@@ -69,7 +69,7 @@ Versión sin δ: P(D Cámara) 0.872, P(D Senado) 0.688.
 ## Pasos de hoy
 
 1. `git push` del repositorio (público) con la etiqueta: `git push origin congelado-2026-11-02` (hecho).
-2. OSF: proyecto nuevo → subir los tres archivos → Registrations → "Preregistration" → pegar el texto de arriba → registrar (sin embargo).
+2. OSF: hecho el 2 de noviembre de 2026 a las 15:15 Caracas, plantilla "OSF Preregistration", proyecto asociado https://osf.io/35xdw.
 3. OpenTimestamps: opentimestamps.org → arrastrar `predicciones.csv` → guardar el `.ots` en `output/` y hacer commit.
 4. Publicar el post con el hash y los enlaces.
 5. Metaculus/Manifold con las probabilidades.
