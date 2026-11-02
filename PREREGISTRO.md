@@ -42,6 +42,9 @@ La **versión principal** es la que incluye δ ("con_delta"). Se publica tambié
 | Combinación | precisión inversa de fundamentales, encuestas y calificación; var. encuesta = s_sys² + s_within²/n_eff |
 | Correlación Cámara–Senado | comparten ε_nac, ε_región y la mitad de ε_estado |
 | Componentes de error | σ_nac, σ_región, σ_estado, σ_distrito calibrados con 538 1998–2022 (`data/frozen/calibration.csv`) |
+| Error diferencial por PVI | κ·PVI·η con κ = 0.1 y η ~ N(0,1) común a todo el país (2016/2020: las encuestas fallaron más en zonas republicanas) |
+| Antigüedad de encuestas | la sd del promedio de una carrera crece 0.07 puntos por día desde su encuesta más reciente |
+| Calificación con encuestas | varianza ×2 cuando la carrera tiene encuestas (información parcialmente redundante) |
 | Réplicas | 20 000, semilla 20261103 |
 | Sin competencia | el único partido mayor gana con P = 1 |
 | Independientes | NE (Osborn), MT (Bodnar), SD (Bengs): ocupan el lado "no R"; se cuentan aparte de los escaños D |

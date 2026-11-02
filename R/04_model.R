@@ -40,6 +40,9 @@ MIN_TWO_PARTY   <- 15     # una encuesta de carrera con D o R < 15% no es un due
 STALE_SD_PER_DAY <- 0.07  # penalizacion por antiguedad del promedio de encuestas (sd extra por dia)
 SIGMA_RATING    <- 6      # sd (margen) de la calificacion de expertos; Likely = 9 -> P ~ 0.93, Lean = 5 -> ~0.80
 SIGMA_RATING_SAFE <- 10   # Solid/Safe es un piso, no una estimacion puntual: se usa con menos peso
+RATING_POLLED_INFL <- 2   # con encuestas, la calificacion es parcialmente redundante: varianza x2 (sd 6 -> 8.5)
+KAPPA_PVI       <- 0.10   # error diferencial por PVI (2016/2020: las encuestas fallan mas en zonas R):
+                          # contribucion = KAPPA_PVI * PVI * eta, con eta ~ N(0,1) comun a todo el pais
 
 
 prep_polls <- function(df) {
@@ -138,7 +141,8 @@ D <- districts %>%
          fund_margin = mu_G + pvi_mult * pvi_2026 + P[["beta_inc_house"]] * inc_eff,
          fund_var = P[["sigma_dist_fund"]]^2 + if_else(redistricted, P[["redistricted_extra_sd"]]^2, 0),
          polled = !is.na(poll_margin), rated = !is.na(rating_margin),
-         rating_var = if_else(abs(coalesce(rating_margin, 0)) >= 15, SIGMA_RATING_SAFE^2, SIGMA_RATING^2)) %>%
+         rating_var = if_else(abs(coalesce(rating_margin, 0)) >= 15, SIGMA_RATING_SAFE^2, SIGMA_RATING^2) *
+                      if_else(polled, RATING_POLLED_INFL, 1)) %>%
   bind_cols(with(., combine3(fund_margin, fund_var, poll_margin, poll_var, rating_margin, rating_var))) %>%
   mutate(sd_d = sd,
          # sin competencia: el unico partido mayor gana
@@ -155,7 +159,8 @@ S <- senate %>%
          fund_margin = mu_G + pvi_mult * pvi + P[["beta_inc_senate"]] * inc,
          fund_var = if_else(challenger_is_ind, 12^2, P[["sigma_state_fund"]]^2),   # sin D en la boleta, fundamentales casi no informan
          polled = !is.na(poll_margin), rated = !is.na(rating_margin),
-         rating_var = if_else(abs(coalesce(rating_margin, 0)) >= 15, SIGMA_RATING_SAFE^2, SIGMA_RATING^2)) %>%
+         rating_var = if_else(abs(coalesce(rating_margin, 0)) >= 15, SIGMA_RATING_SAFE^2, SIGMA_RATING^2) *
+                      if_else(polled, RATING_POLLED_INFL, 1)) %>%
   bind_cols(with(., combine3(fund_margin, fund_var, poll_margin, poll_var, rating_margin, rating_var))) %>%
   mutate(sd_s_extra = sd,
          # carreras sin demócrata ni encuestas: el republicano gana (ID)
@@ -183,10 +188,12 @@ simulate <- function(version = c("con_delta", "sin_delta", "solo_fundamentales")
   e_reg <- matrix(rnorm(n_sim * length(regions), 0, P[["sigma_region_house"]]), n_sim, dimnames = list(NULL, regions))
   e_st  <- matrix(rnorm(n_sim * length(states),  0, P[["sigma_state_house"]]),  n_sim, dimnames = list(NULL, states))
   common <- delta + e_nat                                   # error nacional comun (encuestas vs urnas)
+  eta <- rnorm(n_sim)                                       # error diferencial por PVI, signo comun a todo el pais
 
   # Camara: matriz n_sim x 435
   e_d <- matrix(rnorm(n_sim * nrow(D), 0, 1), n_sim) * rep(D$sd_d, each = n_sim)
-  M_house <- rep(D$m_hat, each = n_sim) + common + e_reg[, D$region] + e_st[, D$state] + e_d
+  M_house <- rep(D$m_hat, each = n_sim) + common + e_reg[, D$region] + e_st[, D$state] + e_d +
+             KAPPA_PVI * outer(eta, D$pvi_2026)
   M_house[, D$uncontested] <- rep(D$m_hat[D$uncontested], each = n_sim)
   seats_house <- rowSums(M_house > 0)
 
@@ -194,7 +201,7 @@ simulate <- function(version = c("con_delta", "sin_delta", "solo_fundamentales")
   e_s <- matrix(rnorm(n_sim * nrow(S), 0, 1), n_sim) * rep(S$sd_s_extra, each = n_sim)
   M_sen <- rep(S$m_hat, each = n_sim) + common +
            e_reg[, S$region] * (P[["sigma_region_senate"]] / P[["sigma_region_house"]]) +
-           e_st[, S$state] * 0.5 + e_s
+           e_st[, S$state] * 0.5 + e_s + KAPPA_PVI * outer(eta, S$pvi)
   M_sen[, !S$has_D & !S$polled] <- -100
   win_nonR <- M_sen > 0
   wins_D   <- rowSums(win_nonR[, !S$challenger_is_ind, drop = FALSE])
@@ -230,7 +237,8 @@ saveRDS(sims, file.path(DIR_OUT, "sims.rds"))
 saveRDS(list(D = D, S = S, mu_G = mu_G, sigma_mu = sigma_mu, boot = boot, house_effects = house_effects, gen = gen,
              D_NOT_UP = D_NOT_UP, R_NOT_UP = R_NOT_UP, swing_uniforme = swing_uniforme, ind_races = ind_races,
              sensibilidad = sensibilidad,
-             params = c(P, sigma_rating = SIGMA_RATING, sigma_rating_safe = SIGMA_RATING_SAFE),
+             params = c(P, sigma_rating = SIGMA_RATING, sigma_rating_safe = SIGMA_RATING_SAFE,
+                        rating_polled_infl = RATING_POLLED_INFL, kappa_pvi = KAPPA_PVI, stale_sd_per_day = STALE_SD_PER_DAY),
              n_sim = N_SIM, n_boot = N_BOOT,
              windows = c(generic = WINDOW_GENERIC, house_effect = WINDOW_HOUSE_EFFECT, race = WINDOW_RACE,
                          race_max = WINDOW_RACE_MAX, half_life = HALF_LIFE)),
