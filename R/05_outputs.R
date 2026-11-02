@@ -187,8 +187,9 @@ writeLines(md, file.path(DIR_OUT, "resumen.md"))
 
 hash_files <- c("predicciones.csv", "resumen.json", "resumen.md", "distribucion_escanos.csv", "lineas_base.csv")
 hashes <- map_chr(hash_files, ~ digest(file.path(DIR_OUT, .x), algo = "sha256", file = TRUE))
-writeLines(sprintf("%s  %s", hashes, hash_files), file.path(DIR_OUT, "SHA256SUMS.txt"))
+# write_lines escribe LF (no CRLF): asi `sha256sum -c` funciona en cualquier sistema
+write_lines(sprintf("%s  %s", hashes, hash_files), file.path(DIR_OUT, "SHA256SUMS.txt"))
 frozen_hash <- map_chr(list.files(DIR_FROZEN, full.names = TRUE), ~ digest(.x, algo = "sha256", file = TRUE))
-writeLines(sprintf("%s  data/frozen/%s", frozen_hash, list.files(DIR_FROZEN)), file.path(DIR_OUT, "SHA256SUMS_datos.txt"))
+write_lines(sprintf("%s  data/frozen/%s", frozen_hash, list.files(DIR_FROZEN)), file.path(DIR_OUT, "SHA256SUMS_datos.txt"))
 msg("Entregables escritos en %s", DIR_OUT)
 cat(readLines(file.path(DIR_OUT, "SHA256SUMS.txt")), sep = "\n")
