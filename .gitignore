@@ -8,3 +8,5 @@ output/sims.rds
 .Rhistory
 .RData
 .Rproj.user/
+# resultados de la autoprueba (--simulado); la evaluacion real se versiona a mano tras la eleccion
+output/evaluacion/
