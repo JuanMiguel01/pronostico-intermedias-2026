@@ -1,0 +1,467 @@
+# 02_clean.R -- convierte las fuentes crudas en CSV limpios y congelados (data/frozen/)
+# Salidas:
+#   districts.csv        435 distritos: PVI 2026, votos 2020/2024, incumbencia, candidatos
+#   senate_races.csv     35 escanos: PVI estatal, incumbente, candidatos
+#   polls_generic.csv    encuestas nacionales (Wikipedia + Poliwave)
+#   polls_senate.csv     encuestas por carrera senatorial (Poliwave)
+#   polls_house.csv      encuestas por distrito (Poliwave)
+#   hist_polls_538.csv   archivo historico 1998-2024 con resultado real (calibracion)
+#   benchmark_*.csv      promedios de otros agregadores (lineas base)
+source("R/00_setup.R")
+
+args  <- commandArgs(trailingOnly = TRUE)
+STAMP <- if (length(args)) args[1] else max(list.files(DIR_RAW))
+RAW   <- file.path(DIR_RAW, STAMP)
+msg("Limpiando %s", RAW)
+
+# ============================================================================
+# 1. Cook PVI 2026
+# ============================================================================
+cook <- read_tsv(file.path(RAW, "cook_pvi_2026.tsv"), col_types = cols(.default = "c")) %>%
+  filter(str_detect(DIST, "^[A-Z]{2}-(\\d{2}|AL)$")) %>%
+  transmute(
+    district     = DIST,
+    state        = str_sub(DIST, 1, 2),
+    incumbent_raw = Incumbent,
+    biden_2020   = parse_number(`Biden 2020`),
+    trump_2020   = parse_number(`Trump 2020`),
+    harris_2024  = parse_number(`Harris 2024`),
+    trump_2024   = parse_number(`Trump 2024`),
+    pvi_2026_lab = `2026 PVI`,
+    pvi_2026     = as.numeric(`2026 Raw PVI`),
+    pvi_2025     = as.numeric(`2025 Raw PVI`),
+    pvi_shift    = as.numeric(`Raw PVI Shift`)
+  ) %>%
+  mutate(
+    region       = unname(REGION[state]),
+    inc_party    = str_match(incumbent_raw, "\\(([DRI])\\)\\s*$")[, 2],
+    open_seat    = str_detect(incumbent_raw, "^(OPEN|VACANT|NEW)"),
+    incumbent    = if_else(open_seat, NA_character_,
+                           str_trim(str_remove(incumbent_raw, "\\s*\\([DRI]\\)\\s*$"))),
+    margin_2024  = 100 * (harris_2024 - trump_2024) / (harris_2024 + trump_2024),
+    margin_2020  = 100 * (biden_2020 - trump_2020) / (biden_2020 + trump_2020),
+    redistricted = state %in% REDISTRICTED_2026 | (abs(pvi_shift) > 0.05 & !is.na(pvi_shift))
+  )
+stopifnot(nrow(cook) == 435, all(!is.na(cook$pvi_2026)))
+msg("Cook: %d distritos, %d abiertos, %d en estados rediseñados",
+    nrow(cook), sum(cook$open_seat), sum(cook$state %in% REDISTRICTED_2026))
+
+# ============================================================================
+# 2. Wikipedia -- utilidades
+# ============================================================================
+wiki_tables <- function(json_file) {
+  txt <- fromJSON(json_file)$parse$text
+  html_elements(read_html(txt), "table.wikitable")
+}
+clean_ref <- function(x) str_squish(str_remove_all(x, "\\[[^\\]]*\\]"))
+
+norm_party <- function(p) {
+  # Democratic / DFL (Minnesota) / Democratic-NPL (Dakota del Norte) -> Democratic ; etc.
+  case_when(is.na(p) ~ NA_character_,
+            str_detect(p, "^Democratic|^DFL") ~ "Democratic",
+            str_detect(p, "^Republican") ~ "Republican",
+            str_detect(p, "^Independent|^Nonpartisan|^No party") ~ "Independent",
+            TRUE ~ str_squish(p))
+}
+parties_in <- function(cands) {
+  # "▌Jerry Carl (Republican)\n▌Clyde Jones Jr. (Democratic)" -> lista de partidos normalizados
+  norm_party(str_match_all(clean_ref(cands), "\\(([^()]+)\\)")[[1]][, 2])
+}
+cand_by_party <- function(cands, party) {
+  lines <- str_split(clean_ref(cands), "▌|\\n")[[1]] %>% str_squish() %>% discard(~ .x == "")
+  lp <- norm_party(str_match(lines, "\\(([^()]+)\\)\\s*$")[, 2])
+  hit <- lines[!is.na(lp) & lp == party]
+  if (!length(hit)) NA_character_ else paste(str_remove(hit, "\\s*\\([^()]*\\)\\s*$"), collapse = "; ")
+}
+
+# ============================================================================
+# 3. Wikipedia -- Camara: candidatos por distrito
+# ============================================================================
+house_tabs <- wiki_tables(file.path(RAW, "wiki_house.json"))
+house_cands <- map_dfr(house_tabs, function(tb) {
+  hdr <- html_text2(html_elements(tb, "tr:first-child th"))
+  if (!any(str_detect(hdr, "^District")) || !any(str_detect(hdr, "^Candidates"))) return(NULL)
+  df <- as.data.frame(html_table(tb, fill = TRUE), check.names = FALSE)
+  sub <- str_squish(as.character(df[1, ]))
+  names(df) <- make.unique(sub); df <- df[-1, , drop = FALSE]
+  loc_col  <- which(str_detect(names(df), "^Location"))[1]
+  cand_col <- which(str_detect(names(df), "^Candidates"))[1]
+  stat_col <- which(str_detect(names(df), "^Status"))[1]
+  if (any(is.na(c(loc_col, cand_col)))) return(NULL)
+  tibble(location = str_squish(df[[loc_col]]),
+         status = if (is.na(stat_col)) NA_character_ else clean_ref(df[[stat_col]]),
+         candidates = df[[cand_col]])
+}) %>%
+  mutate(m = str_match(location, "^(.*?)\\s+(\\d+|at-large)$"),
+         state = unname(STATE_ABBR[m[, 2]]),
+         num   = if_else(m[, 3] == "at-large", "AL", sprintf("%02d", suppressWarnings(as.integer(m[, 3])))),
+         district = paste0(state, "-", num)) %>%
+  filter(!is.na(state), !is.na(num)) %>%
+  select(-m, -location) %>%
+  distinct(district, .keep_all = TRUE) %>%
+  mutate(parties = map(candidates, parties_in),
+         has_D = map_lgl(parties, ~ any(.x == "Democratic")),
+         has_R = map_lgl(parties, ~ any(.x == "Republican")),
+         n_cands = map_int(parties, length),
+         cand_D = map_chr(candidates, cand_by_party, party = "Democratic"),
+         cand_R = map_chr(candidates, cand_by_party, party = "Republican"),
+         wiki_status = status) %>%
+  select(district, has_D, has_R, n_cands, cand_D, cand_R, wiki_status, wiki_candidates = candidates)
+msg("Wikipedia Camara: %d distritos con candidatos (%d sin D, %d sin R)",
+    nrow(house_cands), sum(!house_cands$has_D), sum(!house_cands$has_R))
+
+districts <- cook %>%
+  left_join(house_cands, by = "district") %>%
+  mutate(has_D = coalesce(has_D, TRUE), has_R = coalesce(has_R, TRUE),
+         uncontested = xor(has_D, has_R) & !(has_D & has_R)) %>%
+  arrange(district)
+# Casos especiales documentados (ver README):
+#  CA-06: el incumbente Kevin Kiley (ex-R) compite como independiente contra Richard Pan (D) en el mapa nuevo.
+#         Se modela como carrera competida con Kiley en el lado "R" (caucus republicano) y con ventaja de incumbencia.
+districts <- districts %>%
+  mutate(inc_party_model = inc_party,
+         has_R = if_else(district == "CA-06", TRUE, has_R),
+         uncontested = if_else(district == "CA-06", FALSE, uncontested),
+         cand_R = if_else(district == "CA-06", paste0(incumbent, " (independiente, ex-R)"), cand_R),
+         inc_party_model = if_else(district == "CA-06", "R", inc_party_model))
+missing_wiki <- districts$district[is.na(districts$n_cands)]
+if (length(missing_wiki)) msg("Sin candidatos en Wikipedia (se asume D vs R): %s", paste(missing_wiki, collapse = " "))
+
+# ============================================================================
+# 4. Wikipedia -- Senado
+# ============================================================================
+sen_tabs <- wiki_tables(file.path(RAW, "wiki_senate.json"))
+sen_tab <- keep(sen_tabs, function(tb) {
+  hdr <- html_text2(html_elements(tb, "tr:first-child th"))
+  any(str_detect(hdr, "^Constituency")) && any(str_detect(hdr, "^(Results|Status)")) && any(str_detect(hdr, "^Candidates"))
+})
+stopifnot(length(sen_tab) >= 1)
+senate_races <- map_dfr(sen_tab, function(tb) {
+  hdr <- html_text2(html_elements(tb, "tr:first-child th"))
+  is_special_tab <- any(str_detect(hdr, "^Status")) && !any(str_detect(hdr, "^Results"))
+  sdf <- as.data.frame(html_table(tb, fill = TRUE), check.names = FALSE)
+  sub <- str_squish(as.character(sdf[1, ])); names(sdf) <- make.unique(sub); sdf <- sdf[-1, , drop = FALSE]
+  col <- function(pat) {
+    i <- which(str_detect(names(sdf), pat))[1]
+    if (is.na(i)) rep(NA_character_, nrow(sdf)) else as.character(sdf[[i]])
+  }
+  tibble(
+    state_raw   = str_squish(col("^State")),
+    pvi_lab     = clean_ref(col("^PVI")),
+    senator     = clean_ref(col("^Senator")),
+    inc_party_name = str_squish(col("^Party")),
+    last_race   = clean_ref(col("^Last race")),
+    results     = clean_ref(col("^(Results|Status)")),
+    candidates  = col("^Candidates"),
+    from_special_table = is_special_tab
+  )
+}) %>%
+  mutate(special    = from_special_table | str_detect(state_raw, regex("special", ignore_case = TRUE)),
+         state_name = str_squish(str_remove(state_raw, "\\(.*\\)")),
+         state      = unname(STATE_ABBR[state_name]),
+         race_id    = paste0(state, if_else(special, "-S", "")),
+         pvi        = pvi_to_num(pvi_lab),
+         inc_party  = case_when(str_detect(inc_party_name, "Democrat|DFL") ~ "D",
+                                str_detect(inc_party_name, "Republican") ~ "R",
+                                TRUE ~ "I"),
+         open_seat  = str_detect(results, regex("retir|not seeking|lost|resign|defeated|did not", ignore_case = TRUE)),
+         region     = unname(REGION[state]),
+         parties    = map(candidates, parties_in),
+         has_D      = map_lgl(parties, ~ any(.x == "Democratic")),
+         has_R      = map_lgl(parties, ~ any(.x == "Republican")),
+         cand_D     = map_chr(candidates, cand_by_party, party = "Democratic"),
+         cand_R     = map_chr(candidates, cand_by_party, party = "Republican"),
+         cand_I     = map_chr(candidates, cand_by_party, party = "Independent"),
+         last_margin_dir = str_extract(last_race, "[DRI]$"),
+         last_pct   = suppressWarnings(parse_number(last_race))) %>%
+  filter(!is.na(state)) %>%
+  select(race_id, state, state_name, special, region, pvi, pvi_lab, senator, inc_party, open_seat,
+         has_D, has_R, cand_D, cand_R, cand_I, last_pct, last_margin_dir, results, wiki_candidates = candidates) %>%
+  arrange(race_id)
+msg("Wikipedia Senado: %d carreras (%d especiales, %d abiertas)",
+    nrow(senate_races), sum(senate_races$special), sum(senate_races$open_seat))
+stopifnot(nrow(senate_races) == 35)
+
+# ============================================================================
+# 5. Wikipedia -- generic ballot nacional
+# ============================================================================
+MONTHS <- c("January","February","March","April","May","June","July","August",
+            "September","October","November","December")
+parse_wiki_dates <- function(x) {
+  # "October 22–30, 2026" | "October 29 – November 1, 2026" | "October 26, 2026"
+  x <- str_squish(str_replace_all(x, "[–—−-]", "-"))
+  yr <- as.integer(str_extract(x, "\\d{4}"))
+  body <- str_squish(str_remove(str_remove(x, ",?\\s*\\d{4}\\s*$"), ","))
+  parts <- str_split_fixed(body, "\\s*-\\s*", 2)
+  left <- str_squish(parts[, 1]); right <- str_squish(parts[, 2])
+  lm <- str_extract(left, paste(MONTHS, collapse = "|")); ld <- as.integer(str_extract(left, "\\d+"))
+  rm_ <- str_extract(right, paste(MONTHS, collapse = "|")); rd <- as.integer(str_extract(right, "\\d+"))
+  end_m <- coalesce(rm_, lm); end_d <- coalesce(rd, ld)
+  start <- suppressWarnings(make_date(yr, match(lm, MONTHS), ld))
+  end   <- suppressWarnings(make_date(yr, match(end_m, MONTHS), end_d))
+  tibble(start = start, end = end)
+}
+
+us_tabs <- wiki_tables(file.path(RAW, "wiki_us2026.json"))
+gb_tabs <- keep(us_tabs, function(tb) {
+  hdr <- html_text2(html_elements(tb, "tr:first-child th"))
+  any(str_detect(hdr, "^Poll source")) && any(str_detect(hdr, "^Democratic"))
+})
+polls_generic_wiki <- map_dfr(gb_tabs, function(tb) {
+  df <- as.data.frame(html_table(tb, fill = TRUE), check.names = FALSE)
+  names(df) <- str_squish(str_remove_all(names(df), "\\[.*?\\]"))
+  tibble(pollster_raw = df[["Poll source"]],
+         dates = df[[which(str_detect(names(df), "^Date"))[1]]],
+         sample = df[[which(str_detect(names(df), "^Sample"))[1]]],
+         dem = df[["Democratic"]], rep = df[["Republican"]])
+}) %>%
+  mutate(pollster = clean_ref(pollster_raw),
+         partisan = str_match(pollster, "\\(([DR])\\)")[, 2],
+         pollster = str_squish(str_remove(pollster, "\\s*\\([DR]\\)")),
+         n   = parse_number(str_remove(sample, "\\(.*\\)")),
+         pop = str_match(sample, "\\((LV|RV|A|V)\\)")[, 2],
+         dem = parse_number(as.character(dem)), rep = parse_number(as.character(rep)),
+         source = "wikipedia") %>%
+  bind_cols(parse_wiki_dates(.$dates)) %>%
+  filter(!is.na(dem), !is.na(rep), !is.na(end)) %>%
+  mutate(margin = dem - rep) %>%
+  select(source, pollster, partisan, start, end, n, pop, dem, rep, margin)
+msg("Wikipedia generic ballot: %d filas (%d LV, %d RV, %d A)", nrow(polls_generic_wiki),
+    sum(polls_generic_wiki$pop == "LV", na.rm = TRUE), sum(polls_generic_wiki$pop == "RV", na.rm = TRUE),
+    sum(polls_generic_wiki$pop == "A", na.rm = TRUE))
+
+# agregadores (linea base)
+agg_tab <- keep(us_tabs, function(tb) any(str_detect(html_text2(html_elements(tb, "tr:first-child th")), "aggregation")))
+benchmark_generic <- if (length(agg_tab)) {
+  df <- as.data.frame(html_table(agg_tab[[1]], fill = TRUE), check.names = FALSE)
+  names(df) <- c("aggregator", "dates", "updated", "rep", "dem", "other", "margin")[seq_len(ncol(df))]
+  df %>% transmute(aggregator = clean_ref(aggregator), updated = clean_ref(updated),
+                   rep = parse_number(as.character(rep)), dem = parse_number(as.character(dem)), margin = dem - rep)
+} else tibble()
+
+# ============================================================================
+# 6. Poliwave -- generic, Senado, Camara
+# ============================================================================
+color_to_party <- function(style) {
+  hex <- tolower(str_match(style, "--party-color:\\s*#([0-9a-fA-F]{6})")[, 2])
+  r <- strtoi(substr(hex, 1, 2), 16L); g <- strtoi(substr(hex, 3, 4), 16L); b <- strtoi(substr(hex, 5, 6), 16L)
+  case_when(is.na(hex) ~ NA_character_,
+            r > 170 & b < 110 & g < 110 ~ "R",
+            b > 150 & r < 120 ~ "D",
+            r > 120 & b > 150 ~ "I",
+            abs(r - g) < 25 & abs(g - b) < 25 ~ "UND",
+            TRUE ~ "OTH")
+}
+parse_pw_dates <- function(x) {
+  x <- str_replace_all(x, "[–—]", "-")
+  parts <- str_split_fixed(x, "\\s*-\\s*", 2)
+  end <- suppressWarnings(mdy(if_else(parts[, 2] == "", parts[, 1], parts[, 2])))
+  start <- suppressWarnings(mdy(parts[, 1]))
+  tibble(start = start, end = end)
+}
+option_key <- function(x) {
+  # "James Talarico" -> "JAMES_TALARICO" (como las claves de `options` en el JS embebido de Poliwave)
+  x <- iconv(x, from = "UTF-8", to = "ASCII//TRANSLIT", sub = "")
+  toupper(str_replace_all(str_squish(x), "[^A-Za-z0-9]+", "_"))
+}
+parse_pw_header <- function(file) {
+  # tabla visible: candidatos (th con --party-color) -> partido
+  h <- read_html(file); xml_remove(xml_find_all(h, "//comment()"))
+  tbs <- html_elements(h, "table"); if (!length(tbs)) return(NULL)
+  ths <- html_elements(tbs[[1]], "thead th")
+  th_txt <- str_squish(html_text2(ths)); th_sty <- html_attr(ths, "style")
+  idx <- which(!is.na(th_sty) & str_detect(th_sty, "party-color"))
+  if (!length(idx)) return(NULL)
+  tibble(candidate = th_txt[idx], party = color_to_party(th_sty[idx])) %>%
+    mutate(party = case_when(candidate == "DEM" ~ "D", candidate == "REP" ~ "R",
+                             candidate %in% c("N/A", "UND") ~ "UND", candidate == "WILL_NOT_VOTE" ~ "WNV",
+                             TRUE ~ party),
+           key = option_key(candidate))
+}
+parse_poliwave_embedded <- function(file) {
+  # Poliwave incrusta en la pagina (SvelteKit) el historial completo de encuestas de la carrera,
+  # no solo las 20 visibles. Se extraen con una expresion regular sobre el objeto JS.
+  g <- paste(readLines(file, warn = FALSE, encoding = "UTF-8"), collapse = "\n")
+  rx <- paste0('\\{date:"(\\d{4}-\\d{2}-\\d{2})",pollster:"([^"]*)",pollsterID:\\d+,question:"([^"]*)",',
+               'demoFilter:"([^"]*)",regionFilter:"([^"]*)",options:\\{([^}]*)\\},sampleSize:(\\d+|null),serialID:(\\d+),',
+               'pollUrl:(?:"[^"]*"|null),startDate:("[^"]*"|null),endDate:"([^"]*)",method:"[^"]*",moe:[^,]*,',
+               'isRolling:[^,]*,rollingPeriod:[^,]*,weight:[^,]*,ratingWeight:[^,]*,population:"([^"]*)"\\}')
+  m <- str_match_all(g, rx)[[1]]
+  if (!nrow(m)) return(NULL)
+  d <- tibble(pollster_raw = m[, 3], question = m[, 4], demo = m[, 5], region_f = m[, 6],
+              options = m[, 7], n = suppressWarnings(as.numeric(m[, 8])),
+              start = ymd(str_remove_all(m[, 10], '"'), quiet = TRUE), end = ymd(m[, 11], quiet = TRUE),
+              pop_raw = m[, 12]) %>%
+    filter(demo == "All", region_f == "All") %>%
+    distinct(pollster_raw, start, end, options, pop_raw, .keep_all = TRUE) %>%
+    mutate(poll_id = row_number())
+  opts <- str_match_all(d$options, "([A-Z0-9_]+):(-?[0-9.]+)")
+  d %>%
+    mutate(opt = map(opts, ~ tibble(key = str_remove(.x[, 2], "^CAND_"), pct = as.numeric(.x[, 3])))) %>%
+    select(-options, -demo, -region_f) %>%
+    unnest(opt) %>%
+    mutate(pop = case_when(str_detect(pop_raw, "^(LV|Likely)") ~ "LV",
+                           str_detect(pop_raw, "^(RV|Registered)") ~ "RV",
+                           str_detect(pop_raw, "^(A|Adult)") ~ "A", TRUE ~ NA_character_),
+           partisan = str_match(pollster_raw, "\\(([DR])\\)")[, 2],
+           pollster = str_squish(str_remove(pollster_raw, "\\s*\\([DR]\\).*$"))) %>%
+    select(-pop_raw, -pollster_raw)
+}
+key_tokens <- function(k) {
+  # "TOM_KEAN_JR" -> c("TOM","KEAN"); quita sufijos y tokens vacios
+  t <- str_split(k, "_")[[1]]; t <- t[t != ""]
+  t[!t %in% c("JR", "SR", "II", "III", "IV")]
+}
+match_key_to_header <- function(keys, hdr) {
+  # Las claves del JS ("MATT_DUNLAP", "TOM_KEAN_JR", "MAR_A_ELVIRA_SALAZAR") no siempre coinciden con
+  # el nombre visible ("Matthew Dunlap", "Thomas Kean Jr.", "Maria Elvira Salazar"): se empareja por
+  # apellido (ultimo token) y, si hay ambiguedad, por la inicial del primer token.
+  if (is.null(hdr) || !nrow(hdr)) return(rep(NA_character_, length(keys)))
+  htok <- map(hdr$key, key_tokens)
+  map_chr(keys, function(k) {
+    exact <- which(hdr$key == k); if (length(exact)) return(hdr$party[exact[1]])
+    kt <- key_tokens(k); if (!length(kt)) return(NA_character_)
+    last <- kt[length(kt)]
+    cand <- which(map_lgl(htok, ~ length(.x) > 0 && .x[length(.x)] == last))
+    if (length(cand) == 1) return(hdr$party[cand])
+    if (length(cand) > 1) {
+      cand2 <- cand[map_lgl(htok[cand], ~ substr(.x[1], 1, 1) == substr(kt[1], 1, 1))]
+      if (length(cand2) >= 1) return(hdr$party[cand2[1]])
+    }
+    NA_character_
+  })
+}
+parse_pw_table <- function(file, hdr) {
+  # respaldo: filas visibles de la tabla (20 mas recientes) cuando el JS embebido usa referencias
+  h <- read_html(file); xml_remove(xml_find_all(h, "//comment()"))
+  tbs <- html_elements(h, "table"); if (!length(tbs) || is.null(hdr)) return(NULL)
+  tb <- tbs[[1]]; ths <- html_elements(tb, "thead th")
+  th_txt <- str_squish(html_text2(ths)); th_sty <- html_attr(ths, "style")
+  cand_idx <- which(!is.na(th_sty) & str_detect(th_sty, "party-color"))
+  rows <- html_elements(tb, "tbody tr")
+  out <- map_dfr(seq_along(rows), function(i) {
+    tds <- html_elements(rows[[i]], "td"); if (length(tds) != length(ths)) return(NULL)
+    txt <- str_squish(html_text2(tds))
+    pollster_raw <- str_squish(html_text2(html_element(tds[[which(th_txt == "Pollster")]], "a")))
+    if (is.na(pollster_raw)) pollster_raw <- txt[th_txt == "Pollster"][1]
+    sample <- txt[th_txt == "Sample"][1]
+    dates <- str_split_fixed(str_replace_all(txt[th_txt == "Date"][1], "[\u2013\u2014]", "-"), "\\s*-\\s*", 2)
+    tibble(poll_id = i, question = NA_character_,
+           start = suppressWarnings(mdy(dates[1])),
+           end   = suppressWarnings(mdy(if (dates[2] == "") dates[1] else dates[2])),
+           n = parse_number(str_extract(sample, "^[0-9,]+")), pop = str_extract(sample, "\\b(LV|RV|A)\\b"),
+           partisan = str_match(pollster_raw, "\\(([DR])\\)")[, 2],
+           pollster = str_squish(str_remove(pollster_raw, "\\s*\\([DR]\\).*$")),
+           key = hdr$key, party = hdr$party,
+           pct = suppressWarnings(as.numeric(str_extract(txt[cand_idx], "[0-9.]+"))))
+  })
+  if (!nrow(out)) NULL else out
+}
+pw_race_polls <- function(file) {
+  hdr <- parse_pw_header(file)
+  emb <- parse_poliwave_embedded(file)
+  if (is.null(emb) || !nrow(emb)) return(parse_pw_table(file, hdr))
+  emb %>%
+    mutate(party = match_key_to_header(key, hdr),
+           party = case_when(!is.na(party) ~ party,
+                             key == "DEM" ~ "D", key == "REP" ~ "R",
+                             key %in% c("OTH", "UND", "N_A", "WILL_NOT_VOTE", "EXHAUSTED") ~ "OTH",
+                             TRUE ~ "UNKNOWN"))
+}
+pw_wide <- function(df) {
+  # una fila por encuesta: dem, rep, ind (suma de independientes), oth
+  if (is.null(df) || !nrow(df)) return(tibble())
+  df %>%
+    mutate(party = if_else(party %in% c("D", "R", "I"), party, "OTH")) %>%
+    group_by(poll_id, pollster, partisan, question, start, end, n, pop, party) %>%
+    summarise(pct = sum(pct, na.rm = TRUE), .groups = "drop") %>%
+    pivot_wider(names_from = party, values_from = pct) %>%
+    mutate(dem = if ("D" %in% names(.)) D else NA_real_,
+           rep = if ("R" %in% names(.)) R else NA_real_,
+           ind = if ("I" %in% names(.)) I else NA_real_) %>%
+    select(pollster, partisan, question, start, end, n, pop, dem, rep, ind) %>%
+    mutate(margin = dem - rep)
+}
+
+pw_generic <- pw_race_polls(file.path(RAW, "poliwave", "generic.html")) %>% pw_wide() %>%
+  mutate(source = "poliwave", .before = 1) %>% select(-question)
+msg("Poliwave generic: %d encuestas (historial embebido)", nrow(pw_generic))
+
+# union Wikipedia + Poliwave, eliminando duplicados (misma fecha final, poblacion y cifras)
+polls_generic <- bind_rows(polls_generic_wiki, pw_generic) %>%
+  mutate(key = paste(end, pop, round(dem), round(rep))) %>%
+  group_by(key) %>% arrange(source != "wikipedia") %>% slice(1) %>% ungroup() %>%
+  select(-key) %>% arrange(desc(end), pollster)
+msg("Generic ballot combinado: %d encuestas unicas", nrow(polls_generic))
+
+sen_files <- list.files(file.path(RAW, "poliwave", "senate"), full.names = TRUE)
+polls_senate_long <- map_dfr(sen_files, function(f) {
+  d <- pw_race_polls(f); if (is.null(d) || !nrow(d)) return(NULL)
+  d %>% mutate(state = str_remove(basename(f), "\\.html$"), .before = 1)
+})
+# candidatos por carrera (nombre y partido) segun Poliwave
+senate_cands_pw <- polls_senate_long %>% filter(!key %in% c("OTH", "UND", "N_A", "WILL_NOT_VOTE")) %>%
+  distinct(state, key, party) %>%
+  group_by(state) %>% summarise(pw_candidates = paste0(key, " (", party, ")", collapse = "; "), .groups = "drop")
+polls_senate_wide <- polls_senate_long %>% group_by(state) %>% group_modify(~ pw_wide(.x)) %>% ungroup() %>%
+  # Poliwave no distingue la especial de Florida/Ohio en la URL: es la unica carrera del estado en 2026
+  mutate(race_id = if_else(state %in% senate_races$state[senate_races$special], paste0(state, "-S"), state), .before = 1) %>%
+  arrange(race_id, desc(end))
+msg("Poliwave Senado: %d encuestas en %d carreras", nrow(polls_senate_wide), n_distinct(polls_senate_wide$race_id))
+
+house_files <- list.files(file.path(RAW, "poliwave", "house"), full.names = TRUE)
+polls_house_long <- map_dfr(house_files, function(f) {
+  d <- pw_race_polls(f); if (is.null(d) || !nrow(d)) return(NULL)
+  d %>% mutate(district = str_remove(basename(f), "\\.html$"), .before = 1)
+})
+polls_house_wide <- polls_house_long %>% group_by(district) %>% group_modify(~ pw_wide(.x)) %>% ungroup() %>%
+  arrange(district, desc(end))
+
+msg("Poliwave Camara: %d encuestas en %d distritos", nrow(polls_house_wide), n_distinct(polls_house_wide$district))
+
+# benchmark Poliwave Senado (promedio y pronostico por estado)
+pw_sen_idx <- read_html(file.path(RAW, "poliwave", "senate_index.html"))
+xml_remove(xml_find_all(pw_sen_idx, "//comment()"))
+pw_sen_tabs <- html_elements(pw_sen_idx, "table")
+benchmark_pw_senate <- map_dfr(pw_sen_tabs, function(tb) {
+  cap <- html_text2(html_element(tb, "caption"))
+  if (is.na(cap) || !str_detect(cap, "Polling in each")) return(NULL)
+  df <- as.data.frame(html_table(tb, fill = TRUE), check.names = FALSE)
+  names(df) <- c("state_name", "dem", "ind", "rep", "poll_lead", "forecast", "n_polls", "newest")[seq_len(ncol(df))]
+  df %>% transmute(state = unname(STATE_ABBR[state_name]), dem = parse_number(as.character(dem)), ind = parse_number(as.character(ind)),
+                   rep = parse_number(as.character(rep)), poll_lead, forecast, n_polls = parse_number(as.character(n_polls)), newest)
+})
+
+# ============================================================================
+# 7. FiveThirtyEight historico
+# ============================================================================
+hist <- read_csv(file.path(RAW, "fte_raw_polls.csv"), col_types = cols(.default = "c")) %>%
+  filter(type_simple %in% c("House-G", "House-G-US", "Sen-G", "Gov-G", "Pres-G")) %>%
+  transmute(cycle = as.integer(cycle), location, type = type_simple, race, pollster, partisan,
+            methodology, polldate = ymd(polldate), electiondate = ymd(electiondate),
+            time_to_election = as.integer(time_to_election), samplesize = as.numeric(samplesize),
+            cand1_party, cand2_party, cand1_pct = as.numeric(cand1_pct), cand2_pct = as.numeric(cand2_pct),
+            cand1_actual = as.numeric(cand1_actual), cand2_actual = as.numeric(cand2_actual),
+            margin_poll = as.numeric(margin_poll), margin_actual = as.numeric(margin_actual)) %>%
+  mutate(# margen D-R (positivo = D), independientemente del orden de candidatos
+         sgn = case_when(cand1_party == "DEM" & cand2_party == "REP" ~ 1,
+                         cand1_party == "REP" & cand2_party == "DEM" ~ -1, TRUE ~ NA_real_),
+         margin_poll_d = sgn * margin_poll, margin_actual_d = sgn * margin_actual,
+         error_d = margin_poll_d - margin_actual_d,          # >0: la encuesta exagero a D
+         state = if_else(type == "House-G-US", "US", str_sub(location, 1, 2)))
+msg("538 historico: %d encuestas, ciclos %s", nrow(hist), paste(range(hist$cycle), collapse = "-"))
+
+# ============================================================================
+# 8. Guardar
+# ============================================================================
+write_csv(districts %>% select(-wiki_candidates), file.path(DIR_FROZEN, "districts.csv"))
+write_csv(senate_races %>% left_join(senate_cands_pw, by = "state") %>% select(-wiki_candidates),
+          file.path(DIR_FROZEN, "senate_races.csv"))
+write_csv(polls_generic,      file.path(DIR_FROZEN, "polls_generic.csv"))
+write_csv(polls_senate_wide,  file.path(DIR_FROZEN, "polls_senate.csv"))
+write_csv(polls_house_wide,   file.path(DIR_FROZEN, "polls_house.csv"))
+write_csv(hist,               file.path(DIR_FROZEN, "hist_polls_538.csv"))
+write_csv(benchmark_generic,  file.path(DIR_FROZEN, "benchmark_generic_aggregators.csv"))
+write_csv(benchmark_pw_senate, file.path(DIR_FROZEN, "benchmark_poliwave_senate.csv"))
+writeLines(STAMP, file.path(DIR_FROZEN, "RAW_SNAPSHOT.txt"))
+msg("CSV congelados escritos en %s", DIR_FROZEN)

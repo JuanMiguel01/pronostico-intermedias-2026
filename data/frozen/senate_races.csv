@@ -1,0 +1,36 @@
+race_id,state,state_name,special,region,pvi,pvi_lab,senator,inc_party,open_seat,has_D,has_R,cand_D,cand_R,cand_I,last_pct,last_margin_dir,results,pw_candidates
+AK,AK,Alaska,FALSE,West,-6,R+6,Dan Sullivan,R,FALSE,TRUE,TRUE,Mary Peltola,Gerald Heikes; Dan J. Sullivan; Dan S. Sullivan,NA,53.9,R,Incumbent advanced to general,MARY_PELTOLA (D); DAN_SULLIVAN (R)
+AL,AL,Alabama,FALSE,South,-15,R+15,Tommy Tuberville,R,TRUE,TRUE,TRUE,Everett Wess,Barry Moore,NA,60.1,R,Incumbent retiringto run for governor,EVERETT_WESS (D); BARRY_MOORE (R)
+AR,AR,Arkansas,FALSE,South,-15,R+15,Tom Cotton,R,FALSE,TRUE,TRUE,Hallie Shoffner,Tom Cotton,NA,66.5,R,Incumbent renominated,HALLIE_SHOFFNER (D); TOM_COTTON (R)
+CO,CO,Colorado,FALSE,West,6,D+6,John Hickenlooper,D,FALSE,TRUE,TRUE,John Hickenlooper,Mark Baisley,NA,53.5,D,Incumbent renominated,JOHN_HICKENLOOPER (D); MARK_BAISLEY (R)
+DE,DE,Delaware,FALSE,South,8,D+8,Chris Coons,D,FALSE,TRUE,TRUE,Chris Coons,Michael Katz,NA,59.4,D,Incumbent renominated,NA
+FL-S,FL,Florida,TRUE,South,-5,R+5,Ashley Moody,R,FALSE,TRUE,TRUE,Angie Nixon,Ashley Moody,Neil Gillespie,NA,NA,Interim appointee nominated,ANGIE_NIXON (D); ASHLEY_MOODY (R)
+GA,GA,Georgia,FALSE,South,-1,R+1,Jon Ossoff,D,FALSE,TRUE,TRUE,Jon Ossoff,Mike Collins,NA,50.6,D,Incumbent renominated,JON_OSSOFF (D); MIKE_COLLINS (R)
+IA,IA,Iowa,FALSE,Midwest,-6,R+6,Joni Ernst,R,TRUE,TRUE,TRUE,Josh Turek,Ashley Hinson,NA,51.7,R,Incumbent retiring,JOSH_TUREK (D); ASHLEY_HINSON (R)
+ID,ID,Idaho,FALSE,West,-18,R+18,Jim Risch,R,FALSE,FALSE,TRUE,NA,Jim Risch,Todd Achilles; Natalie Fleming,62.6,R,Incumbent renominated,TODD_ACHILLES (OTH); JIM_RISCH (R)
+IL,IL,Illinois,FALSE,Midwest,6,D+6,Dick Durbin,D,TRUE,TRUE,TRUE,Juliana Stratton,Don Tracy,Whitfield Harrington Jr.,54.9,D,Incumbent retiring,JULIANA_STRATTON (D); DON_TRACY (R)
+KS,KS,Kansas,FALSE,Midwest,-8,R+8,Roger Marshall,R,FALSE,TRUE,TRUE,Adam Hamilton,Roger Marshall,NA,53.2,R,Incumbent renominated,ADAM_HAMILTON (D); ROGER_MARSHALL (R)
+KY,KY,Kentucky,FALSE,South,-15,R+15,Mitch McConnell,R,TRUE,TRUE,TRUE,Charles Booker,Andy Barr,Christopher Campbell,57.8,R,Incumbent retiring,CHARLES_BOOKER (D); ANDY_BARR (R)
+LA,LA,Louisiana,FALSE,South,-11,R+11,Bill Cassidy,R,TRUE,TRUE,TRUE,Jamie Davis,Julia Letlow,NA,59.3,R,Incumbent lost renomination,JAMIE_DAVIS (D); JULIA_LETLOW (R)
+MA,MA,Massachusetts,FALSE,Northeast,14,D+14,Ed Markey,D,FALSE,TRUE,TRUE,Ed Markey,John Deaton,Shiva Ayyadurai,66.2,D,Incumbent renominated,ED_MARKEY (D); JOHN_DEATON (R)
+ME,ME,Maine,FALSE,Northeast,4,D+4,Susan Collins,R,FALSE,TRUE,TRUE,Troy Jackson,Susan Collins,NA,51,R,Incumbent renominated,TROY_JACKSON (D); SUSAN_COLLINS (R)
+MI,MI,Michigan,FALSE,Midwest,0,EVEN,Gary Peters,D,TRUE,TRUE,TRUE,Abdul El-Sayed,Mike Rogers,NA,49.9,D,Incumbent retiring,ABDUL_EL_SAYED (D); MIKE_ROGERS (R)
+MN,MN,Minnesota,FALSE,Midwest,3,D+3,Tina Smith,D,TRUE,TRUE,TRUE,Peggy Flanagan,Michele Tafoya,Marisa Simonetti,48.7,NA,Incumbent retiring,PEGGY_FLANAGAN (D); MICHELE_TAFOYA (R)
+MS,MS,Mississippi,FALSE,South,-11,R+11,Cindy Hyde-Smith,R,FALSE,TRUE,TRUE,Scott Colom,Cindy Hyde-Smith,Ty Pinkins,54.1,R,Incumbent renominated,SCOTT_COLOM (D); CINDY_HYDE_SMITH (R)
+MT,MT,Montana,FALSE,West,-10,R+10,Steve Daines,R,TRUE,TRUE,TRUE,Alani Bankhead,Kurt Alme,Seth Bodnar,55,R,Incumbent retiring,ALANI_BANKHEAD (D); SETH_BODNAR (I); KURT_ALME (R)
+NC,NC,North Carolina,FALSE,South,-1,R+1,Thom Tillis,R,TRUE,TRUE,TRUE,Roy Cooper,Michael Whatley,NA,48.7,R,Incumbent retiring,ROY_COOPER (D); MICHAEL_WHATLEY (R)
+NE,NE,Nebraska,FALSE,Midwest,-10,R+10,Pete Ricketts,R,FALSE,FALSE,TRUE,NA,Pete Ricketts,Dan Osborn,62.6,R,Incumbent renominated,DAN_OSBORN (D); PETE_RICKETTS (R)
+NH,NH,New Hampshire,FALSE,Northeast,2,D+2,Jeanne Shaheen,D,TRUE,TRUE,TRUE,Chris Pappas,John E. Sununu,NA,56.6,D,Incumbent retiring,CHRIS_PAPPAS (D); JOHN_E_SUNUNU (R)
+NJ,NJ,New Jersey,FALSE,Northeast,4,D+4,Cory Booker,D,FALSE,TRUE,TRUE,Cory Booker,Justin Murphy,Veronica Fernandez,57.2,D,Incumbent renominated,NA
+NM,NM,New Mexico,FALSE,West,4,D+4,Ben Ray Luján,D,FALSE,TRUE,TRUE,Ben Ray Luján,Larry Marker,NA,51.7,D,Incumbent renominated,BEN_RAY_LUJAN (D); LARRY_MARKER (R)
+OH-S,OH,Ohio,TRUE,Midwest,-5,R+5,Jon Husted,R,FALSE,TRUE,TRUE,Sherrod Brown,Jon Husted,Greg Levy,NA,NA,Interim appointee nominated,SHERROD_BROWN (D); JON_HUSTED (R)
+OK,OK,Oklahoma,FALSE,South,-17,R+17,Alan Armstrong,R,FALSE,TRUE,TRUE,N'Kiyla Jasmine Thomas,Kevin Hern,Ron Meinhardt; Curtis Stinnett,NA,NA,Interim appointee ineligible to run,N_KIYLA_JASMINE_THOMAS (D); KEVIN_HERN (R)
+OR,OR,Oregon,FALSE,West,8,D+8,Jeff Merkley,D,FALSE,TRUE,TRUE,Jeff Merkley,David Brock Smith,NA,56.9,D,Incumbent renominated,NA
+RI,RI,Rhode Island,FALSE,Northeast,8,D+8,Jack Reed,D,FALSE,TRUE,TRUE,Jack Reed,Raymond McKay,Michael Bahry,66.5,D,Incumbent renominated,JACK_REED (D); RAYMOND_MCKAY (R)
+SC,SC,South Carolina,FALSE,South,-8,R+8,Darline Graham,R,FALSE,TRUE,TRUE,Annie Andrews,Darline Graham,NA,NA,NA,Interim appointee nominated in runoff,ANNIE_ANDREWS (D); DARLINE_GRAHAM (R)
+SD,SD,South Dakota,FALSE,Midwest,-15,R+15,Mike Rounds,R,FALSE,FALSE,TRUE,NA,Mike Rounds,Brian Bengs,65.7,R,Incumbent renominated,BRIAN_BENGS (D); MIKE_ROUNDS (R)
+TN,TN,Tennessee,FALSE,South,-14,R+14,Bill Hagerty,R,FALSE,TRUE,TRUE,Marquita Bradshaw,Bill Hagerty,Tharon Chandler; Andrew Gerena; Jeremy Hearn; Robert Jones; James Macon III; Yoshi Matthews; David Sutman Jr.; Catherine Whitson,62.2,R,Incumbent renominated,MARQUITA_BRADSHAW (D); BILL_HAGERTY (R)
+TX,TX,Texas,FALSE,South,-6,R+6,John Cornyn,R,TRUE,TRUE,TRUE,James Talarico,Ken Paxton,NA,53.5,R,Incumbent lost renomination in runoff,JAMES_TALARICO (D); KEN_PAXTON (R)
+VA,VA,Virginia,FALSE,South,3,D+3,Mark Warner,D,FALSE,TRUE,TRUE,Mark Warner,Bert Mizusawa,NA,56,D,Incumbent renominated,MARK_WARNER (D); BERT_MIZUSAWA (R)
+WV,WV,West Virginia,FALSE,South,-21,R+21,Shelley Moore Capito,R,FALSE,TRUE,TRUE,Rachel Fetty Anderson,Shelley Moore Capito,NA,70.3,R,Incumbent renominated,NA
+WY,WY,Wyoming,FALSE,West,-23,R+23,Cynthia Lummis,R,TRUE,TRUE,TRUE,James W. Byrd,Harriet Hageman,NA,72.9,R,Incumbent retiring,NA

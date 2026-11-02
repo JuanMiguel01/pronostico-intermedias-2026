@@ -1,0 +1,8 @@
+linea_base,camara_D,P_D_camara,senado_D,P_D_senado,fuente,fecha
+modelo principal (con delta),233,0.81765,51,0.59765,este repositorio,2026-11-02
+modelo sin delta,237,0.87945,52,0.691,este repositorio,2026-11-02
+(a) swing uniforme sin delta,229,1,49,0,este repositorio,2026-11-02
+(b) solo fundamentales,235,0.88645,50,0.39985,este repositorio,2026-11-02
+(c) Poliwave,NA,0.89,54,0.78,poliwave.com/us/fed/projection (consultado 2026-11-02),2026-11-02
+(c) PollCheck,230,NA,50,NA,"PollCheck (Senado: D 50, R 45, 5 sin definir), citado en el plan",2026-11-01
+(c) Silver Bulletin (FLIPR),238,0.95,NA,NA,"Silver Bulletin: ~95% Camara, +25 escanos netos sobre 213 actuales, citado en el plan",2026-11-01

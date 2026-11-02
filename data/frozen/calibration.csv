@@ -1,0 +1,26 @@
+parameter,value,n,source
+sigma_nat,3.5798666431354587,13,RMS error promedio final generic ballot 1998-2022 (todos los ciclos)
+sigma_nat_midterm,3.714959666090605,7,RMS solo intermedias (informativo)
+sd_nat_demeaned,2.731267655067491,13,sd del error nacional alrededor de su media (se usa junto con delta)
+s_sys_house,5,NA,a priori: error sistematico del promedio de encuestas de distrito (no baja con n)
+s_sys_senate,4.5,NA,a priori: error sistematico del promedio de encuestas estatales (no baja con n)
+partisan_shift,2,NA,a priori: encuestas partidistas se corren 2 puntos contra su patrocinador
+partisan_weight,0.5,NA,a priori: peso relativo de encuestas partidistas
+bias_nat_midterm,2.65853491494304,7,sesgo medio intermedias (>0 = sobreestimo a D)
+bias_nat_pres,2.1743114665124574,6,sesgo medio presidenciales
+sigma_region_house,1.0717154473086594,759,ANOVA anidada House-G (nlme)
+sigma_state_house,2.955913902670374,759,ANOVA anidada House-G (nlme)
+sigma_dist_polled,6.436898321396727,759,residuo distrito: error del promedio de encuestas de distrito
+sigma_dist_fund,6.5,NA,a priori: RMSE de modelo fundamentales (PVI+incumbencia) sin encuesta
+sigma_region_senate,0.75,385,ANOVA anidada Sen-G (nlme)
+sigma_state_polled,5.536791634150593,385,residuo estado: error del promedio de encuestas de Senado
+sigma_state_fund,9,NA,a priori: fundamentales de Senado (PVI estatal + incumbencia) ignoran calidad del candidato; RMSE ~9
+sd_poll_within_house,4.73647213078277,432,desviacion de una encuesta individual vs promedio de su carrera
+sd_poll_within_senate,4.092506607723656,2430,idem Senado
+beta_inc_house,2.5,NA,"a priori: ventaja de incumbencia Camara (margen), literatura 2018-2024"
+beta_inc_senate,4,NA,a priori: ventaja de incumbencia Senado (margen)
+rv_to_lv_shift,-1,NA,a priori: encuestas RV se corren 1 punto hacia R en intermedias
+delta_mean,-1,NA,preregistrado: hipotesis de sesgo (negativo = encuestas exageran a D)
+delta_sd,2.5,NA,preregistrado: incertidumbre sobre el sesgo
+pvi_multiplier,2,NA,PVI es por cuota: margen = 2*PVI
+redistricted_extra_sd,1.5,NA,sd adicional en distritos de estados rediseñados (mapa nuevo)

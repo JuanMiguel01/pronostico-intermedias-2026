@@ -1,0 +1,10 @@
+# HTML/JSON crudos (75 MB): se conservan localmente; el MANIFEST.csv con SHA-256 si se versiona
+data/raw/*/poliwave/
+data/raw/*/*.json
+data/raw/*/*.html
+# objetos pesados de simulacion
+output/sims.rds
+# R
+.Rhistory
+.RData
+.Rproj.user/
