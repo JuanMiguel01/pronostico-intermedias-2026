@@ -71,7 +71,7 @@ msg("Sen-G    sd: nacional %.2f | region %.2f | estado(+ruido encuesta) %.2f | i
 # ruido de una encuesta individual de Senado/Camara alrededor del promedio de su carrera
 noise <- hist %>% filter(type %in% c("Sen-G", "House-G")) %>%
   group_by(type, cycle, race) %>% filter(n() >= 3) %>%
-  mutate(dev = error_d - mean(error_d)) %>% ungroup() %>%
+  mutate(dev = (error_d - mean(error_d)) * sqrt(n() / (n() - 1))) %>% ungroup() %>%   # corrige el sesgo de sd con n pequeno
   group_by(type) %>% summarise(sd_poll_within = sd(dev), n = n(), .groups = "drop")
 print(noise)
 

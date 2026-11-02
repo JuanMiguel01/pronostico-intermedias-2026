@@ -34,11 +34,12 @@ if ("--simulado" %in% args) {
   resultados <- read_csv(res_file) %>% filter(!is.na(margin_actual))
 }
 
-ev <- pred %>% inner_join(resultados %>% select(race_id, margin_actual, winner), by = "race_id") %>%
+# Se evaluan solo las carreras competidas: los escanos sin rival mayor (P = 0 o 1 por construccion) no informan
+ev <- pred %>% filter(!uncontested) %>% inner_join(resultados %>% select(race_id, margin_actual, winner), by = "race_id") %>%
   mutate(y = as.integer(winner %in% c("D", "I")),          # 1 si gano el lado no republicano
-         p = p_dem + p_ind,
-         p_alt = p_dem_sin_delta + p_ind,
-         p_fund = p_dem_solo_fund + p_ind,
+         p = p_nonR,
+         p_alt = p_nonR_sin_delta,
+         p_fund = p_nonR_solo_fund,
          brier = (p - y)^2, brier_alt = (p_alt - y)^2, brier_fund = (p_fund - y)^2,
          logs = -log(pmax(pmin(if_else(y == 1, p, 1 - p), 1 - 1e-4), 1e-4)),
          resid = margin_actual - margin_median,
@@ -58,8 +59,11 @@ print(as.data.frame(calib), digits = 3)
 
 # Q1-Q3, Q6 y Q5
 us <- resultados %>% filter(race_id == "US_HOUSE_VOTE")
-seats_D_house <- sum(ev$y[ev$chamber == "House"])
-sen_ev <- ev %>% filter(chamber == "Senate")
+# escanos reales: carreras competidas (ev) + escanos sin rival, que van al unico partido mayor
+all_res <- pred %>% inner_join(resultados %>% select(race_id, winner), by = "race_id") %>%
+  mutate(y = as.integer(winner %in% c("D", "I")))
+seats_D_house <- sum(all_res$y[all_res$chamber == "House"])
+sen_ev <- all_res %>% filter(chamber == "Senate")
 seats_D_sen   <- ms$D_NOT_UP + sum(sen_ev$y == 1 & !sen_ev$race_id %in% ms$S$race_id[ms$S$challenger_is_ind])
 rj <- fromJSON(file.path(DIR_OUT, "resumen.json"))$resumen
 r  <- rj[rj$version == "con_delta", ]
@@ -76,7 +80,7 @@ msg("Q5: delta observado = resultado - promedio final = %+.2f (hipotesis: %+.1f,
 msg("Q6: ocurrio 'D Camara y R Senado' = %s (P predicha %.3f)", seats_D_house >= 218 & seats_D_sen < 51, r$Q6_P_D_camara_y_R_senado)
 
 # post-mortem multietapico: ANOVA anidada de residuos de margen (region/estado), residuo = distrito
-house_ev <- ev %>% filter(chamber == "House", !uncontested, !is.na(resid))
+house_ev <- ev %>% filter(chamber == "House", !is.na(resid))
 fit <- tryCatch(lme(resid ~ 1, random = ~ 1 | region / state, data = house_ev,
                     control = lmeControl(opt = "optim")), error = function(e) NULL)
 if (!is.null(fit)) {

@@ -37,10 +37,10 @@ WINDOW_RACE     <- 35     # distritos y estados (menos encuestas)
 WINDOW_RACE_MAX <- 75     # si hay < 3 encuestas en 35 dias se amplia hasta aqui
 HALF_LIFE       <- 10     # dias: peso de recencia 0.5^(edad/HALF_LIFE)
 MIN_TWO_PARTY   <- 15     # una encuesta de carrera con D o R < 15% no es un duelo D-R util
+STALE_SD_PER_DAY <- 0.07  # penalizacion por antiguedad del promedio de encuestas (sd extra por dia)
 SIGMA_RATING    <- 6      # sd (margen) de la calificacion de expertos; Likely = 9 -> P ~ 0.93, Lean = 5 -> ~0.80
 SIGMA_RATING_SAFE <- 10   # Solid/Safe es un piso, no una estimacion puntual: se usa con menos peso
 
-two_party_margin <- function(dem, rep) 100 * (dem - rep) / (dem + rep)
 
 prep_polls <- function(df) {
   # ajustes comunes: dos partidos (reparto proporcional de indecisos), RV->LV, partidistas, calidad del encuestador
@@ -103,9 +103,11 @@ race_poll_avg <- function(df, id, s_sys, s_within) {
       recent <- x %>% filter(age <= WINDOW_RACE)
       use <- if (nrow(recent) >= 3) recent else x %>% arrange(age) %>% slice_head(n = max(3, nrow(recent)))
       n_eff <- sum(use$w) / max(use$w)                     # encuestas "efectivas" (<= n)
+      age_min <- min(use$age)
       tibble(poll_margin = weighted.mean(use$margin_adj - he_of(use$pollster), use$w),
              n_polls = nrow(use), n_eff = n_eff, last_poll = max(use$end),
-             poll_var = s_sys^2 + s_within^2 / n_eff)
+             # encuestas viejas informan menos: la sd crece 0.07 puntos por dia desde la encuesta mas reciente
+             poll_var = s_sys^2 + s_within^2 / n_eff + (STALE_SD_PER_DAY * age_min)^2)
     }) %>% ungroup() %>% rename(!!id := .id)
 }
 # CA-06: Kiley (independiente, ex-R) ocupa el lado "R" del duelo (ver 02_clean.R)
@@ -126,13 +128,6 @@ msg("Promedios: %d distritos y %d carreras senatoriales con encuestas utiles", n
 # 3. Estimacion puntual por carrera: fundamentales + encuestas + calificaciones por precision inversa
 # ============================================================================
 pvi_mult <- P[["pvi_multiplier"]]
-combine3 <- function(m_f, v_f, m_p, v_p, m_r, v_r) {
-  # media ponderada por precision de hasta tres fuentes (NA = fuente ausente)
-  w_f <- 1 / v_f; w_p <- if_else(is.na(m_p), 0, 1 / v_p); w_r <- if_else(is.na(m_r), 0, 1 / v_r)
-  tot <- w_f + w_p + w_r
-  tibble(m_hat = (w_f * m_f + w_p * coalesce(m_p, 0) + w_r * coalesce(m_r, 0)) / tot,
-         sd = sqrt(1 / tot), w_poll = w_p / tot, w_rating = w_r / tot)
-}
 
 D <- districts %>%
   left_join(hp, by = "district") %>%

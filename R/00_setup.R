@@ -91,5 +91,11 @@ STATE_NAME <- c(
 )
 STATE_ABBR <- setNames(names(STATE_NAME), STATE_NAME)
 
-# Estados que redisenaron sus mapas para 2026 (Cook PVI 2026)
-REDISTRICTED_2026 <- c("AL","CA","FL","LA","MO","NC","OH","TN","TX","UT")
+# Estados cuyo mapa NUEVO rige en 2026 (Cook PVI 2026 los recalculo). Missouri NO esta: su mapa de 2025 quedo
+# suspendido por el referendo de veto (Proposicion A, 3 nov 2026) y la Corte Suprema estatal ordeno usar el mapa
+# de 2022; por eso en 02_clean.R Missouri usa el PVI 2025 (mapa viejo).
+REDISTRICTED_2026 <- c("AL","CA","FL","LA","NC","OH","TN","TX","UT")
+OLD_MAP_STATES    <- c("MO")
+
+# funciones puras compartidas (probadas en tests/test_utils.R)
+source(file.path(ROOT, "R", "utils.R"))

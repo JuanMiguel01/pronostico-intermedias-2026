@@ -63,6 +63,7 @@ wikipedia,Centerline Research & Strategy,NA,2026-09-26,2026-10-01,930,LV,50,42,8
 wikipedia,I&I/TIPP Insights,R,2026-09-29,2026-10-01,1328,RV,46,42,4,NA
 wikipedia,Rasmussen Reports,R,2026-09-24,2026-09-30,1794,LV,47,44,3,NA
 wikipedia,AlphaROC,NA,2026-09-25,2026-09-28,1000,A,43,37,6,NA
+poliwave,AlphaROC,NA,2026-09-25,2026-09-28,1000,NA,43,37,6,NA
 wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-09-26,2026-09-28,NA,LV,51,49,2,NA
 wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-09-26,2026-09-28,2200,RV,50,50,0,NA
 wikipedia,The Economist/YouGov,NA,2026-09-25,2026-09-28,1003,LV,53,38,15,NA
@@ -107,7 +108,7 @@ wikipedia,Marist University,NA,2026-09-14,2026-09-15,1280,RV,53,41,12,NA
 wikipedia,Morning Consult,NA,2026-09-10,2026-09-15,2102,RV,46,43,3,NA
 wikipedia,RMG Research,NA,2026-09-08,2026-09-15,2000,RV,51,43,8,NA
 wikipedia,Beacon Research/Shaw & Co. Research (R),D,2026-09-11,2026-09-14,1211,RV,51,44,7,NA
-poliwave,Fox News,NA,2026-09-11,2026-09-14,1211,A,51,44,7,NA
+poliwave,Fox News,NA,2026-09-11,2026-09-14,1211,NA,51,44,7,NA
 wikipedia,Reuters/Ipsos,NA,2026-09-11,2026-09-14,1143,A,39,31,8,NA
 wikipedia,Reuters/Ipsos,NA,2026-09-11,2026-09-14,896,RV,44,37,7,NA
 wikipedia,The Economist/YouGov,NA,2026-09-11,2026-09-14,1051,LV,51,39,12,NA
@@ -144,6 +145,7 @@ wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-08-28,2026-08-30,NA,LV,49,51,-2,NA
 wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-08-28,2026-08-30,2100,RV,51,49,2,NA
 wikipedia,Rasmussen Reports,R,2026-08-23,2026-08-30,2231,LV,41,36,5,NA
 wikipedia,UMass Amherst/YouGov,NA,2026-08-21,2026-08-26,1000,A,42,34,8,NA
+poliwave,UMass Amherst/YouGov,NA,2026-08-21,2026-08-26,1000,NA,42,34,8,NA
 wikipedia,ActiVote,NA,2026-08-10,2026-08-24,1000,LV,52,48,4,NA
 poliwave,Economist/YouGov,NA,2026-08-21,2026-08-24,1377,RV,46,40,6,NA
 wikipedia,McLaughlin & Associates,R,2026-08-14,2026-08-24,1000,LV,48,43,5,NA
@@ -159,12 +161,14 @@ wikipedia,The Economist/YouGov,NA,2026-08-14,2026-08-17,1449,RV,46,39,7,NA
 wikipedia,Morning Consult,NA,2026-08-10,2026-08-16,29719,RV,46,42,4,NA
 wikipedia,Morning Consult/Cato Institute,NA,2026-08-13,2026-08-16,4150,RV,47,42,5,NA
 wikipedia,Angus Reid Global,NA,2026-08-08,2026-08-11,1525,A,45,36,9,NA
+poliwave,Angus Reid Global,NA,2026-08-08,2026-08-11,1525,NA,45,36,9,NA
 wikipedia,Focaldata/Financial Times,NA,2026-08-07,2026-08-11,2152,A,48,41,7,NA
 wikipedia,Focaldata/Financial Times,NA,2026-08-07,2026-08-11,1857,LV,51,45,6,NA
 wikipedia,Focaldata/Financial Times,NA,2026-08-07,2026-08-11,1913,RV,49,43,6,NA
 wikipedia,Wave Polling/Verasight,NA,2026-08-07,2026-08-11,1591,RV,48,40,8,NA
 wikipedia,Wave Polling/Verasight,NA,2026-08-07,2026-08-11,1591,RV,50,43,7,NA
 wikipedia,AlphaROC,NA,2026-08-08,2026-08-10,1000,A,41,37,4,NA
+poliwave,AlphaROC,NA,2026-08-08,2026-08-10,1000,NA,41,37,4,NA
 wikipedia,The Economist/YouGov,NA,2026-08-07,2026-08-10,1558,A,40,32,8,NA
 wikipedia,The Economist/YouGov,NA,2026-08-07,2026-08-10,1419,RV,46,40,6,NA
 wikipedia,Morning Consult,NA,2026-08-03,2026-08-09,29719,RV,47,42,5,NA
@@ -197,12 +201,14 @@ wikipedia,McLaughlin & Associates,R,2026-07-15,2026-07-21,1000,LV,46,44,2,NA
 wikipedia,Beacon Research/Shaw & Co. Research (R),D,2026-07-17,2026-07-20,1003,RV,53,46,7,NA
 wikipedia,Emerson College,NA,2026-07-19,2026-07-20,1100,LV,53,42,11,NA
 wikipedia,Focaldata,NA,2026-07-14,2026-07-20,2064,A,44,36,8,NA
+poliwave,Focaldata,NA,2026-07-14,2026-07-20,2064,NA,44,36,8,NA
 wikipedia,The Economist/YouGov,NA,2026-07-17,2026-07-20,1602,A,39,33,6,NA
 wikipedia,The Economist/YouGov,NA,2026-07-17,2026-07-20,1432,RV,46,41,5,NA
 wikipedia,Morning Consult,NA,2026-07-17,2026-07-19,2200,RV,46,43,3,NA
 wikipedia,Strength In Numbers/Verasight,NA,2026-07-14,2026-07-17,1514,A,48,42,6,NA
 wikipedia,Strength In Numbers/Verasight,NA,2026-07-14,2026-07-17,1364,RV,50,43,7,NA
 wikipedia,AlphaROC,NA,2026-07-13,2026-07-14,1000,A,42,37,5,NA
+poliwave,AlphaROC,NA,2026-07-14,2026-07-14,1000,NA,42,37,5,NA
 wikipedia,RMG Research,NA,2026-07-06,2026-07-14,2000,RV,47,45,2,NA
 wikipedia,Echelon Insights,NA,2026-07-09,2026-07-13,1004,LV,50,44,6,NA
 wikipedia,Morning Consult,NA,2026-07-10,2026-07-13,2200,RV,46,43,3,NA
@@ -214,21 +220,21 @@ wikipedia,Hart Research Associates/Public Opinion Strategies (R),D,2026-07-08,20
 wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-07-11,2026-07-12,NA,LV,51,49,2,NA
 wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-07-11,2026-07-12,1776,RV,50,50,0,NA
 wikipedia,Pew Research Center,NA,2026-07-06,2026-07-12,2779,RV,43,37,6,NA
-poliwave,HarrisX/2WAY,NA,2026-07-10,2026-07-10,787,A,47,44,3,NA
 wikipedia,HarrisX/2WAY,NA,2026-07-09,2026-07-10,787,LV,47,44,3,NA
 wikipedia,HarrisX/2WAY,NA,2026-07-09,2026-07-10,787,LV,51,49,2,NA
+poliwave,HarrisX/2WAY,NA,2026-07-10,2026-07-10,787,NA,47,44,3,NA
 wikipedia,HarrisX/2WAY,NA,2026-07-09,2026-07-10,1019,RV,44,41,3,NA
 wikipedia,HarrisX/2WAY,NA,2026-07-09,2026-07-10,1019,RV,52,48,4,NA
-poliwave,Quantus Insights,R,2026-07-07,2026-07-07,1140,A,47,42,5,NA
 wikipedia,Quantus Insights,R,2026-07-03,2026-07-07,1140,LV,47,42,5,NA
+poliwave,Quantus Insights,R,2026-07-07,2026-07-07,1140,NA,47,42,5,NA
 wikipedia,Manhattan Institute,NA,2026-07-01,2026-07-06,1121,LV,47,43,4,NA
 wikipedia,Morning Consult,NA,2026-06-29,2026-07-05,24000,RV,46,42,4,NA
-poliwave,Zogby Analytics,NA,2026-07-01,2026-07-04,1003,A,38.3,39.2,-0.9000000000000057,NA
 wikipedia,Zogby Analytics,NA,2026-07-01,2026-07-04,1003,LV,42,36,6,NA
+poliwave,Zogby Analytics,NA,2026-07-01,2026-07-04,1003,NA,38.3,39.2,-0.9000000000000057,NA
 wikipedia,Talker Research,NA,2026-06-25,2026-07-02,2000,RV,48,39,9,NA
 wikipedia,Cygnal,R,2026-06-30,2026-07-01,1500,LV,50,44,6,NA
 wikipedia,Rasmussen Reports,R,2026-06-24,2026-07-01,2224,LV,46,42,4,NA
-poliwave,Focaldata/FT,NA,2026-06-30,2026-06-30,1723,A,51,44,7,NA
+poliwave,Focaldata/FT,NA,2026-06-30,2026-06-30,1723,NA,51,44,7,NA
 wikipedia,Focaldata/Financial Times,NA,2026-06-26,2026-06-30,2016,A,47,39,8,NA
 wikipedia,Focaldata/Financial Times,NA,2026-06-26,2026-06-30,1795,RV,49,42,7,NA
 wikipedia,Focaldata/Financial Times,NA,2026-06-26,2026-06-30,1723,RV,51,44,7,NA
@@ -236,6 +242,7 @@ wikipedia,The Economist/YouGov,NA,2026-06-26,2026-06-29,1603,A,37,35,2,NA
 wikipedia,The Economist/YouGov,NA,2026-06-26,2026-06-29,1426,RV,45,42,3,NA
 wikipedia,ActiVote,NA,2026-06-06,2026-06-28,1000,LV,53,47,6,NA
 wikipedia,AlphaROC,NA,2026-06-27,2026-06-28,1000,A,43,37,6,NA
+poliwave,AlphaROC,NA,2026-06-27,2026-06-28,1000,NA,43,37,6,NA
 wikipedia,Big Data Poll,R,2026-06-26,2026-06-28,2604,LV,48,39,9,NA
 wikipedia,Big Data Poll,R,2026-06-26,2026-06-28,2604,LV,50,41,9,NA
 wikipedia,Big Data Poll,R,2026-06-26,2026-06-28,2971,RV,45,37,8,NA
@@ -271,6 +278,7 @@ wikipedia,HarrisX/Forbes,NA,2026-05-20,2026-06-07,1876,RV,44,43,1,NA
 wikipedia,Hart Research Associates/Public Opinion Strategies (R),D,2026-05-29,2026-06-07,2400,RV,49,44,5,NA
 wikipedia,Morning Consult,NA,2026-06-01,2026-06-07,24849,RV,46,42,4,NA
 wikipedia,Research Co.,NA,2026-06-04,2026-06-06,1001,A,38,33,5,NA
+poliwave,Research Co.,NA,2026-06-04,2026-06-06,1001,NA,38,33,5,NA
 wikipedia,Clarity Campaign Labs,D,2026-05-28,2026-06-05,1045,LV,48,45,3,NA
 wikipedia,Noble Predictive Insights/The Center Square,NA,2026-06-01,2026-06-04,2585,RV,47,41,6,NA
 wikipedia,RMG Research,NA,2026-06-01,2026-06-04,2000,RV,49,45,4,NA
@@ -302,6 +310,7 @@ wikipedia,The Economist/YouGov,NA,2026-05-22,2026-05-26,1393,RV,46,41,5,NA
 wikipedia,Emerson College,NA,2026-05-24,2026-05-25,1000,LV,50,41,9,NA
 wikipedia,John Zogby Strategies,NA,2026-05-21,2026-05-22,NA,LV,49,42,7,NA
 wikipedia,Morris Predictive Insights/Verasight,NA,2026-05-18,2026-05-20,2000,A,52,41,11,NA
+poliwave,Morris Predictive Insights/Verasight,NA,2026-05-18,2026-05-20,2000,NA,52,41,11,NA
 wikipedia,Rasmussen Reports,R,2026-05-13,2026-05-20,2161,LV,47,41,6,NA
 wikipedia,Strength In Numbers/Verasight,NA,2026-05-18,2026-05-19,1520,A,51,41,10,NA
 wikipedia,Strength In Numbers/Verasight,NA,2026-05-18,2026-05-19,1413,RV,51,43,8,NA
@@ -323,20 +332,21 @@ wikipedia,Reuters/Ipsos,NA,2026-05-08,2026-05-11,993,RV,41,35,6,NA
 wikipedia,The Economist/YouGov,NA,2026-05-09,2026-05-11,1547,A,37,34,3,NA
 wikipedia,The Economist/YouGov,NA,2026-05-09,2026-05-11,1406,RV,45,40,5,NA
 wikipedia,AtlasIntel,NA,2026-05-04,2026-05-07,2069,A,55,40,15,NA
-poliwave,Cygnal,R,2026-05-07,2026-05-07,1500,A,48,41,7,NA
+poliwave,AtlasIntel,NA,2026-05-04,2026-05-07,2069,NA,55,40,15,NA
 wikipedia,Cygnal,R,2026-05-04,2026-05-07,1500,LV,48,41,7,NA
+poliwave,Cygnal,R,2026-05-07,2026-05-07,1500,NA,48,41,7,NA
 poliwave,AARP (Fabrizio Ward/Impact),NA,2026-05-06,2026-05-06,2069,NA,57.7,42.3,15.400000000000006,NA
-poliwave,Cygnal,R,2026-05-06,2026-05-06,1500,A,49,42,7,NA
 wikipedia,Cygnal,R,2026-05-05,2026-05-06,1500,LV,49,42,7,NA
+poliwave,Cygnal,R,2026-05-06,2026-05-06,1500,NA,49,42,7,NA
 wikipedia,RMG Research,NA,2026-05-04,2026-05-06,2000,RV,50,41,9,NA
 wikipedia,Focaldata/Financial Times,NA,2026-05-01,2026-05-05,3612,A,46,39,7,NA
 wikipedia,Focaldata/Financial Times,NA,2026-05-01,2026-05-05,3167,RV,49,42,7,NA
 wikipedia,Focaldata/Financial Times,NA,2026-05-01,2026-05-05,3017,RV,52,44,8,NA
 wikipedia,HarrisX/Forbes,NA,2026-04-29,2026-05-05,2569,A,46,40,6,NA
-poliwave,HarrisX/Forbes,NA,2026-05-05,2026-05-05,1891,A,48,42,6,NA
 wikipedia,HarrisX/Forbes,NA,2026-04-29,2026-05-05,1891,LV,48,42,6,NA
+poliwave,HarrisX/Forbes,NA,2026-05-05,2026-05-05,1891,NA,48,42,6,NA
 wikipedia,HarrisX/Forbes,NA,2026-04-29,2026-05-05,2359,RV,46,41,5,NA
-poliwave,CNN/SSRS,NA,2026-05-04,2026-05-04,0,A,45,42,3,NA
+poliwave,CNN/SSRS,NA,2026-05-04,2026-05-04,0,NA,45,42,3,NA
 wikipedia,CNN/SSRS,NA,2026-04-30,2026-05-04,NA,RV,45,42,3,NA
 wikipedia,The Economist/YouGov,NA,2026-05-01,2026-05-04,1703,A,38,34,4,NA
 wikipedia,The Economist/YouGov,NA,2026-05-01,2026-05-04,1406,RV,44,41,3,NA
@@ -357,9 +367,9 @@ wikipedia,Emerson College,NA,2026-04-24,2026-04-26,1000,LV,50,40,10,NA
 wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-04-23,2026-04-26,NA,LV,50,50,0,NA
 wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-04-23,2026-04-26,2745,RV,50,50,0,NA
 wikipedia,Clarity Campaign Labs,D,2026-04-15,2026-04-24,1000,LV,50,45,5,NA
-poliwave,Quantus Insights,R,2026-04-23,2026-04-23,1452,A,47,42,5,NA
 wikipedia,Quantus Insights,R,2026-04-21,2026-04-23,1452,LV,47,42,5,NA
-poliwave,The Argument/Verasight,NA,2026-04-20,2026-04-23,1516,A,47,40,7,NA
+poliwave,Quantus Insights,R,2026-04-23,2026-04-23,1452,NA,47,42,5,NA
+poliwave,The Argument/Verasight,NA,2026-04-20,2026-04-23,1516,NA,47,40,7,NA
 wikipedia,The Argument/Verasight,NA,2026-04-20,2026-04-23,1516,RV,47,40,7,NA
 wikipedia,The Argument/Verasight,NA,2026-04-20,2026-04-23,1516,RV,53,47,6,NA
 wikipedia,Beacon Research/Shaw & Co. Research (R),D,2026-04-17,2026-04-20,1001,RV,52,47,5,NA
@@ -392,6 +402,7 @@ wikipedia,Morning Consult,NA,2026-04-03,2026-04-04,2203,RV,45,42,3,NA
 wikipedia,Cygnal,R,2026-04-02,2026-04-03,1500,LV,49,43,6,NA
 wikipedia,CNN/SSRS,NA,2026-03-26,2026-03-30,951,RV,48,42,6,NA
 wikipedia,UMass Lowell/YouGov,NA,2026-03-26,2026-03-30,1000,A,38,35,3,NA
+poliwave,UMass Lowell/YouGov,NA,2026-03-26,2026-03-30,1000,NA,38,35,3,NA
 wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-03-25,2026-03-26,NA,LV,52,48,4,NA
 wikipedia,Harvard/Harris Poll/HarrisX,NA,2026-03-25,2026-03-26,2009,RV,51,49,2,NA
 wikipedia,Quantus Insights,R,2026-03-25,2026-03-26,1472,LV,47,41,6,NA
@@ -461,6 +472,7 @@ wikipedia,Morning Consult,NA,2026-02-20,2026-02-22,2202,RV,46,42,4,NA
 wikipedia,Strength In Numbers/Verasight,NA,2026-02-18,2026-02-20,1566,A,50,40,10,NA
 wikipedia,Strength In Numbers/Verasight,NA,2026-02-18,2026-02-20,1401,RV,52,42,10,NA
 wikipedia,Talker Research,NA,2026-02-13,2026-02-19,1000,A,42,36,6,NA
+poliwave,Talker Research,NA,2026-02-13,2026-02-19,1000,NA,42,36,6,NA
 wikipedia,BGSU/YouGov,NA,2026-02-13,2026-02-18,1200,RV,49,41,8,NA
 wikipedia,Big Data Poll,R,2026-02-16,2026-02-18,1805,LV,48,39,9,NA
 wikipedia,Big Data Poll,R,2026-02-16,2026-02-18,1805,LV,50,41,9,NA
@@ -538,8 +550,10 @@ wikipedia,RMG Research,NA,2026-01-05,2026-01-08,2000,RV,44,43,1,NA
 wikipedia,RMG Research,NA,2026-01-05,2026-01-08,2000,RV,47,46,1,NA
 wikipedia,The Economist/YouGov,NA,2026-01-02,2026-01-05,1547,A,39,32,7,NA
 wikipedia,The Economist/YouGov,NA,2026-01-02,2026-01-05,1386,RV,45,39,6,NA
+wikipedia,Morning Consult,NA,2025-12-29,2026-01-04,22709,RV,44,42,2,NA
 wikipedia,Morning Consult,NA,2026-01-02,2026-01-04,2201,RV,45,42,3,NA
-poliwave,The Bullfinch Group,NA,2025-12-30,2026-01-01,1000,RV,44,33,11,NA
+wikipedia,The Bullfinch Group,NA,2025-12-30,2026-01-01,1200,A,40,30,10,NA
+wikipedia,The Bullfinch Group,NA,2025-12-30,2026-01-01,1000,RV,44,33,11,NA
 wikipedia,The Economist/YouGov,NA,2025-12-26,2025-12-29,1546,A,36,31,5,NA
 wikipedia,The Economist/YouGov,NA,2025-12-26,2025-12-29,1417,RV,42,38,4,NA
 wikipedia,Big Data Poll,R,2025-12-26,2025-12-28,3412,LV,45,42,3,NA
@@ -645,7 +659,7 @@ wikipedia,The Economist/YouGov,NA,2025-09-19,2025-09-22,1392,RV,45,42,3,NA
 wikipedia,Strength In Numbers/Verasight,NA,2025-09-15,2025-09-19,1500,A,47,42,5,NA
 wikipedia,Strength In Numbers/Verasight,NA,2025-09-15,2025-09-19,1268,LV,50,45,5,NA
 wikipedia,AtlasIntel,NA,2025-09-12,2025-09-16,1066,A,52,44,8,NA
-wikipedia,Normington Petts/Third Way (D),D,2025-09-11,2025-09-16,800,V,51,49,2,NA
+wikipedia,Normington Petts/Third Way (D),D,2025-09-11,2025-09-16,800,RV,51,49,2,NA
 wikipedia,The Economist/YouGov,NA,2025-09-12,2025-09-15,1418,RV,43,41,2,NA
 wikipedia,National Association of Independent Pollsters,NA,2025-09-06,2025-09-13,2071,LV,47,46,1,NA
 wikipedia,i360,NA,2025-09-10,2025-09-12,577,RV,35,32,3,NA
@@ -694,7 +708,7 @@ wikipedia,Cygnal,R,2025-06-19,2025-06-21,800,LV,48,46,2,NA
 wikipedia,RMG Research,NA,2025-06-18,2025-06-19,1000,RV,44,52,-8,NA
 wikipedia,Echelon Insights,NA,2025-06-12,2025-06-16,982,LV,47,48,-1,NA
 wikipedia,co/efficient,R,2025-06-12,2025-06-16,1035,LV,46,46,0,NA
-wikipedia,Clarity Campaign Labs,D,2025-06-05,2025-06-14,1000,V,50,45,5,NA
+wikipedia,Clarity Campaign Labs,D,2025-06-05,2025-06-14,1000,RV,50,45,5,NA
 wikipedia,Strength In Numbers/Verasight,NA,2025-06-06,2025-06-12,1500,A,45,37,8,NA
 wikipedia,Quantus Insights,R,2025-06-09,2025-06-11,1000,RV,43,43,0,NA
 wikipedia,Quantus Insights,R,2025-06-01,2025-06-04,1000,RV,46,45,1,NA
@@ -720,7 +734,7 @@ wikipedia,Yale Youth Poll,NA,2025-04-01,2025-04-03,4100,RV,43,42,1,NA
 wikipedia,Quantus Insights,R,2025-03-25,2025-03-27,1000,RV,45,46,-1,NA
 wikipedia,Echelon Insights,NA,2025-03-10,2025-03-13,1007,LV,46,47,-1,NA
 wikipedia,Hart Research Associates/Public Opinion Strategies (R),D,2025-03-07,2025-03-11,1000,RV,48,47,1,NA
-wikipedia,Clarity Campaign Labs,D,2025-03-03,2025-03-09,1036,V,46,44,2,NA
+wikipedia,Clarity Campaign Labs,D,2025-03-03,2025-03-09,1036,RV,46,44,2,NA
 wikipedia,Cygnal,R,2025-03-03,2025-03-05,1500,LV,47,46,1,NA
 wikipedia,Emerson College,NA,2025-03-02,2025-03-03,1000,RV,44,41,3,NA
 wikipedia,Public Opinion Strategies,R,2025-02-25,2025-03-02,1000,RV,44,46,-2,NA
@@ -729,7 +743,7 @@ wikipedia,co/efficient,R,2025-02-15,2025-02-17,2063,LV,44,46,-2,NA
 wikipedia,Echelon Insights,NA,2025-02-10,2025-02-13,1010,LV,46,47,-1,NA
 wikipedia,Quantus Insights,R,2025-02-10,2025-02-12,1000,RV,44,48,-4,NA
 wikipedia,Morning Consult,NA,2025-02-03,2025-02-09,19675,RV,43,45,-2,NA
-wikipedia,Clarity Campaign Labs,D,2025-01-31,2025-02-06,1102,V,45,44,1,NA
+wikipedia,Clarity Campaign Labs,D,2025-01-31,2025-02-06,1102,RV,45,44,1,NA
 wikipedia,Cygnal,R,2025-02-04,2025-02-05,1500,LV,46,47,-1,NA
 wikipedia,Morning Consult,NA,2025-01-27,2025-02-02,19675,RV,43,44,-1,NA
 wikipedia,Fabrizio Ward/Impact Research (D),R,2025-01-27,2025-02-01,3000,RV,43,43,0,NA
@@ -737,8 +751,5 @@ wikipedia,Morning Consult,NA,2025-01-20,2025-01-26,19675,RV,42,45,-3,NA
 wikipedia,Quantus Insights,R,2025-01-22,2025-01-23,1000,RV,45,48,-3,NA
 wikipedia,RMG Research,NA,2025-01-15,2025-01-16,1000,RV,44,51,-7,NA
 wikipedia,Cygnal,R,2025-01-09,2025-01-12,1500,LV,45,47,-2,NA
-wikipedia,Morning Consult,NA,2025-12-29,2025-01-04,22709,RV,44,42,2,NA
-wikipedia,The Bullfinch Group,NA,2025-12-30,2025-01-01,1200,A,40,30,10,NA
-wikipedia,The Bullfinch Group,NA,2025-12-30,2025-01-01,1000,RV,44,33,11,NA
 wikipedia,McLaughlin & Associates,R,2024-12-11,2024-12-16,1000,LV,42,47,-5,NA
 wikipedia,Cygnal,R,2024-12-09,2024-12-11,1500,LV,45,48,-3,NA

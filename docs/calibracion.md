@@ -1,6 +1,6 @@
 # Calibracion historica (archivo FiveThirtyEight 1998-2022)
 
-Generado: 2026-11-02 13:57. Encuestas de los ultimos 21 dias antes de cada eleccion.
+Generado: 2026-11-02 14:11. Encuestas de los ultimos 21 dias antes de cada eleccion.
 
 ## Error del promedio final del generic ballot por ciclo (poll - resultado; >0 exagera a D)
 
@@ -58,8 +58,8 @@ Generado: 2026-11-02 13:57. Encuestas de los ultimos 21 dias antes de cada elecc
 | sigma_region_senate | 0.75 | 385 | ANOVA anidada Sen-G (nlme) |
 | sigma_state_polled | 5.54 | 385 | residuo estado: error del promedio de encuestas de Senado |
 | sigma_state_fund | 9.00 | - | a priori: fundamentales de Senado (PVI estatal + incumbencia) ignoran calidad del candidato; RMSE ~9 |
-| sd_poll_within_house | 4.74 | 432 | desviacion de una encuesta individual vs promedio de su carrera |
-| sd_poll_within_senate | 4.09 | 2430 | idem Senado |
+| sd_poll_within_house | 5.60 | 432 | desviacion de una encuesta individual vs promedio de su carrera |
+| sd_poll_within_senate | 4.43 | 2430 | idem Senado |
 | beta_inc_house | 2.50 | - | a priori: ventaja de incumbencia Camara (margen), literatura 2018-2024 |
 | beta_inc_senate | 4.00 | - | a priori: ventaja de incumbencia Senado (margen) |
 | rv_to_lv_shift | -1.00 | - | a priori: encuestas RV se corren 1 punto hacia R en intermedias |

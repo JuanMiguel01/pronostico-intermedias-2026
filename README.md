@@ -38,7 +38,7 @@ FiftyPlusOne ofrece API solo de pago; no se usa. Los HTML crudos (75 MB) no se v
 2. **Sesgo δ (Q5):** δ ~ N(−1, 2.5²). Se publican dos versiones: con δ (principal) y sin δ, más una tabla de sensibilidad a la media de δ.
 3. **Carreras:** fundamentales (μ_G + 2·PVI + incumbencia, reducida a la mitad en mapas nuevos), promedio de encuestas de la carrera y calificación de expertos (Cook, Sabato, Inside Elections, DDHQ) combinados por precisión inversa; la varianza de la encuesta tiene un piso sistemático (herding).
 4. **Error por conglomerados:** ε_nac + ε_región + ε_estado + ε_distrito, con desviaciones calibradas en el archivo histórico (ver `docs/calibracion.md`). La Cámara y el Senado comparten ε_nac y ε_región, de modo que Q6 es coherente.
-5. **Casos especiales:** 19 distritos sin competencia entre los dos partidos (P = 1); CA‑06 (Kiley, independiente ex‑R, en el lado R); Senado con independientes principales en NE, MT y SD (se cuentan aparte de los escaños D).
+5. **Casos especiales:** 19 distritos sin competencia entre los dos partidos (P = 1); CA‑06 (Kiley, independiente ex‑R, en el lado R); Senado con independientes principales en NE, MT y SD (se cuentan aparte de los escaños D); Missouri vota con el mapa de 2022 porque el nuevo está suspendido por el referendo de veto (Prop. A), así que usa el PVI 2025 y no el 2026 de Cook.
 
 ## Cómo reproducir
 

@@ -15,8 +15,8 @@ sigma_dist_fund,6.5,NA,a priori: RMSE de modelo fundamentales (PVI+incumbencia) 
 sigma_region_senate,0.75,385,ANOVA anidada Sen-G (nlme)
 sigma_state_polled,5.536791634150593,385,residuo estado: error del promedio de encuestas de Senado
 sigma_state_fund,9,NA,a priori: fundamentales de Senado (PVI estatal + incumbencia) ignoran calidad del candidato; RMSE ~9
-sd_poll_within_house,4.73647213078277,432,desviacion de una encuesta individual vs promedio de su carrera
-sd_poll_within_senate,4.092506607723656,2430,idem Senado
+sd_poll_within_house,5.59600475656013,432,desviacion de una encuesta individual vs promedio de su carrera
+sd_poll_within_senate,4.427851752510918,2430,idem Senado
 beta_inc_house,2.5,NA,"a priori: ventaja de incumbencia Camara (margen), literatura 2018-2024"
 beta_inc_senate,4,NA,a priori: ventaja de incumbencia Senado (margen)
 rv_to_lv_shift,-1,NA,a priori: encuestas RV se corren 1 punto hacia R en intermedias

@@ -4,7 +4,7 @@ AK-AL,Alaska Survey Research,NA,NA,2026-10-01,2026-10-03,1512,LV,7,50,NA,-43
 AK-AL,New York Times/Siena University,NA,NA,2026-09-22,2026-10-01,616,LV,8,47,NA,-39
 AK-AL,Fabrizio Ward,R,NA,2026-09-08,2026-09-11,800,LV,9,45,NA,-36
 AK-AL,The Bullfinch Group,NA,NA,2026-09-01,2026-09-06,820,LV,7.4,44.2,NA,-36.800000000000004
-AL-02,Tulchin Research,D,house ballot,2026-08-24,2026-08-31,0,A,47,47,NA,0
+AL-02,Tulchin Research,D,house ballot,2026-08-24,2026-08-31,0,NA,47,47,NA,0
 AL-02,DCCC,D,house ballot,2026-07-29,2026-07-30,421,LV,46,46,NA,0
 AL-02,Impact Research,D,house ballot,2026-06-22,2026-06-25,400,LV,44,45,NA,-1
 AR-02,Emerson College,NA,house ballot,2026-10-12,2026-10-14,383,LV,48,52,NA,-4
@@ -23,8 +23,8 @@ AZ-06,Ragnar Research Partners,R,house ballot,2026-03-12,2026-03-14,400,LV,47,44
 AZ-06,Public Policy Polling,D,house ballot,2025-10-14,2025-10-15,581,LV,42,41,NA,1
 CA-01,University of Southern California,NA,NA,2026-10-22,2026-10-28,444,LV,54,40,NA,14
 CA-04,Fulcrum Strategy Group,NA,house ballot,2026-10-18,2026-10-20,400,LV,40,NA,NA,NA
-CA-06,The Bullfinch Group,NA,house ballot,2026-09-01,2026-09-06,927,LV,74,NA,NA,NA
-CA-06,The Bullfinch Group/Independent Center,NA,house ballot,2026-07-13,2026-07-16,741,LV,74,NA,NA,NA
+CA-06,The Bullfinch Group,NA,house ballot,2026-09-01,2026-09-06,927,LV,37,37,NA,0
+CA-06,The Bullfinch Group/Independent Center,NA,house ballot,2026-07-13,2026-07-16,741,LV,39,35,NA,4
 CA-07,RedBox Research,D,house ballot,2026-10-20,2026-10-23,722,LV,32,NA,NA,NA
 CA-07,Data for Progress,D,house ballot,2026-08-18,2026-08-21,651,LV,28,NA,NA,NA
 CA-11,RedBox Research,D,house ballot,2026-10-20,2026-10-23,856,LV,93,NA,NA,NA
@@ -50,7 +50,7 @@ CO-05,Global Strategy Group,D,house ballot,2026-07-16,2026-07-21,450,LV,44,45,NA
 CO-05,Global Strategy Group,D,house ballot,2025-10-30,2025-11-03,450,LV,40,43,NA,-3
 CO-08,McLaughlin and Associates,R,house ballot,2026-09-16,2026-09-17,400,LV,46,48,NA,-2
 CT-02,DM Strategies,NA,house ballot,2026-10-16,2026-10-19,279,LV,52,33,NA,19
-CT-05,OnMessage,R,house ballot,2026-09-29,2026-10-01,0,A,51,45,NA,6
+CT-05,OnMessage,R,house ballot,2026-09-29,2026-10-01,0,NA,51,45,NA,6
 FL-07,DCCC,NA,house ballot,2026-10-17,2026-10-19,414,LV,45,45,NA,0
 FL-08,Inquire LLC,R,house ballot,2026-07-27,2026-07-29,0,LV,42,51,NA,-9
 FL-08,Public Policy Polling,D,house ballot,2026-07-17,2026-07-18,633,RV,35,44,NA,-9
@@ -69,7 +69,7 @@ FL-16,Public Policy Polling,D,house ballot,2026-10-01,2026-10-02,530,RV,39,43,NA
 FL-16,Sea Polling,NA,house ballot,2026-08-25,2026-08-29,400,LV,40,39,NA,1
 FL-21,Upswing Research & Strategy,D,house ballot,2026-09-21,2026-09-25,402,LV,38,49,NA,-11
 FL-22,RedBox Research,D,house ballot,2026-10-20,2026-10-23,550,LV,46,46,NA,0
-FL-22,Tulchin Research,D,house ballot,2026-08-24,2026-08-31,0,A,46,44,NA,2
+FL-22,Tulchin Research,D,house ballot,2026-08-24,2026-08-31,0,NA,46,44,NA,2
 FL-22,Tavern Research,D,house ballot,2026-08-10,2026-08-12,551,LV,50,50,NA,0
 FL-25,Public Policy Polling,D,house ballot,2026-10-26,2026-10-27,523,LV,47,41,NA,6
 FL-25,RedBox Research,D,house ballot,2026-10-20,2026-10-23,643,LV,46,40,NA,6
@@ -86,9 +86,9 @@ GA-07,20/20 Insight,D,house ballot,2026-08-20,2026-08-26,445,LV,43,46,NA,-3
 GA-11,Miller Consulting Services,NA,house ballot,2026-08-31,2026-09-11,402,LV,42,40,NA,2
 IA-01,Wavefield Research,NA,house ballot,2026-09-29,2026-10-02,297,LV,63,29,NA,34
 IA-01,The Bullfinch Group/Independent Center,NA,house ballot,2026-07-13,2026-07-16,705,LV,51,35,NA,16
-IA-01,Public Policy Polling,D,house ballot,2025-06-18,2025-06-19,555,A,43,39,NA,4
+IA-01,Public Policy Polling,D,house ballot,2025-06-18,2025-06-19,555,NA,43,39,NA,4
 IA-02,Emerson College,NA,house ballot,2026-10-12,2026-10-14,344,LV,50,47,NA,3
-IA-02,Global Strategy Group,D,house ballot,2026-07-14,2026-07-19,0,A,46,45,NA,1
+IA-02,Global Strategy Group,D,house ballot,2026-07-14,2026-07-19,0,NA,46,45,NA,1
 IA-02,Public Policy Polling,D,house ballot,2026-04-13,2026-04-14,675,RV,36,33,NA,3
 IA-03,Ragnar Research Partners,R,house ballot,2026-03-12,2026-03-14,400,LV,42,48,NA,-6
 ID-01,VoteNexus,D,house ballot,2026-10-21,2026-10-22,700,LV,31,52,NA,-21
@@ -103,8 +103,8 @@ KY-06,Public Policy Polling,D,house ballot,2026-10-19,2026-10-20,572,LV,47,41,NA
 KY-06,Change Research,D,house ballot,2026-09-29,2026-10-05,524,LV,47,38,NA,9
 KY-06,DCCC,D,house ballot,2026-10-02,2026-10-05,606,LV,46,40,NA,6
 KY-06,Lake Research Partners,D,house ballot,2026-08-17,2026-08-23,400,LV,45,44,NA,1
-KY-06,DCCC,D,house ballot,2026-07-29,2026-07-30,474,A,47,47,NA,0
-KY-06,GQR,D,house ballot,2026-06-22,2026-06-28,440,A,39,42,NA,-3
+KY-06,DCCC,D,house ballot,2026-07-29,2026-07-30,474,NA,47,47,NA,0
+KY-06,GQR,D,house ballot,2026-06-22,2026-06-28,440,NA,39,42,NA,-3
 KY-06,Public Policy Polling,D,house ballot,2026-04-24,2026-04-25,675,RV,37,37,NA,0
 MD-01,Z to A Research,D,house ballot,2026-07-23,2026-07-27,482,LV,39,52,NA,-13
 ME-01,University of New Hampshire,NA,house ballot,2026-09-17,2026-09-21,679,LV,57,35,NA,22
@@ -142,7 +142,7 @@ MO-02,Emerson College,NA,house ballot,2026-10-12,2026-10-14,401,LV,51,46,NA,5
 MO-02,Remington Research Group,R,house ballot,2026-09-14,2026-09-15,565,LV,42,43,NA,-1
 MO-02,FM3 Research,D,house ballot,2026-05-26,2026-05-31,600,LV,41,44,NA,-3
 MT-01,RedBox Research,D,house ballot,2026-10-20,2026-10-23,754,LV,46,48,NA,-2
-MT-01,Montana State University Billings,NA,house ballot,2026-10-05,2026-10-21,720,A,49,32,NA,17
+MT-01,Montana State University Billings,NA,house ballot,2026-10-05,2026-10-21,720,NA,49,32,NA,17
 MT-01,Emerson College,NA,house ballot,2026-10-12,2026-10-14,329,LV,50,46,NA,4
 MT-01,Public Policy Polling,D,house ballot,2026-10-12,2026-10-14,541,LV,48,45,NA,3
 MT-01,American Pulse,NA,house ballot,2026-09-19,2026-09-24,314,LV,45,46,NA,-1
@@ -151,7 +151,7 @@ MT-01,Public Policy Polling,D,house ballot,2026-09-09,2026-09-10,536,RV,45,43,NA
 MT-01,Rutgers Eagleton/Montana Free Press,NA,house ballot,2026-08-27,2026-09-07,375,RV,43,42,NA,1
 MT-01,Impact Research,D,house ballot,2026-06-22,2026-06-25,500,LV,44,44,NA,0
 MT-01,Upswing Research,D,house ballot,2026-04-30,2026-05-05,401,LV,43,48,NA,-5
-MT-02,Montana State University Billings,NA,house ballot,2026-10-05,2026-10-21,720,A,33,29,NA,4
+MT-02,Montana State University Billings,NA,house ballot,2026-10-05,2026-10-21,720,NA,33,29,NA,4
 MT-02,Rutgers University Eagleton Institute of Politics,NA,house ballot,2026-08-27,2026-09-07,470,RV,35,48,NA,-13
 NC-01,RedBox Research,D,house ballot,2026-10-20,2026-10-23,1468,LV,45,44,NA,1
 NC-01,co/efficient,R,house ballot,2026-10-06,2026-10-08,623,LV,42,43,NA,-1
@@ -198,7 +198,7 @@ NV-02,Public Policy Polling,D,house ballot,2026-10-12,2026-10-13,613,LV,44,46,NA
 NV-02,GBAO,D,house ballot,2026-08-31,2026-09-03,500,LV,38,37,NA,1
 NV-02,Strategies 360,NA,house ballot,2026-08-22,2026-08-26,400,LV,42,45,NA,-3
 NV-03,RedBox Research,D,house ballot,2026-10-20,2026-10-23,687,LV,49,42,NA,7
-NY-01,Public Policy Polling,D,house ballot,2025-12-10,2025-12-11,579,A,38,41,NA,-3
+NY-01,Public Policy Polling,D,house ballot,2025-12-10,2025-12-11,579,NA,38,41,NA,-3
 NY-17,RedBox Research,D,house ballot,2026-10-20,2026-10-23,726,LV,48,46,NA,2
 NY-17,McLaughlin & Associates,R,house ballot,2026-09-28,2026-09-30,400,LV,47,50,NA,-3
 NY-17,Emerson College,NA,house ballot,2026-09-27,2026-09-29,400,LV,48,46,NA,2
@@ -250,16 +250,16 @@ PA-07,GBAO,D,house ballot,2026-06-29,2026-07-02,550,LV,47,43,NA,4
 PA-08,RedBox Research,D,house ballot,2026-10-20,2026-10-23,696,LV,49,46,NA,3
 PA-08,New York Times/The Philadelphia Inquirer/Siena University,NA,house ballot,2026-10-16,2026-10-22,400,LV,51,46,NA,5
 PA-08,Emerson College,NA,house ballot,2026-10-12,2026-10-14,396,LV,52,48,NA,4
-PA-08,Lake Research Partners,D,house ballot,2026-06-18,2026-06-23,400,A,47,45,NA,2
+PA-08,Lake Research Partners,D,house ballot,2026-06-18,2026-06-23,400,NA,47,45,NA,2
 PA-08,Impact Research,D,house ballot,2026-06-08,2026-06-11,500,LV,46,45,NA,1
-PA-08,Public Policy Polling,D,house ballot,2025-08-27,2025-08-28,615,A,45,43,NA,2
+PA-08,Public Policy Polling,D,house ballot,2025-08-27,2025-08-28,615,NA,45,43,NA,2
 PA-10,RedBox Research,D,house ballot,2026-10-20,2026-10-23,1022,LV,48,45,NA,3
 PA-10,New York Times/The Philadelphia Inquirer/Siena University,NA,house ballot,2026-10-16,2026-10-22,400,LV,48,48,NA,0
 PA-10,Susquehanna Polling & Research,R,house ballot,2026-10-05,2026-10-11,300,LV,49,46,NA,3
 PA-10,Franklin & Marshall College,NA,house ballot,2026-09-09,2026-09-20,390,RV,47,44,NA,3
 PA-10,Normington Petts,D,house ballot,2026-04-20,2026-04-23,400,RV,51,45,NA,6
 PA-10,Public Policy Polling,D,house ballot,2025-11-18,2025-11-19,549,RV,48,44,NA,4
-PA-10,Public Policy Polling,D,house ballot,2025-07-10,2025-07-11,559,A,46,43,NA,3
+PA-10,Public Policy Polling,D,house ballot,2025-07-10,2025-07-11,559,NA,46,43,NA,3
 RI-01,Emerson College/WPRI-TV,NA,house ballot,2026-10-08,2026-10-11,394,LV,60,26,NA,34
 RI-01,Embold Research,NA,house ballot,2026-10-05,2026-10-08,363,LV,56,33,NA,23
 RI-02,Emerson College/WPRI-TV,NA,house ballot,2026-10-08,2026-10-11,406,LV,55,39,NA,16
@@ -277,8 +277,8 @@ TN-09,Hart Research Associates,D,house ballot,2026-09-01,2026-09-03,400,LV,44,48
 TX-02,Impact Research,D,house ballot,2026-09-29,2026-10-04,501,LV,37,46,NA,-9
 TX-09,DCCC,NA,house ballot,2026-10-20,2026-10-22,490,LV,47,48,NA,-1
 TX-09,University of Houston,NA,house ballot,2026-10-03,2026-10-07,677,LV,42,48,NA,-6
-TX-09,PPP,NA,house ballot,2026-09-18,2026-09-19,0,A,39,45,NA,-6
-TX-09,Public Policy Polling,D,house ballot,2026-09-18,2026-09-19,0,A,39,45,NA,-6
+TX-09,PPP,NA,house ballot,2026-09-18,2026-09-19,0,NA,39,45,NA,-6
+TX-09,Public Policy Polling,D,house ballot,2026-09-18,2026-09-19,0,NA,39,45,NA,-6
 TX-10,Change Research,NA,house ballot,2026-09-18,2026-09-22,613,LV,41,48,NA,-7
 TX-15,Washington Post/Schar School,NA,house ballot,2026-10-14,2026-10-19,606,LV,47,48,NA,-1
 TX-15,Texas Southern University,NA,house ballot,2026-10-13,2026-10-16,0,LV,51,44,NA,7
@@ -288,7 +288,7 @@ TX-15,Normington Petts,D,house ballot,2026-07-23,2026-07-27,553,LV,51,45,NA,6
 TX-15,Applecart,D,house ballot,2026-05-18,2026-05-25,802,LV,48,46,NA,2
 TX-15,Public Policy Polling,D,house ballot,2025-09-10,2025-09-11,533,LV,38,41,NA,-3
 TX-23,Normington Petts,D,house ballot,2026-10-05,2026-10-07,400,LV,46,46,NA,0
-TX-23,Public Policy Polling,D,house ballot,2026-03-10,2026-03-11,521,A,40,42,NA,-2
+TX-23,Public Policy Polling,D,house ballot,2026-03-10,2026-03-11,521,NA,40,42,NA,-2
 TX-28,DCCC,NA,house ballot,2026-10-07,2026-10-13,536,LV,54,34,NA,20
 TX-28,Texas Southern University,NA,house ballot,2026-08-18,2026-08-22,600,LV,45,34,NA,11
 TX-34,Washington Post/Schar School,NA,house ballot,2026-10-14,2026-10-19,626,LV,50,43,NA,7

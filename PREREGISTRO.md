@@ -46,6 +46,8 @@ La **versión principal** es la que incluye δ ("con_delta"). Se publica tambié
 | Sin competencia | el único partido mayor gana con P = 1 |
 | Independientes | NE (Osborn), MT (Bodnar), SD (Bengs): ocupan el lado "no R"; se cuentan aparte de los escaños D |
 | CA‑06 | Kiley (independiente, ex‑R) se modela en el lado R con ventaja de incumbencia |
+| Missouri | vota con el mapa de 2022 (el mapa de 2025 está suspendido por el referendo de veto, Prop. A): se usa el PVI 2025, no el 2026 de Cook |
+| Mapas nuevos en vigor | AL, CA, FL, LA, NC, OH, TN, TX, UT (PVI 2026 de Cook) |
 
 ## 4. Evaluación preregistrada (`R/06_evaluate.R`)
 

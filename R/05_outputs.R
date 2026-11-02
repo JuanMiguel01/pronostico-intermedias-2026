@@ -48,16 +48,17 @@ race_table <- function(s) {
   ph <- colMeans(s$M_house > 0); psn <- colMeans(s$M_sen > 0)
   bind_rows(
     tibble(race_id = D$district, chamber = "House", state = D$state, region = D$region,
-           p_dem = ph,
+           p_nonR = ph, p_dem = ph,
            margin_median = apply(s$M_house, 2, median), margin_lo80 = apply(s$M_house, 2, q, .1), margin_hi80 = apply(s$M_house, 2, q, .9)),
     tibble(race_id = S$race_id, chamber = "Senate", state = S$state, region = S$region,
-           p_dem = if_else(S$challenger_is_ind, 0, psn), p_ind = if_else(S$challenger_is_ind, psn, 0),
+           p_nonR = psn, p_dem = if_else(S$challenger_is_ind, 0, psn), p_ind = if_else(S$challenger_is_ind, psn, 0),
            margin_median = apply(s$M_sen, 2, median), margin_lo80 = apply(s$M_sen, 2, q, .1), margin_hi80 = apply(s$M_sen, 2, q, .9))
   ) %>% mutate(p_ind = coalesce(p_ind, 0), p_rep = 1 - p_dem - p_ind)
 }
 main <- race_table(sims[[PRIMARY]])
-alt  <- race_table(sims[["sin_delta"]]) %>% select(race_id, p_dem_sin_delta = p_dem, margin_median_sin_delta = margin_median)
-fund <- race_table(sims[["solo_fundamentales"]]) %>% select(race_id, p_dem_solo_fund = p_dem)
+# p_nonR: probabilidad del lado no republicano (D, o el independiente principal); es lo que se evalua en 06
+alt  <- race_table(sims[["sin_delta"]]) %>% select(race_id, p_nonR_sin_delta = p_nonR, margin_median_sin_delta = margin_median)
+fund <- race_table(sims[["solo_fundamentales"]]) %>% select(race_id, p_nonR_solo_fund = p_nonR)
 
 info <- bind_rows(
   D %>% transmute(race_id = district, pvi = round(pvi_2026, 2), incumbent, inc_party = inc_party_model, open_seat, uncontested,
@@ -72,7 +73,7 @@ info <- bind_rows(
                   m_hat = round(m_hat, 2), redistricted = FALSE)
 )
 predicciones <- main %>% left_join(alt, by = "race_id") %>% left_join(fund, by = "race_id") %>% left_join(info, by = "race_id") %>%
-  mutate(across(c(p_dem, p_ind, p_rep, p_dem_sin_delta, p_dem_solo_fund), ~ round(.x, 4)),
+  mutate(across(c(p_nonR, p_dem, p_ind, p_rep, p_nonR_sin_delta, p_nonR_solo_fund), ~ round(.x, 4)),
          across(c(margin_median, margin_lo80, margin_hi80, margin_median_sin_delta), ~ round(.x, 2)),
          version_principal = PRIMARY, generado_utc = format(Sys.time(), tz = "UTC", "%Y-%m-%dT%H:%M:%SZ")) %>%
   arrange(chamber, race_id)
@@ -150,7 +151,7 @@ write_json(list(generado_utc = format(Sys.time(), tz = "UTC", "%Y-%m-%dT%H:%M:%S
                 resumen = resumen, lineas_base = lineas_base),
            file.path(DIR_OUT, "resumen.json"), auto_unbox = TRUE, pretty = TRUE, digits = 4)
 
-fmt <- function(x, d = 1) formatC(x, format = "f", digits = d)
+fmt <- function(x, d = 1) ifelse(is.na(x), "-", formatC(x, format = "f", digits = d))
 r <- resumen %>% filter(version == PRIMARY); r2 <- resumen %>% filter(version == "sin_delta")
 md <- c(
   "# Resumen del pronostico (cantidades preregistradas Q1-Q6)", "",

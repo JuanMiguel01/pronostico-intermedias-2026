@@ -12,16 +12,16 @@ AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-09-10,2026-09-12,1352,L
 AK,AK,Fabrizio Ward,R,Alaska Senate polls,2026-09-08,2026-09-11,800,LV,51,45,NA,6
 AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-08-20,2026-08-23,1495,LV,51,49,NA,2
 AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-08-02,2026-08-05,1371,LV,51,49,NA,2
-AK,AK,New York Times/Siena University,NA,Alaska Senate polls,2026-06-15,2026-06-29,593,A,45,47,NA,-2
-AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-06-07,2026-06-07,1393,A,49,44,NA,5
-AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-05-17,2026-05-17,1401,A,48,44,NA,4
-AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-04-19,2026-04-19,1946,A,49,44,NA,5
-AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-03-22,2026-03-22,1590,A,50,46,NA,4
-AK,AK,Public Policy Polling,D,Alaska Senate polls,2026-01-16,2026-01-17,611,A,49,47,NA,2
+AK,AK,New York Times/Siena University,NA,Alaska Senate polls,2026-06-15,2026-06-29,593,NA,45,47,NA,-2
+AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-06-07,2026-06-07,1393,NA,49,44,NA,5
+AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-05-17,2026-05-17,1401,NA,48,44,NA,4
+AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-04-19,2026-04-19,1946,NA,49,44,NA,5
+AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-03-22,2026-03-22,1590,NA,50,46,NA,4
+AK,AK,Public Policy Polling,D,Alaska Senate polls,2026-01-16,2026-01-17,611,NA,49,47,NA,2
 AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2026-01-08,2026-01-11,1988,RV,48,46,NA,2
-AK,AK,Data for Progress,D,Alaska Senate polls,2025-10-17,2025-10-23,823,A,46,45,NA,1
-AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2025-10-10,2025-10-15,1708,A,48,46,NA,2
-AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2025-07-29,2025-08-01,1623,A,42,47,NA,-5
+AK,AK,Data for Progress,D,Alaska Senate polls,2025-10-17,2025-10-23,823,NA,46,45,NA,1
+AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2025-10-10,2025-10-15,1708,NA,48,46,NA,2
+AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2025-07-29,2025-08-01,1623,NA,42,47,NA,-5
 AK,AK,Data for Progress,D,Alaska Senate polls,2025-07-21,2025-07-27,678,LV,45,46,NA,-1
 AK,AK,Alaska Survey Research,NA,Alaska Senate polls,2023-04-21,2023-04-25,1261,LV,44,41,NA,3
 AL,AL,Chism Strategies,D,Alabama Senate polls,2026-10-22,2026-10-24,695,LV,40,48,NA,-8
@@ -63,17 +63,17 @@ FL-S,FL,St. Pete Polls/FloridaPolitics.com,NA,Florida Senate polls,2026-09-15,20
 FL-S,FL,Quantus Insights,R,Florida Senate polls,2026-09-08,2026-09-10,733,LV,43,50,NA,-7
 FL-S,FL,Change Research,D,Florida Senate polls,2026-09-07,2026-09-09,1107,LV,47,47,NA,0
 FL-S,FL,University of North Florida,NA,Florida Senate polls,2026-07-08,2026-07-17,848,LV,42,50,NA,-8
-FL-S,FL,Change Research,D,Florida Senate polls,2026-07-09,2026-07-11,1348,A,37,45,NA,-8
-FL-S,FL,McLaughlin & Associates,R,Florida Senate polls,2026-06-03,2026-06-07,800,A,40,47,NA,-7
+FL-S,FL,Change Research,D,Florida Senate polls,2026-07-09,2026-07-11,1348,NA,37,45,NA,-8
+FL-S,FL,McLaughlin & Associates,R,Florida Senate polls,2026-06-03,2026-06-07,800,NA,40,47,NA,-7
 FL-S,FL,Global Strategy Group,D,Florida Senate polls,2026-05-18,2026-05-21,1000,LV,43,46,NA,-3
 FL-S,FL,Cherry Communications,R,Florida Senate polls,2026-05-01,2026-05-09,604,LV,40,48,NA,-8
 FL-S,FL,Stetson University,NA,Florida Senate polls,2026-03-15,2026-04-13,848,LV,38,51,NA,-13
 FL-S,FL,Public Policy Polling,D,Florida Senate polls,2026-04-02,2026-04-03,574,RV,40,43,NA,-3
-FL-S,FL,MDW,D,Florida Senate polls,2026-03-27,2026-04-03,1834,A,42,43,NA,-1
+FL-S,FL,MDW,D,Florida Senate polls,2026-03-27,2026-04-03,1834,NA,42,43,NA,-1
 FL-S,FL,Emerson College,NA,Florida Senate polls,2026-03-29,2026-03-31,1125,LV,36,47,NA,-11
-FL-S,FL,University of North Florida,NA,Florida Senate polls,2026-02-21,2026-03-02,786,A,38,46,NA,-8
-FL-S,FL,University of North Florida,NA,Florida Senate polls,2025-10-15,2025-10-25,728,A,38,49,NA,-11
-FL-S,FL,The Tyson Group,R,Florida Senate polls,2025-10-01,2025-10-03,800,A,37,44,NA,-7
+FL-S,FL,University of North Florida,NA,Florida Senate polls,2026-02-21,2026-03-02,786,NA,38,46,NA,-8
+FL-S,FL,University of North Florida,NA,Florida Senate polls,2025-10-15,2025-10-25,728,NA,38,49,NA,-11
+FL-S,FL,The Tyson Group,R,Florida Senate polls,2025-10-01,2025-10-03,800,NA,37,44,NA,-7
 GA,GA,Echelon Insights,R,Georgia Senate polls,2026-10-16,2026-10-23,508,LV,55,40,NA,15
 GA,GA,ActiVote,NA,Georgia Senate polls,2026-09-26,2026-10-20,400,LV,54,46,NA,8
 GA,GA,Quantus Insights,R,Georgia Senate polls,2026-10-15,2026-10-17,755,LV,54,46,NA,8
@@ -91,11 +91,11 @@ GA,GA,Wick,NA,Georgia Senate polls,2026-06-30,2026-06-30,1175,LV,47,43,NA,4
 GA,GA,Beacon Research/Shaw & Co.,NA,Georgia Senate polls,2026-06-27,2026-06-27,1002,RV,56,43,NA,13
 GA,GA,Echelon Insights,NA,Georgia Senate polls,2026-04-03,2026-04-09,407,LV,51,44,NA,7
 GA,GA,Emerson College,NA,Georgia Senate polls,2026-03-02,2026-03-02,1000,LV,48,43,NA,5
-GA,GA,Quantus Insights,R,Georgia Senate polls,2025-09-09,2025-09-12,624,A,38,38,NA,0
+GA,GA,Quantus Insights,R,Georgia Senate polls,2025-09-09,2025-09-12,624,NA,38,38,NA,0
 GA,GA,TIPP Insights,NA,Georgia Senate polls,2025-08-01,2025-08-01,2956,RV,45,44,NA,1
-GA,GA,Cygnal,R,Georgia Senate polls,2025-05-15,2025-05-17,800,A,46,43,NA,3
+GA,GA,Cygnal,R,Georgia Senate polls,2025-05-15,2025-05-17,800,NA,46,43,NA,3
 GA,GA,Trafalgar Group,R,Georgia Senate polls,2025-04-24,2025-04-27,1426,LV,48,43,NA,5
-GA,GA,WPA Intelligence,R,Georgia Senate polls,2025-01-14,2025-01-15,500,A,44,34,NA,10
+GA,GA,WPA Intelligence,R,Georgia Senate polls,2025-01-14,2025-01-15,500,NA,44,34,NA,10
 IA,IA,New York Times/Siena University,NA,Iowa Senate polls,2026-10-23,2026-11-01,705,LV,48,47,NA,1
 IA,IA,YouGov,NA,Iowa Senate polls,2026-10-26,2026-10-29,2020,LV,50,49,NA,1
 IA,IA,co/efficient,R,Iowa Senate polls,2026-10-28,2026-10-28,1020,LV,46,48,NA,-2
@@ -127,13 +127,13 @@ IA,IA,Abacus Data,NA,Iowa Senate polls,2026-08-26,2026-08-28,323,LV,54,45,NA,9
 IA,IA,Suffolk University,NA,Iowa Senate polls,2026-08-20,2026-08-23,500,LV,41,45,NA,-4
 IA,IA,Emerson College,NA,Iowa Senate polls,2026-08-02,2026-08-04,712,LV,45,48,NA,-3
 IA,IA,Beacon Research/Shaw & Co.,NA,Iowa Senate polls,2026-06-27,2026-06-27,1003,RV,50,46,NA,4
-IA,IA,NYT/Siena,NA,Iowa Senate polls,2026-06-27,2026-06-27,600,A,46,48,NA,-2
-IA,IA,Cygnal,R,Iowa Senate polls,2026-06-16,2026-06-19,600,A,44,46,NA,-2
-IA,IA,Global Strategy Group,D,Iowa Senate polls,2026-06-08,2026-06-11,1000,A,47,45,NA,2
-IA,IA,Public Policy Polling,D,Iowa Senate polls,2026-06-03,2026-06-04,557,A,46,46,NA,0
+IA,IA,NYT/Siena,NA,Iowa Senate polls,2026-06-27,2026-06-27,600,NA,46,48,NA,-2
+IA,IA,Cygnal,R,Iowa Senate polls,2026-06-16,2026-06-19,600,NA,44,46,NA,-2
+IA,IA,Global Strategy Group,D,Iowa Senate polls,2026-06-08,2026-06-11,1000,NA,47,45,NA,2
+IA,IA,Public Policy Polling,D,Iowa Senate polls,2026-06-03,2026-06-04,557,NA,46,46,NA,0
 IA,IA,Echelon Insights,NA,Iowa Senate polls,2026-04-03,2026-04-09,377,LV,46,45,NA,1
-IA,IA,GQR,D,Iowa Senate polls,2026-03-10,2026-03-16,1200,A,43,47,NA,-4
-IA,IA,Change Research,D,Iowa Senate polls,2026-01-08,2026-01-11,1108,A,41,44,NA,-3
+IA,IA,GQR,D,Iowa Senate polls,2026-03-10,2026-03-16,1200,NA,43,47,NA,-4
+IA,IA,Change Research,D,Iowa Senate polls,2026-01-08,2026-01-11,1108,NA,41,44,NA,-3
 ID,ID,VoteNexus,D,Idaho Senate polls,2026-10-21,2026-10-22,700,LV,NA,49,NA,NA
 ID,ID,Peak Insights,R,Idaho Senate polls,2026-09-28,2026-09-30,500,LV,NA,49,NA,NA
 ID,ID,Advanced Targeting Research,NA,Idaho Senate polls,2026-09-13,2026-09-16,700,RV,NA,39.4,NA,NA
@@ -162,10 +162,10 @@ KS,KS,co/efficient,NA,Kansas Senate polls,2026-09-08,2026-09-10,915,LV,44,49,NA,
 KS,KS,Global Strategy Group,D,Kansas Senate polls,2026-08-12,2026-08-16,800,LV,44,43,NA,1
 KS,KS,Public Policy Polling,D,Kansas Senate polls,2026-08-07,2026-08-08,569,LV,45,46,NA,-1
 KS,KS,GBAO,D,Kansas Senate polls,2026-07-08,2026-07-13,600,LV,43,47,NA,-4
-KS,KS,GQR,D,Kansas Senate polls,2026-04-23,2026-04-27,500,A,45,49,NA,-4
+KS,KS,GQR,D,Kansas Senate polls,2026-04-23,2026-04-27,500,NA,45,49,NA,-4
 KS,KS,Tavern Research,D,Kansas Senate polls,2026-01-26,2026-01-28,1013,LV,46,54,NA,-8
 KY,KY,Global Strategy Group,D,Kentucky Senate polls,2026-08-24,2026-08-27,600,LV,40,49,NA,-9
-KY,KY,Public Policy Polling,D,Kentucky Senate polls,2025-12-18,2025-12-19,650,A,38,49,NA,-11
+KY,KY,Public Policy Polling,D,Kentucky Senate polls,2025-12-18,2025-12-19,650,NA,38,49,NA,-11
 LA,LA,Hart Research Associates,D,Louisiana Senate polls,2026-10-28,2026-10-29,502,LV,45,45,NA,0
 LA,LA,Hart Research,D,Louisiana Senate polls,2026-09-17,2026-09-19,500,LV,44,48,NA,-4
 LA,LA,Public Policy Polling,D,Louisiana Senate polls,2026-07-21,2026-07-22,518,RV,37,41,NA,-4
@@ -214,26 +214,26 @@ ME,ME,Abacus Data,NA,Maine Senate polls,2026-08-26,2026-08-28,327,LV,52,43,NA,9
 ME,ME,Beacon Research,D,Maine Senate polls,2026-08-06,2026-08-10,1000,RV,48,46,NA,2
 ME,ME,Hart Research,D,Maine Senate polls,2026-07-27,2026-08-01,802,LV,49,45,NA,4
 ME,ME,University of New Hampshire,NA,Maine Senate polls,2026-07-15,2026-07-20,1178,LV,49,46,NA,3
-ME,ME,UMass Lowell,NA,Maine Senate polls,2026-07-09,2026-07-09,1000,A,47,47,NA,0
+ME,ME,UMass Lowell,NA,Maine Senate polls,2026-07-09,2026-07-09,1000,NA,47,47,NA,0
 ME,ME,Z to A Research,D,Maine Senate polls,2026-07-07,2026-07-08,988,LV,47,47,NA,0
 ME,ME,Tavern Research,D,Maine Senate polls,2026-07-03,2026-07-06,1074,LV,52,48,NA,4
-ME,ME,Beacon Research/Shaw & Co.,NA,Maine Senate polls,2026-06-30,2026-06-30,1000,A,47,50,NA,-3
-ME,ME,NYT/Siena,NA,Maine Senate polls,2026-06-29,2026-06-29,800,A,49,47,NA,2
+ME,ME,Beacon Research/Shaw & Co.,NA,Maine Senate polls,2026-06-30,2026-06-30,1000,NA,47,50,NA,-3
+ME,ME,NYT/Siena,NA,Maine Senate polls,2026-06-29,2026-06-29,800,NA,49,47,NA,2
 ME,ME,Beacon Research,D,Maine Senate polls,2026-06-23,2026-06-27,1003,RV,47,50,NA,-3
-ME,ME,New York Times/Portland Press Herald/Siena University,NA,Maine Senate polls,2026-06-19,2026-06-26,608,A,49,47,NA,2
+ME,ME,New York Times/Portland Press Herald/Siena University,NA,Maine Senate polls,2026-06-19,2026-06-26,608,NA,49,47,NA,2
 ME,ME,Wick/2WAY,NA,Maine Senate polls,2026-06-11,2026-06-14,1008,LV,48,45,NA,3
-ME,ME,Quantus Insights,R,Maine Senate polls,2026-06-09,2026-06-11,870,A,46,45,NA,1
-ME,ME,Tavern Research,D,Maine Senate polls,2026-06-05,2026-06-08,1642,A,51,49,NA,2
-ME,ME,The Public Sentiment Institute,NA,Maine Senate polls,2026-06-08,2026-06-08,497,A,43,44,NA,-1
+ME,ME,Quantus Insights,R,Maine Senate polls,2026-06-09,2026-06-11,870,NA,46,45,NA,1
+ME,ME,Tavern Research,D,Maine Senate polls,2026-06-05,2026-06-08,1642,NA,51,49,NA,2
+ME,ME,The Public Sentiment Institute,NA,Maine Senate polls,2026-06-08,2026-06-08,497,NA,43,44,NA,-1
 ME,ME,Public Policy Polling,D,Maine Senate polls,2026-06-02,2026-06-03,670,RV,49,45,NA,4
-ME,ME,"Fabrizio, Lee & Associates",R,Maine Senate polls,2026-06-01,2026-06-03,800,A,46,46,NA,0
-ME,ME,UMass Lowell/YouGov,NA,Maine Senate polls,2026-05-13,2026-05-26,650,A,48,43,NA,5
-ME,ME,University of New Hampshire,NA,Maine Senate polls,2026-05-21,2026-05-25,1280,A,51,42,NA,9
-ME,ME,Pan Atlantic Research,NA,Maine Senate polls,2026-05-08,2026-05-18,827,A,48,41,NA,7
-ME,ME,Maine People's Resource Center,D,Maine Senate polls,2026-03-20,2026-03-31,1167,A,48,39,NA,9
-ME,ME,Quantus Insights,R,Maine Senate polls,2026-03-05,2026-03-05,800,A,49,42,NA,7
+ME,ME,"Fabrizio, Lee & Associates",R,Maine Senate polls,2026-06-01,2026-06-03,800,NA,46,46,NA,0
+ME,ME,UMass Lowell/YouGov,NA,Maine Senate polls,2026-05-13,2026-05-26,650,NA,48,43,NA,5
+ME,ME,University of New Hampshire,NA,Maine Senate polls,2026-05-21,2026-05-25,1280,NA,51,42,NA,9
+ME,ME,Pan Atlantic Research,NA,Maine Senate polls,2026-05-08,2026-05-18,827,NA,48,41,NA,7
+ME,ME,Maine People's Resource Center,D,Maine Senate polls,2026-03-20,2026-03-31,1167,NA,48,39,NA,9
+ME,ME,Quantus Insights,R,Maine Senate polls,2026-03-05,2026-03-05,800,NA,49,42,NA,7
 ME,ME,"Fabrizio, Lee & Associates",R,Maine Senate polls,2026-01-20,2026-01-24,800,LV,44,45,NA,-1
-ME,ME,Workbench Strategy,D,Maine Senate polls,2025-12-11,2025-12-16,900,A,49,51,NA,-2
+ME,ME,Workbench Strategy,D,Maine Senate polls,2025-12-11,2025-12-16,900,NA,49,51,NA,-2
 ME,ME,Pan Atlantic Research,NA,Maine Senate polls,2025-11-29,2025-12-07,820,LV,43,43,NA,0
 ME,ME,Zenith Research,D,Maine Senate polls,2025-10-07,2025-10-10,501,LV,38,38,NA,0
 MI,MI,ResearchCo.,NA,Michigan Senate polls,2026-10-30,2026-11-01,450,LV,51,48,NA,3
@@ -286,18 +286,18 @@ MI,MI,EPIC-MRA,NA,Michigan Senate polls,2026-07-24,2026-07-31,600,LV,43,46,NA,-3
 MI,MI,SoCal Strategies,R,Michigan Senate polls,2026-07-28,2026-07-30,640,LV,41,42,NA,-1
 MI,MI,Mitchell Research & Communications,NA,Michigan Senate polls,2026-07-28,2026-07-29,672,LV,45,45,NA,0
 MI,MI,Glengariff Group,NA,Michigan Senate polls,2026-07-22,2026-07-24,600,LV,39,49,NA,-10
-MI,MI,Quantus Insights,R,Michigan Senate polls,2026-06-29,2026-06-30,947,A,45,44,NA,1
+MI,MI,Quantus Insights,R,Michigan Senate polls,2026-06-29,2026-06-30,947,NA,45,44,NA,1
 MI,MI,Data for Progress,D,Michigan Senate polls,2026-06-15,2026-06-22,709,LV,47,46,NA,1
 MI,MI,Zenith Research,D,Michigan Senate polls,2026-06-11,2026-06-14,602,LV,45,42,NA,3
-MI,MI,Mitchell Research & Communications,NA,Michigan Senate polls,2026-06-11,2026-06-13,827,A,47,42,NA,5
+MI,MI,Mitchell Research & Communications,NA,Michigan Senate polls,2026-06-11,2026-06-13,827,NA,47,42,NA,5
 MI,MI,Tulchin Research,D,Michigan Senate polls,2026-06-02,2026-06-04,500,LV,46,41,NA,5
-MI,MI,TIPP Insights,R,Michigan Senate polls,2026-05-20,2026-05-23,1456,A,40,40,NA,0
-MI,MI,Mitchell Research,NA,Michigan Senate polls,2026-05-01,2026-05-07,607,A,41,42,NA,-1
+MI,MI,TIPP Insights,R,Michigan Senate polls,2026-05-20,2026-05-23,1456,NA,40,40,NA,0
+MI,MI,Mitchell Research,NA,Michigan Senate polls,2026-05-01,2026-05-07,607,NA,41,42,NA,-1
 MI,MI,Glengariff Group,NA,Michigan Senate polls,2026-04-28,2026-05-01,600,LV,40,45,NA,-5
 MI,MI,Emerson College,NA,Michigan Senate polls,2026-01-24,2026-01-25,1000,LV,43,43,NA,0
-MI,MI,Glengariff Group,NA,Michigan Senate polls,2026-01-02,2026-01-06,600,A,47,43,NA,4
-MI,MI,Mitchell Research & Communications,NA,Michigan Senate polls,2025-11-18,2025-11-21,616,A,38,41,NA,-3
-MI,MI,Rosetta Stone Communications,R,Michigan Senate polls,2025-10-23,2025-10-25,637,A,31,45,NA,-14
+MI,MI,Glengariff Group,NA,Michigan Senate polls,2026-01-02,2026-01-06,600,NA,47,43,NA,4
+MI,MI,Mitchell Research & Communications,NA,Michigan Senate polls,2025-11-18,2025-11-21,616,NA,38,41,NA,-3
+MI,MI,Rosetta Stone Communications,R,Michigan Senate polls,2025-10-23,2025-10-25,637,NA,31,45,NA,-14
 MI,MI,Glengariff Group,NA,Michigan Senate polls,2025-05-05,2025-05-08,600,RV,41,47,NA,-6
 MN,MN,Research Co.,NA,Minnesota Senate polls,2026-10-30,2026-11-01,450,LV,48,43,NA,5
 MN,MN,InsiderAdvantage,R,Minnesota Senate polls,2026-10-29,2026-10-30,1200,LV,49,46,NA,3
@@ -319,15 +319,15 @@ MN,MN,Quantus Insights,R,Minnesota Senate polls,2026-09-08,2026-09-10,720,LV,48,
 MN,MN,TIPP Insights,R,Minnesota Senate polls,2026-08-31,2026-09-02,1201,LV,44,42,NA,2
 MN,MN,Deep Root Analytics,R,Minnesota Senate polls,2026-08-17,2026-08-18,597,RV,50,45,NA,5
 MN,MN,KTSP/SurveyUSA,NA,Minnesota Senate polls,2026-08-13,2026-08-17,661,LV,46,41,NA,5
-MN,MN,Impact Research,D,Minnesota Senate polls,2026-05-26,2026-05-28,808,A,51,44,NA,7
+MN,MN,Impact Research,D,Minnesota Senate polls,2026-05-26,2026-05-28,808,NA,51,44,NA,7
 MN,MN,Emerson College,NA,Minnesota Senate polls,2026-02-06,2026-02-08,1000,LV,47,40,NA,7
-MN,MN,Impact Research,D,Minnesota Senate polls,2025-07-08,2025-07-11,604,A,49,45,NA,4
+MN,MN,Impact Research,D,Minnesota Senate polls,2025-07-08,2025-07-11,604,NA,49,45,NA,4
 MS,MS,Change Research,D,Mississippi Senate polls,2026-10-21,2026-10-22,842,LV,40,43,NA,-3
 MS,MS,Data for Progress,D,Mississippi Senate polls,2026-08-05,2026-08-15,1018,LV,38,44,NA,-6
 MS,MS,Impact Research,D,Mississippi Senate polls,2026-04-08,2026-04-12,500,LV,39,42,NA,-3
-MS,MS,Impact Research,D,Mississippi Senate polls,2025-06-18,2025-06-22,500,A,38,51,NA,-13
+MS,MS,Impact Research,D,Mississippi Senate polls,2025-06-18,2025-06-22,500,NA,38,51,NA,-13
 MT,MT,Concord Public Opinion Partners,NA,Montana Senate polls,2026-10-22,2026-10-23,410,LV,10,38,39,-28
-MT,MT,Montana State University Billings,NA,Montana Senate polls,2026-10-05,2026-10-21,720,A,21,30,26,-9
+MT,MT,Montana State University Billings,NA,Montana Senate polls,2026-10-05,2026-10-21,720,NA,21,30,26,-9
 MT,MT,Quantus Insights,R,Montana Senate polls,2026-10-15,2026-10-18,667,LV,22,47,31,-25
 MT,MT,Peak Insights,R,Montana Senate polls,2026-10-07,2026-10-12,500,LV,12,44,29,-32
 MT,MT,Concord Public Opinion Partners,NA,Montana Senate polls,2026-10-06,2026-10-08,405,LV,13,35,37,-22
@@ -369,28 +369,28 @@ NC,NC,Elon University/YouGov,NA,North Carolina Senate polls,2026-08-21,2026-08-3
 NC,NC,High Point University/YouGov,NA,North Carolina Senate polls,2026-08-03,2026-08-12,660,LV,50,45,NA,5
 NC,NC,Harper Polling,R,North Carolina Senate polls,2026-08-09,2026-08-10,600,LV,52,39,NA,13
 NC,NC,Change Research,D,North Carolina Senate polls,2026-08-03,2026-08-06,915,LV,50,43,NA,7
-NC,NC,Change Research,D,North Carolina Senate polls,2026-07-29,2026-08-01,967,A,50,41,NA,9
+NC,NC,Change Research,D,North Carolina Senate polls,2026-07-29,2026-08-01,967,NA,50,41,NA,9
 NC,NC,Elon University/YouGov,NA,North Carolina Senate polls,2026-07-23,2026-07-31,466,LV,53,42,NA,11
 NC,NC,Beacon Research,D,North Carolina Senate polls,2026-07-23,2026-07-27,1005,RV,53,44,NA,9
-NC,NC,Public Policy Polling,D,North Carolina Senate polls,2026-07-10,2026-07-11,759,A,48,44,NA,4
-NC,NC,NYT/Siena,NA,North Carolina Senate polls,2026-06-27,2026-06-27,601,A,50,43,NA,7
-NC,NC,Catawba College/YouGov,NA,North Carolina Senate polls,2026-06-10,2026-06-10,905,A,48,34,NA,14
+NC,NC,Public Policy Polling,D,North Carolina Senate polls,2026-07-10,2026-07-11,759,NA,48,44,NA,4
+NC,NC,NYT/Siena,NA,North Carolina Senate polls,2026-06-27,2026-06-27,601,NA,50,43,NA,7
+NC,NC,Catawba College/YouGov,NA,North Carolina Senate polls,2026-06-10,2026-06-10,905,NA,48,34,NA,14
 NC,NC,Harper Polling,R,North Carolina Senate polls,2026-05-10,2026-05-11,600,LV,50,39,NA,11
-NC,NC,Change Research,D,North Carolina Senate polls,2026-05-04,2026-05-08,957,A,49,42,NA,7
-NC,NC,Opinion Diagnostics,R,North Carolina Senate polls,2026-04-21,2026-04-24,830,A,50,41,NA,9
+NC,NC,Change Research,D,North Carolina Senate polls,2026-05-04,2026-05-08,957,NA,49,42,NA,7
+NC,NC,Opinion Diagnostics,R,North Carolina Senate polls,2026-04-21,2026-04-24,830,NA,50,41,NA,9
 NC,NC,High Point University/YouGov,NA,North Carolina Senate polls,2026-04-06,2026-04-06,703,LV,50,42,NA,8
-NC,NC,Quantus Insights,R,North Carolina Senate polls,2026-03-31,2026-04-01,987,A,49,44,NA,5
-NC,NC,Harper Polling,R,North Carolina Senate polls,2026-03-22,2026-03-23,600,A,49,41,NA,8
+NC,NC,Quantus Insights,R,North Carolina Senate polls,2026-03-31,2026-04-01,987,NA,49,44,NA,5
+NC,NC,Harper Polling,R,North Carolina Senate polls,2026-03-22,2026-03-23,600,NA,49,41,NA,8
 NC,NC,Catawba College/YouGov,NA,North Carolina Senate polls,2026-03-18,2026-03-18,1000,LV,48,34,NA,14
-NC,NC,Public Policy Polling,D,North Carolina Senate polls,2026-03-13,2026-03-14,556,A,47,44,NA,3
-NC,NC,Nexus Strategies/Strategic Partners Solutions,NA,North Carolina Senate polls,2026-03-08,2026-03-09,800,A,50,32,NA,18
-NC,NC,Change Research,D,North Carolina Senate polls,2026-01-31,2026-02-04,1069,A,50,40,NA,10
-NC,NC,TIPP Insights,R,North Carolina Senate polls,2026-01-12,2026-01-15,1512,A,48,24,NA,24
+NC,NC,Public Policy Polling,D,North Carolina Senate polls,2026-03-13,2026-03-14,556,NA,47,44,NA,3
+NC,NC,Nexus Strategies/Strategic Partners Solutions,NA,North Carolina Senate polls,2026-03-08,2026-03-09,800,NA,50,32,NA,18
+NC,NC,Change Research,D,North Carolina Senate polls,2026-01-31,2026-02-04,1069,NA,50,40,NA,10
+NC,NC,TIPP Insights,R,North Carolina Senate polls,2026-01-12,2026-01-15,1512,NA,48,24,NA,24
 NC,NC,Change Research,D,North Carolina Senate polls,2026-01-05,2026-01-07,1105,LV,47,42,NA,5
 NC,NC,Harper Polling,R,North Carolina Senate polls,2025-11-09,2025-11-10,600,LV,47,39,NA,8
-NC,NC,Harper Polling,R,North Carolina Senate polls,2025-09-14,2025-09-15,600,A,46,42,NA,4
+NC,NC,Harper Polling,R,North Carolina Senate polls,2025-09-14,2025-09-15,600,NA,46,42,NA,4
 NC,NC,Change Research,D,North Carolina Senate polls,2025-09-02,2025-09-08,855,LV,48,41,NA,7
-NC,NC,Harper Polling,R,North Carolina Senate polls,2025-08-11,2025-08-12,600,A,47,39,NA,8
+NC,NC,Harper Polling,R,North Carolina Senate polls,2025-08-11,2025-08-12,600,NA,47,39,NA,8
 NC,NC,Victory Insights,R,North Carolina Senate polls,2025-07-28,2025-07-30,600,LV,43,40,NA,3
 NC,NC,Emerson College,NA,North Carolina Senate polls,2025-07-30,2025-07-30,1000,RV,47,41,NA,6
 NE,NE,New York Times/Siena University,NA,Nebraska Senate polls,2026-10-23,2026-10-29,809,LV,43,49,NA,-6
@@ -428,22 +428,22 @@ NH,NH,Rasmussen Reports,R,New Hampshire Senate polls,2026-09-08,2026-09-10,1000,
 NH,NH,"Fabrizio, Lee, & Associates",R,New Hampshire Senate polls,2026-08-27,2026-08-30,600,LV,36,37,NA,-1
 NH,NH,University of New Hampshire,NA,New Hampshire Senate polls,2026-08-20,2026-08-24,1878,LV,43,45,NA,-2
 NH,NH,Saint Anselm College,NA,New Hampshire Senate polls,2026-08-17,2026-08-18,1411,LV,48,41,NA,7
-NH,NH,Peak Insights,R,New Hampshire Senate polls,2026-06-24,2026-06-27,500,A,43,42,NA,1
+NH,NH,Peak Insights,R,New Hampshire Senate polls,2026-06-24,2026-06-27,500,NA,43,42,NA,1
 NH,NH,Saint Anselm College,NA,New Hampshire Senate polls,2026-06-24,2026-06-25,1614,RV,47,41,NA,6
-NH,NH,University of New Hampshire,NA,New Hampshire Senate polls,2026-06-18,2026-06-23,2232,A,47,44,NA,3
-NH,NH,University of New Hampshire,NA,New Hampshire Senate polls,2026-04-21,2026-04-21,1295,A,49,42,NA,7
+NH,NH,University of New Hampshire,NA,New Hampshire Senate polls,2026-06-18,2026-06-23,2232,NA,47,44,NA,3
+NH,NH,University of New Hampshire,NA,New Hampshire Senate polls,2026-04-21,2026-04-21,1295,NA,49,42,NA,7
 NH,NH,Emerson College,NA,New Hampshire Senate polls,2026-03-21,2026-03-23,1000,LV,45,44,NA,1
 NH,NH,Saint Anselm College,NA,New Hampshire Senate polls,2026-03-16,2026-03-18,1491,RV,46,43,NA,3
 NH,NH,yes. every kid.,NA,New Hampshire Senate polls,2026-01-28,2026-01-29,563,LV,45,41,NA,4
-NH,NH,University of New Hampshire,NA,New Hampshire Senate polls,2026-01-15,2026-01-19,2053,A,50,45,NA,5
+NH,NH,University of New Hampshire,NA,New Hampshire Senate polls,2026-01-15,2026-01-19,2053,NA,50,45,NA,5
 NH,NH,NHJournal/Praecones Analytica,NA,New Hampshire Senate polls,2025-12-26,2025-12-28,603,RV,42,36,NA,6
 NH,NH,Guidant Polling and Strategy,R,New Hampshire Senate polls,2025-12-09,2025-12-11,600,LV,47,44,NA,3
 NH,NH,Saint Anselm College,NA,New Hampshire Senate polls,2025-11-18,2025-11-19,2212,RV,44,41,NA,3
 NH,NH,co/efficient,R,New Hampshire Senate polls,2025-10-09,2025-10-13,1034,LV,45,42,NA,3
 NH,NH,University of New Hampshire,NA,New Hampshire Senate polls,2025-09-17,2025-09-23,1235,LV,49,43,NA,6
 NH,NH,1892 Polling,R,New Hampshire Senate polls,2025-09-02,2025-09-04,500,LV,45,43,NA,2
-NH,NH,Saint Anselm College,NA,New Hampshire Senate polls,2025-08-26,2025-08-27,1776,A,48,37,NA,11
-NH,NH,Quantus Insights,R,New Hampshire Senate polls,2025-03-17,2025-03-19,650,A,44,53,NA,-9
+NH,NH,Saint Anselm College,NA,New Hampshire Senate polls,2025-08-26,2025-08-27,1776,NA,48,37,NA,11
+NH,NH,Quantus Insights,R,New Hampshire Senate polls,2025-03-17,2025-03-19,650,NA,44,53,NA,-9
 NM,NM,Research & Polling Inc./Albuquerque Journal,NA,New Mexico Senate polls,2026-08-21,2026-08-28,516,LV,53,38,NA,15
 OH-S,OH,ResearchCo.,NA,Ohio Senate polls,2026-10-30,2026-11-01,450,LV,49,48,NA,1
 OH-S,OH,New York Times/Siena University,NA,Ohio Senate polls,2026-10-23,2026-11-01,717,LV,49,44,NA,5
@@ -479,15 +479,15 @@ OH-S,OH,Concord Public Opinion Partners,D,Ohio Senate polls,2026-08-29,2026-08-3
 OH-S,OH,Abacus Data,NA,Ohio Senate polls,2026-08-26,2026-08-28,306,LV,52,46,NA,6
 OH-S,OH,Beacon Research,D,Ohio Senate polls,2026-08-06,2026-08-10,1008,RV,53,45,NA,8
 OH-S,OH,Tulchin Research,D,Ohio Senate polls,2026-07-29,2026-08-04,600,LV,47,43,NA,4
-OH-S,OH,New York Times/Siena University,NA,Ohio Senate polls,2026-06-15,2026-06-28,601,A,47,50,NA,-3
+OH-S,OH,New York Times/Siena University,NA,Ohio Senate polls,2026-06-15,2026-06-28,601,NA,47,50,NA,-3
 OH-S,OH,Fabrizio Ward,R,Ohio Senate polls,2026-06-14,2026-06-16,800,LV,48,45,NA,3
-OH-S,OH,Tulchin Research,D,Ohio Senate polls,2026-06-02,2026-06-04,600,A,46,42,NA,4
+OH-S,OH,Tulchin Research,D,Ohio Senate polls,2026-06-02,2026-06-04,600,NA,46,42,NA,4
 OH-S,OH,Beacon Research,D,Ohio Senate polls,2026-05-28,2026-06-01,1015,RV,53,45,NA,8
 OH-S,OH,Bowling Green State University/YouGov,NA,Ohio Senate polls,2026-04-07,2026-04-14,1000,RV,47,50,NA,-3
 OH-S,OH,Echelon Insights,R,Ohio Senate polls,2026-04-03,2026-04-09,413,LV,45,51,NA,-6
-OH-S,OH,Quantus Insights,R,Ohio Senate polls,2026-03-13,2026-03-14,784,A,44,46,NA,-2
-OH-S,OH,OnMessage Public Strategies,R,Ohio Senate polls,2026-03-03,2026-03-08,600,A,47,45,NA,2
-OH-S,OH,EMC Research,D,Ohio Senate polls,2026-02-10,2026-02-22,1343,A,51,47,NA,4
+OH-S,OH,Quantus Insights,R,Ohio Senate polls,2026-03-13,2026-03-14,784,NA,44,46,NA,-2
+OH-S,OH,OnMessage Public Strategies,R,Ohio Senate polls,2026-03-03,2026-03-08,600,NA,47,45,NA,2
+OH-S,OH,EMC Research,D,Ohio Senate polls,2026-02-10,2026-02-22,1343,NA,51,47,NA,4
 OH-S,OH,Emerson College,NA,Ohio Senate polls,2025-12-08,2025-12-08,850,RV,46,49,NA,-3
 OH-S,OH,Bowling Green State University/YouGov,NA,Ohio Senate polls,2025-10-02,2025-10-14,800,RV,49,48,NA,1
 OH-S,OH,Hart Research,D,Ohio Senate polls,2025-09-19,2025-09-22,800,LV,48,45,NA,3
@@ -518,9 +518,9 @@ SC,SC,InsiderAdvantage,R,South Carolina Senate polls,2026-09-08,2026-09-09,1200,
 SC,SC,Abacus Data,NA,South Carolina Senate polls,2026-08-26,2026-08-28,306,LV,42,55,NA,-13
 SC,SC,Impact Research,D,South Carolina Senate polls,2026-08-18,2026-08-24,700,LV,41,41,NA,0
 SC,SC,Impact Research,D,South Carolina Senate polls,2026-08-14,2026-08-22,900,LV,42,39,NA,3
-SC,SC,Impact Research,D,South Carolina Senate polls,2026-06-17,2026-06-22,700,A,45,48,NA,-3
-SC,SC,Impact Research,D,South Carolina Senate polls,2026-02-25,2026-03-01,700,A,42,47,NA,-5
-SC,SC,Public Policy Polling,D,South Carolina Senate polls,2025-11-21,2025-11-22,704,A,36,42,NA,-6
+SC,SC,Impact Research,D,South Carolina Senate polls,2026-06-17,2026-06-22,700,NA,45,48,NA,-3
+SC,SC,Impact Research,D,South Carolina Senate polls,2026-02-25,2026-03-01,700,NA,42,47,NA,-5
+SC,SC,Public Policy Polling,D,South Carolina Senate polls,2025-11-21,2025-11-22,704,NA,36,42,NA,-6
 SD,SD,Concord Public Opinion Partners,NA,South Dakota Senate polls,2026-10-22,2026-10-26,448,LV,43,41,NA,2
 SD,SD,Emerson College/KELOLAND,NA,South Dakota Senate polls,2026-10-19,2026-10-20,803,LV,42,50,NA,-8
 SD,SD,Quantus Insights,R,South Dakota Senate polls,2026-10-17,2026-10-19,633,LV,37,57,NA,-20
@@ -598,23 +598,23 @@ TX,TX,Texas A&M University/ReconMR/Siena University,NA,Texas Senate polls,2026-0
 TX,TX,Fox News,NA,Texas Senate polls,2026-07-23,2026-07-27,1006,RV,51,48,NA,3
 TX,TX,Texas Public Opinion Research,D,Texas Senate polls,2026-07-15,2026-07-17,1048,LV,45,40,NA,5
 TX,TX,A2 Insights,NA,Texas Senate polls,2026-06-23,2026-06-28,618,LV,48,46,NA,2
-TX,TX,New York Times/Siena University,NA,Texas Senate polls,2026-06-19,2026-06-27,656,A,47,47,NA,0
+TX,TX,New York Times/Siena University,NA,Texas Senate polls,2026-06-19,2026-06-27,656,NA,47,47,NA,0
 TX,TX,SoCal Strategies,R,Texas Senate polls,2026-06-21,2026-06-21,800,LV,47,49,NA,-2
 TX,TX,University of Texas/Texas Politics Project,NA,Texas Senate polls,2026-06-05,2026-06-12,1200,RV,42,43,NA,-1
 TX,TX,Texas A&M University/ReconMR/Siena University,NA,Texas Senate polls,2026-06-01,2026-06-04,807,LV,46,46,NA,0
-TX,TX,Quantus Insights,R,Texas Senate polls,2026-06-03,2026-06-04,800,A,43,45,NA,-2
+TX,TX,Quantus Insights,R,Texas Senate polls,2026-06-03,2026-06-04,800,NA,43,45,NA,-2
 TX,TX,Texas Public Opinion Research,NA,Texas Senate polls,2026-05-27,2026-05-28,1670,LV,47,44,NA,3
-TX,TX,Public Policy Polling,D,Texas Senate polls,2026-05-22,2026-05-23,643,A,45,38,NA,7
+TX,TX,Public Policy Polling,D,Texas Senate polls,2026-05-22,2026-05-23,643,NA,45,38,NA,7
 TX,TX,Texas Southern University,NA,Texas Senate polls,2026-04-22,2026-05-06,1223,LV,45,45,NA,0
 TX,TX,Texas Public Opinion Research,NA,Texas Senate polls,2026-04-17,2026-04-20,1018,LV,46,41,NA,5
 TX,TX,University of Texas/Texas Politics Project,NA,Texas Senate polls,2026-04-10,2026-04-20,1200,RV,42,34,NA,8
-TX,TX,Impact Research,D,Texas Senate polls,2026-03-12,2026-03-17,900,A,44,43,NA,1
-TX,TX,Public Policy Polling,D,Texas Senate polls,2026-03-04,2026-03-05,576,A,47,45,NA,2
+TX,TX,Impact Research,D,Texas Senate polls,2026-03-12,2026-03-17,900,NA,44,43,NA,1
+TX,TX,Public Policy Polling,D,Texas Senate polls,2026-03-04,2026-03-05,576,NA,47,45,NA,2
 TX,TX,University of Houston/YouGov,NA,Texas Senate polls,2026-01-20,2026-01-31,1502,LV,44,46,NA,-2
 TX,TX,Emerson College,NA,Texas Senate polls,2026-01-10,2026-01-12,1165,RV,46,46,NA,0
-TX,TX,Ragnar Research Partners,R,Texas Senate polls,2025-11-12,2025-11-17,1000,A,44,44,NA,0
-TX,TX,University of Houston/Texas Southern University,NA,Texas Senate polls,2025-09-19,2025-10-01,1650,A,46,49,NA,-3
+TX,TX,Ragnar Research Partners,R,Texas Senate polls,2025-11-12,2025-11-17,1000,NA,44,44,NA,0
+TX,TX,University of Houston/Texas Southern University,NA,Texas Senate polls,2025-09-19,2025-10-01,1650,NA,46,49,NA,-3
 TX,TX,UT Tyler,NA,Texas Senate polls,2025-09-17,2025-09-24,1032,RV,37,38,NA,-1
 VA,VA,The Public Sentiment Institute,NA,Virginia Senate polls,2026-06-12,2026-06-16,996,LV,51,33,NA,18
 VA,VA,The Public Sentiment Institute/Virginia Project,R,Virginia Senate polls,2026-05-01,2026-05-05,1047,LV,54,29,NA,25
-VA,VA,Virginia Commonwealth University,NA,Virginia Senate polls,2024-12-18,2025-01-15,806,A,45,38,NA,7
+VA,VA,Virginia Commonwealth University,NA,Virginia Senate polls,2024-12-18,2025-01-15,806,NA,45,38,NA,7
