@@ -10,3 +10,5 @@ output/sims.rds
 .Rproj.user/
 # resultados de la autoprueba (--simulado); la evaluacion real se versiona a mano tras la eleccion
 output/evaluacion/
+output/resultados_prueba2024.csv
+data/raw/resultados_*/

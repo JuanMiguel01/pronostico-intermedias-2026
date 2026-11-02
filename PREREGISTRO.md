@@ -62,6 +62,7 @@ La **versión principal** es la que incluye δ ("con_delta"). Se publica tambié
 - Líneas base: (a) swing uniforme sin δ, (b) solo fundamentales, (c) Poliwave, PollCheck y Silver Bulletin, (d) Polymarket (precio del contrato "Democratic Party controls" al momento de la descarga) — todas en `output/lineas_base.csv`.
 - Sensibilidad: `output/resumen.md` incluye la tabla de P(D Cámara) y P(D Senado) para medias de δ de 0, −1, −2, −2.7 y −4, para que el lector vea cuánto depende el pronóstico de la hipótesis Q5.
 - Fechas: evaluación provisional con llamadas de AP el 10 de noviembre; definitiva con certificados.
+- Carga de resultados: `Rscript R/07_resultados.R` lee las tablas de resultados de Wikipedia (435 distritos + 35 escaños) y escribe `output/resultados.csv`; luego `Rscript R/06_evaluate.R`. El cargador está probado con las páginas de 2024 (`--prueba2024`).
 
 ## 5. Anclaje externo del hash
 
