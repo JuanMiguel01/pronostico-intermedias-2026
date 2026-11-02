@@ -26,15 +26,17 @@ Requisitos: R ≥ 4.3 con `dplyr, tidyr, readr, stringr, purrr, rvest, xml2, htt
 | Cook Political Report, PVI 2026 | 435 distritos: PVI 2026 y 2025, votos Harris/Trump 2024 y Biden/Trump 2020 por distrito nuevo, incumbente | Datawrapper embebido en la página pública (`rAx2t`) |
 | Wikipedia (API `action=parse`) | generic ballot completo (fechas, n, LV/RV/A), candidatos por distrito y por escaño senatorial, PVI estatal, promedios de otros agregadores | público |
 | Poliwave | encuestas por carrera senatorial (35) y por distrito (119); se usa el historial completo embebido en el JS de cada página, no solo la tabla de 20 | público |
-| FiveThirtyEight (GitHub) | `raw_polls.csv`: 18 250 encuestas 1998–2022 con resultado real, para calibrar varianzas | público |
+| FiveThirtyEight (GitHub) | `raw_polls.csv`: 18 250 encuestas 1998–2022 con resultado real, para calibrar varianzas; `pollster-ratings-combined.csv` para ponderar por calidad del encuestador | público |
+| Wikipedia, páginas por estado (51) | calificaciones por distrito de Cook, Sabato, Inside Elections, DDHQ, Economist, Silver Bulletin; para el Senado, tabla con 12 calificadores | público |
+| Polymarket (API gamma) | precio de "qué partido controla la Cámara / el Senado", línea base (d) | público |
 
 FiftyPlusOne ofrece API solo de pago; no se usa. Los HTML crudos (75 MB) no se versionan, pero `data/raw/<fecha>/MANIFEST.csv` guarda su SHA-256 y los CSV congelados en `data/frozen/` sí están en el repositorio.
 
 ## Modelo (resumen)
 
-1. **Entorno nacional μ_G:** encuestas de los últimos 21 días (LV y RV; RV −1 hacia R; partidistas −2 y peso 0.5), margen a dos partidos (indecisos proporcionales), peso por recencia y tamaño, efecto de casa por encuestador. Incertidumbre por **bootstrap en dos etapas** (encuestadores → encuestas).
-2. **Sesgo δ (Q5):** δ ~ N(−1, 2.5²). Se publican dos versiones: con δ (principal) y sin δ.
-3. **Carreras:** fundamentales (μ_G + 2·PVI + incumbencia) combinados con el promedio de encuestas de la carrera por precisión inversa; la varianza de la encuesta tiene un piso sistemático (herding).
+1. **Entorno nacional μ_G:** encuestas de los últimos 21 días (LV y RV; RV −1 hacia R; partidistas −2 y peso 0.5), margen a dos partidos (indecisos proporcionales), peso por recencia, tamaño y calidad del encuestador (notas de 538), efecto de casa por encuestador estimado en 90 días. Incertidumbre por **bootstrap en dos etapas** (encuestadores → encuestas).
+2. **Sesgo δ (Q5):** δ ~ N(−1, 2.5²). Se publican dos versiones: con δ (principal) y sin δ, más una tabla de sensibilidad a la media de δ.
+3. **Carreras:** fundamentales (μ_G + 2·PVI + incumbencia, reducida a la mitad en mapas nuevos), promedio de encuestas de la carrera y calificación de expertos (Cook, Sabato, Inside Elections, DDHQ) combinados por precisión inversa; la varianza de la encuesta tiene un piso sistemático (herding).
 4. **Error por conglomerados:** ε_nac + ε_región + ε_estado + ε_distrito, con desviaciones calibradas en el archivo histórico (ver `docs/calibracion.md`). La Cámara y el Senado comparten ε_nac y ε_región, de modo que Q6 es coherente.
 5. **Casos especiales:** 19 distritos sin competencia entre los dos partidos (P = 1); CA‑06 (Kiley, independiente ex‑R, en el lado R); Senado con independientes principales en NE, MT y SD (se cuentan aparte de los escaños D).
 

@@ -1,0 +1,177 @@
+13:57:47 | Generic ballot: 38 encuestas en 21 dias (24 encuestadores); efectos de casa estimados para 58 encuestadores en 90 dias 
+13:57:47 | mu_G (margen D-R, dos partidos, LV, con efectos de casa) = +8.42 
+13:57:59 | sd bootstrap (2 etapas) de mu_G = 0.45  [IC80: +7.85, +9.05] 
+13:57:59 | Retador independiente principal en: MT 
+13:58:00 | Promedios: 93 distritos y 27 carreras senatoriales con encuestas utiles 
+13:58:05 | Linea base swing uniforme: Camara D 227, Senado D 49 
+13:58:07 | Sensibilidad a delta_mean: 
+  delta_mean camara_D_mediana P_D_camara senado_D_mediana P_D_senado
+1        0.0              233      0.836               52      0.692
+2       -1.0              229      0.769               51      0.600
+3       -2.0              225      0.687               51      0.507
+4       -2.7              222      0.624               50      0.434
+5       -4.0              217      0.492               49      0.313
+  P_D_camara_R_senado
+1               0.156
+2               0.184
+3               0.195
+4               0.206
+5               0.196
+13:58:22 | Simulaciones guardadas (20000 x 3 versiones) 
+13:58:22 | [con_delta] Camara D: mediana 230, IC80 [210, 253], P(D>=218)=0.780 | Senado D: mediana 51, P(D>=51)=0.602 | voto nacional +7.4 
+13:58:22 | [sin_delta] Camara D: mediana 233, IC80 [214, 257], P(D>=218)=0.849 | Senado D: mediana 52, P(D>=51)=0.694 | voto nacional +8.4 
+13:58:22 | [solo_fundamentales] Camara D: mediana 236, IC80 [217, 261], P(D>=218)=0.888 | Senado D: mediana 50, P(D>=51)=0.402 | voto nacional +8.4 
+   race_id pvi inc_party open_seat has_D n_polls poll_margin   rating
+1       AK  -6         R     FALSE  TRUE       6         2.1   Tossup
+2       AL -15         R      TRUE  TRUE       3       -17.4   Safe R
+3       AR -15         R     FALSE  TRUE       2       -10.0   Safe R
+4       CO   6         D     FALSE  TRUE       1        13.6   Safe D
+5       DE   8         D     FALSE  TRUE      NA          NA   Safe D
+6     FL-S  -5         R     FALSE  TRUE      20        -6.3 Likely R
+7       GA  -1         D     FALSE  TRUE       5        11.6 Likely D
+8       IA  -6         R      TRUE  TRUE      17         0.7   Tossup
+9       ID -18         R     FALSE FALSE      NA          NA   Safe R
+10      IL   6         D      TRUE  TRUE       3        15.5   Safe D
+11      KS  -8         R     FALSE  TRUE      12         3.3   Tossup
+12      KY -15         R      TRUE  TRUE       1       -12.1  Solid R
+13      LA -11         R      TRUE  TRUE       2        -2.3 Likely R
+14      MA  14         D     FALSE  TRUE       3        26.9   Safe D
+15      ME   4         R     FALSE  TRUE      18         5.1   Lean D
+16      MI   0         D      TRUE  TRUE      21         6.0 Likely D
+17      MN   3         D      TRUE  TRUE      14         7.3   Lean D
+18      MS -11         R     FALSE  TRUE       1        -4.7 Likely R
+19      MT -10         R      TRUE  TRUE       4        -5.7 Likely R
+20      NC  -1         R      TRUE  TRUE      12        11.5 Likely D
+21      NE -10         R     FALSE FALSE      11        -1.4   Lean R
+22      NH   2         D      TRUE  TRUE       7        10.3   Lean D
+23      NJ   4         D     FALSE  TRUE      NA          NA   Safe D
+24      NM   4         D     FALSE  TRUE       1        16.5   Safe D
+25    OH-S  -5         R     FALSE  TRUE      22         3.2   Tossup
+26      OK -17         R     FALSE  TRUE      NA          NA   Safe R
+27      OR   8         D     FALSE  TRUE      NA          NA   Safe D
+28      RI   8         D     FALSE  TRUE       3        33.3   Safe D
+29      SC  -8         R     FALSE  TRUE      10        -1.6   Lean R
+30      SD -15         R     FALSE FALSE       6        -9.2  Solid R
+31      TN -14         R     FALSE  TRUE       1       -25.4   Safe R
+32      TX  -6         R      TRUE  TRUE      34         3.8   Tossup
+33      VA   3         D     FALSE  TRUE      NA          NA   Safe D
+34      WV -21         R     FALSE  TRUE      NA          NA   Safe R
+35      WY -23         R      TRUE  TRUE      NA          NA   Safe R
+   rating_margin fund_margin w_poll w_rating  m_hat  sd   ind
+1            1.7        -7.6   0.51     0.34    0.5 3.5 FALSE
+2          -18.0       -21.6   0.62     0.17  -18.4 4.1 FALSE
+3          -18.0       -25.6   0.57     0.19  -15.2 4.4 FALSE
+4           18.0        24.4   0.55     0.20   17.2 4.5 FALSE
+5           18.0        28.4   0.00     0.45   23.8 6.7 FALSE
+6           -9.4        -5.6   0.53     0.32   -7.2 3.4 FALSE
+7           10.9        10.4   0.49     0.35   11.2 3.6 FALSE
+8           -1.2        -3.6   0.50     0.35   -0.6 3.5 FALSE
+9          -18.0       -31.6   0.00     0.45 -100.0 0.0 FALSE
+10          18.0        20.4   0.59     0.18   17.1 4.3 FALSE
+11           0.4       -11.6   0.51     0.34    0.1 3.5 FALSE
+12         -17.2       -21.6   0.55     0.20  -15.5 4.5 FALSE
+13         -12.4       -13.6   0.41     0.41   -8.5 3.8 FALSE
+14          18.0        40.4   0.59     0.18   28.3 4.3 FALSE
+15           3.6        12.4   0.52     0.34    5.7 3.5 FALSE
+16           4.5         8.4   0.52     0.33    5.9 3.5 FALSE
+17           7.0        14.4   0.52     0.34    8.3 3.5 FALSE
+18         -10.5       -17.6   0.40     0.41   -9.5 3.9 FALSE
+19         -13.5       -11.6   0.51     0.40   -9.4 3.8  TRUE
+20           9.8         6.4   0.48     0.36   10.1 3.6 FALSE
+21          -5.8       -15.6   0.52     0.38   -4.4 3.7  TRUE
+22           8.3        12.4   0.46     0.37    9.9 3.7 FALSE
+23          18.0        20.4   0.00     0.45   19.3 6.7 FALSE
+24          17.2        20.4   0.55     0.20   17.6 4.5 FALSE
+25           2.3        -5.6   0.52     0.33    1.6 3.5 FALSE
+26         -18.0       -29.6   0.00     0.45  -24.4 6.7 FALSE
+27          18.0        28.4   0.00     0.45   23.8 6.7 FALSE
+28          18.0        28.4   0.58     0.19   29.3 4.3 FALSE
+29          -4.0       -11.6   0.52     0.34   -3.9 3.5 FALSE
+30         -17.2       -25.6   0.70     0.18  -12.7 4.2  TRUE
+31         -18.0       -23.6   0.55     0.20  -23.4 4.5 FALSE
+32           3.0        -3.6   0.53     0.32    2.5 3.4 FALSE
+33          18.0        18.4   0.00     0.45   18.2 6.7 FALSE
+34         -18.0       -37.6   0.00     0.45  -28.8 6.7 FALSE
+35         -18.0       -37.6   0.00     0.45  -28.8 6.7 FALSE
+   district  pvi inc_party_model open_seat n_polls poll_margin   rating
+1     ME-02 -4.3               D      TRUE       3         3.0   Lean R
+2     MO-05 -8.8               D     FALSE      NA          NA   Safe D
+3     TX-35 -4.2               D      TRUE       3        -0.3   Tossup
+4     OH-07 -5.4               R     FALSE       1         2.5   Tossup
+5     FL-22 -3.6               D      TRUE       1        -2.0   Tossup
+6     KY-06 -7.1               R      TRUE       3         5.8   Tossup
+7     MI-10 -2.6               R      TRUE       1        -5.6   Lean D
+8     VA-01 -2.8               R     FALSE       3         0.1   Tossup
+9     IA-02 -4.4               R      TRUE       1         1.8   Tossup
+10    MT-01 -5.4               R      TRUE       3        -0.5   Tossup
+11    MI-04 -2.6               R     FALSE       2        -3.2   Tossup
+12    WI-01 -2.0               R     FALSE       3        -0.3   Lean R
+13    TX-15 -7.1               R     FALSE       3        -0.2   Lean D
+14    NC-01 -5.3               D     FALSE       4         1.5   Lean D
+15    FL-14 -4.3               D     FALSE       2         1.5   Lean D
+16    OH-10 -3.7               R     FALSE       1         1.3   Lean R
+17    PA-08 -3.6               R     FALSE       3         3.4   Lean D
+18    PA-01  0.7               R     FALSE       3         0.2   Tossup
+19    OH-09 -4.9               D     FALSE       2         3.8   Lean D
+20    SC-01 -6.1               R      TRUE       3        -0.5   Lean R
+21    PA-10 -2.5               R     FALSE       3         1.0   Lean D
+22    WI-03 -3.4               R     FALSE      NA          NA   Lean D
+23    OH-15 -4.7               R     FALSE       2         0.8   Lean R
+24    CO-03 -4.8               R     FALSE       2         1.1 Likely R
+25    NC-11 -5.0               R     FALSE       3         7.7   Lean D
+26    CO-05 -4.8               R     FALSE       1        -2.0   Tossup
+27    NY-17  1.5               R     FALSE       3         0.2   Tossup
+28    MN-01 -5.8               R     FALSE       3         0.6   Lean R
+29    FL-07 -5.4               R     FALSE       1         0.0   Lean R
+30    CO-08 -0.1               R     FALSE       1        -0.1   Lean D
+31    MO-02 -5.8               R     FALSE       3         1.8   Lean R
+32    FL-25 -2.8               D     FALSE       4         3.1   Lean D
+33    TX-23 -6.5               R      TRUE       1        -2.0   Lean R
+34    IA-03 -1.7               R     FALSE      NA          NA   Lean D
+35    AL-02 -6.5               D     FALSE      NA          NA   Lean R
+36    AZ-02 -6.7               R     FALSE       3         0.6   Lean R
+37    FL-09 -7.6               D     FALSE       2        -3.0 Likely R
+38    WA-03 -1.8               D     FALSE       1         0.0   Lean D
+39    FL-13 -6.0               R     FALSE       2        -3.9   Lean R
+40    MI-07 -0.4               R     FALSE       1         6.9   Tossup
+   fund_margin w_poll w_rating m_hat  sd
+1         -0.1   0.35     0.35   0.0 3.6
+2         -7.9   0.00     0.31   0.0 5.5
+3          0.0   0.35     0.36  -0.1 3.6
+4         -3.6   0.30     0.39  -0.1 3.7
+5          1.2   0.30     0.39  -0.2 3.7
+6         -5.9   0.34     0.36  -0.3 3.6
+7          3.2   0.29     0.38   0.5 3.7
+8          0.4   0.36     0.34  -0.5 3.5
+9         -0.3   0.29     0.38   0.8 3.7
+10        -2.3   0.36     0.35  -0.8 3.5
+11         0.7   0.29     0.38  -1.0 3.7
+12         2.0   0.37     0.34  -1.2 3.5
+13        -6.9   0.30     0.39  -1.3 3.7
+14        -0.9   0.33     0.37   1.4 3.6
+15         1.0   0.35     0.36   1.7 3.6
+16        -0.2   0.30     0.39  -2.0 3.7
+17        -1.2   0.35     0.35   2.1 3.5
+18         7.3   0.34     0.35   2.3 3.6
+19        -0.1   0.31     0.38   2.4 3.7
+20        -3.8   0.32     0.36  -2.5 3.6
+21         0.9   0.34     0.35   2.5 3.6
+22        -0.9   0.00     0.54   2.5 4.4
+23        -2.3   0.32     0.38  -2.6 3.7
+24        -3.7   0.35     0.35  -3.0 3.6
+25        -2.8   0.35     0.36   3.0 3.6
+26        -3.7   0.29     0.38  -3.2 3.7
+27         8.9   0.33     0.36   3.3 3.6
+28        -5.6   0.34     0.36  -3.3 3.6
+29        -3.7   0.30     0.39  -3.3 3.7
+30         5.7   0.29     0.38   3.5 3.7
+31        -4.3   0.35     0.36  -3.5 3.6
+32         4.0   0.38     0.34   3.8 3.5
+33        -4.6   0.30     0.39  -3.9 3.7
+34         2.5   0.00     0.54   4.0 4.4
+35        -3.4   0.00     0.55  -4.3 4.5
+36        -7.4   0.29     0.38  -4.3 3.7
+37        -5.5   0.30     0.39  -4.4 3.7
+38         7.3   0.29     0.38   4.5 3.7
+39        -4.9   0.33     0.37  -4.6 3.6
+40         5.2   0.29     0.38   4.8 3.7

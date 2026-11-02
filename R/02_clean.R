@@ -452,8 +452,141 @@ hist <- read_csv(file.path(RAW, "fte_raw_polls.csv"), col_types = cols(.default 
 msg("538 historico: %d encuestas, ciclos %s", nrow(hist), paste(range(hist$cycle), collapse = "-"))
 
 # ============================================================================
+# 7b. Calificaciones de expertos (Cook, Sabato, Inside Elections, DDHQ...) via Wikipedia
+# ============================================================================
+AT_LARGE <- c("AK", "DE", "ND", "SD", "VT", "WY")
+rating_to_margin <- function(x) {
+  # "Lean D (flip)" -> +5 ; "Tossup" -> 0 ; "Safe R" -> -18 ; "Tilt I" -> +2.5 (independiente = lado no R)
+  x <- str_to_lower(str_squish(str_remove_all(x, "\\(.*?\\)|\\[.*?\\]")))
+  lvl <- str_extract(x, "solid|safe|likely|lean|tilt|toss-?up")
+  party <- str_extract(x, "\\b[dri]$")
+  val <- case_when(lvl %in% c("solid", "safe") ~ 18, lvl == "likely" ~ 9, lvl == "lean" ~ 5, lvl == "tilt" ~ 2.5,
+                   str_detect(coalesce(lvl, ""), "toss") ~ 0, TRUE ~ NA_real_)
+  sgn <- case_when(party == "d" ~ 1, party == "i" ~ 1, party == "r" ~ -1, TRUE ~ 0)
+  val * sgn
+}
+parse_state_ratings <- function(file, st) {
+  # recorre encabezados y tablas en orden; cada tabla "Source | Ranking | As of" pertenece al ultimo "District N"
+  txt <- fromJSON(file)$parse$text
+  h <- read_html(txt)
+  nodes <- xml_find_all(h, "//h2|//h3|//h4|//table[contains(@class,'wikitable')]")
+  cur <- if (st %in% AT_LARGE) paste0(st, "-AL") else NA_character_
+  out <- list()
+  for (nd in nodes) {
+    nm <- xml_name(nd)
+    if (nm %in% c("h2", "h3", "h4")) {
+      t <- str_squish(xml_text(nd))
+      if (str_detect(t, regex("^District \\d+$|at-large", ignore_case = TRUE))) {
+        num <- str_extract(t, "\\d+")
+        cur <- if (is.na(num)) paste0(st, "-AL") else sprintf("%s-%02d", st, as.integer(num))
+      } else if (nm == "h2" && !st %in% AT_LARGE) cur <- NA_character_
+    } else {
+      hdr <- str_squish(xml_text(xml_find_all(nd, ".//tr[1]/th")))
+      if (length(hdr) >= 2 && hdr[1] == "Source" && str_detect(hdr[2], "^Ranking")) {
+        for (r in xml_find_all(nd, ".//tr[position()>1]")) {
+          cells <- str_squish(xml_text(xml_find_all(r, "./td|./th")))
+          if (length(cells) >= 3)
+            out[[length(out) + 1]] <- tibble(district = cur, source = cells[1], ranking = cells[2], as_of = cells[length(cells)])
+        }
+      }
+    }
+  }
+  bind_rows(out)
+}
+state_files <- list.files(file.path(RAW, "wiki_states"), full.names = TRUE)
+ratings_house_long <- map_dfr(state_files, ~ parse_state_ratings(.x, str_sub(basename(.x), 1, 2))) %>%
+  filter(!is.na(district)) %>%
+  mutate(source = clean_ref(source), ranking = clean_ref(ranking), as_of = clean_ref(as_of),
+         rating_margin = rating_to_margin(ranking),
+         as_of_date = suppressWarnings(mdy(as_of, quiet = TRUE))) %>%
+  filter(!is.na(rating_margin))
+ratings_house <- ratings_house_long %>% group_by(district) %>%
+  summarise(rating_margin = mean(rating_margin), n_raters = n(),
+            rating_consensus = names(sort(table(str_remove(ranking, "\\s*\\(flip\\)")), decreasing = TRUE))[1],
+            rating_latest = suppressWarnings(max(as_of_date, na.rm = TRUE)),
+            raters = paste(source, collapse = "; "), .groups = "drop")
+msg("Calificaciones Camara: %d distritos (%d calificadores distintos)", nrow(ratings_house), n_distinct(ratings_house_long$source))
+
+# Senado: tabla de Wikipedia con ~12 calificadores
+sen_rat_tab <- keep(sen_tabs, function(tb) { tt <- html_text2(tb); str_detect(tt, "Sabato") && str_detect(tt, "Cook") && str_detect(tt, "Tossup|Toss-up") })
+ratings_senate_long <- if (length(sen_rat_tab)) {
+  rows <- html_elements(sen_rat_tab[[1]], "tr")
+  hdr <- str_squish(html_text2(html_elements(rows[[2]], "th")))
+  # las 4 primeras columnas son State, PVI, Senator, Last election; el resto son calificadores "Cook Oct 30,2026[29]"
+  raters <- clean_ref(str_remove(hdr[-(1:4)], "\\s*(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec).*$"))
+  map_dfr(rows[-(1:2)], function(r) {
+    cells <- str_squish(html_text2(html_elements(r, "td, th")))
+    nr <- length(cells)
+    if (nr != length(raters) + 4 || str_detect(cells[1], "^Overall")) return(NULL)
+    tibble(state_raw = clean_ref(cells[1]), source = raters, ranking = clean_ref(cells[5:nr]))
+  })
+} else tibble()
+ratings_senate <- ratings_senate_long %>%
+  mutate(state_name = str_squish(str_remove(state_raw, "\\(.*\\)")), state = unname(STATE_ABBR[state_name]),
+         special = str_detect(state_raw, regex("special", ignore_case = TRUE)) | state %in% senate_races$state[senate_races$special],
+         race_id = if_else(special, paste0(state, "-S"), state),
+         rating_margin = rating_to_margin(ranking)) %>%
+  filter(!is.na(state), !is.na(rating_margin)) %>%
+  group_by(race_id) %>%
+  summarise(rating_margin = mean(rating_margin), n_raters = n(),
+            rating_consensus = names(sort(table(str_remove(ranking, "\\s*\\(flip\\)")), decreasing = TRUE))[1], .groups = "drop")
+msg("Calificaciones Senado: %d carreras", nrow(ratings_senate))
+
+# ============================================================================
+# 7c. Calidad de encuestadores (ratings de 538, 2024) emparejada por nombre
+# ============================================================================
+pr <- read_csv(file.path(RAW, "fte_pollster_ratings.csv"), col_types = cols(.default = "c")) %>%
+  transmute(fte_pollster = pollster, numeric_grade = as.numeric(numeric_grade), pollscore = as.numeric(POLLSCORE),
+            n_polls_fte = as.numeric(number_polls_pollster_total))
+STOP_TOKENS <- c("the", "and", "inc", "llc", "news", "poll", "polls", "polling", "research", "group", "college", "university",
+                 "insights", "strategies", "strategy", "public", "opinion", "survey", "surveys", "center", "institute",
+                 "associates", "partners", "communications", "media", "for", "company", "analytics", "data", "political", "report")
+name_tokens <- function(x) {
+  x <- str_to_lower(iconv(x, from = "UTF-8", to = "ASCII//TRANSLIT", sub = ""))
+  t <- str_split(str_squish(str_replace_all(x, "[^a-z0-9 ]", " ")), " ")[[1]]
+  unique(t[nchar(t) >= 3 & !t %in% STOP_TOKENS])
+}
+pr_tokens <- map(pr$fte_pollster, name_tokens)
+match_pollster <- function(name) {
+  t <- name_tokens(name); if (!length(t)) return(NA_integer_)
+  shared <- map_int(pr_tokens, ~ length(intersect(t, .x)))
+  score  <- map_dbl(pr_tokens, ~ if (!length(.x)) 0 else length(intersect(t, .x)) / length(union(t, .x)))
+  single <- map_lgl(pr_tokens, ~ length(.x) == 1)
+  cand <- which(shared >= 1 & (score >= 0.5 | shared >= 2 | length(t) == 1 | single))
+  if (!length(cand)) return(NA_integer_)
+  cand[which.max(score[cand] + coalesce(pr$n_polls_fte[cand], 0) / 1e5)]
+}
+all_pollsters <- sort(unique(c(polls_generic$pollster, polls_senate_wide$pollster, polls_house_wide$pollster)))
+pollster_quality <- tibble(pollster = all_pollsters, idx = map_int(all_pollsters, match_pollster)) %>%
+  mutate(fte_pollster = pr$fte_pollster[idx], numeric_grade = pr$numeric_grade[idx], pollscore = pr$pollscore[idx],
+         # peso de calidad: 0.6 (grado 0) a 1.0 (grado 3); desconocidos 0.8
+         w_quality = if_else(is.na(numeric_grade), 0.8, 0.6 + 0.4 * numeric_grade / 3)) %>% select(-idx)
+msg("Calidad de encuestadores: %d de %d emparejados con 538", sum(!is.na(pollster_quality$fte_pollster)), nrow(pollster_quality))
+
+# ============================================================================
+# 7d. Mercados de prediccion (Polymarket) como linea base (d)
+# ============================================================================
+pm_price <- function(file) {
+  if (!file.exists(file)) return(NA_real_)
+  ev <- fromJSON(file, simplifyVector = FALSE)
+  if (!length(ev)) return(NA_real_)
+  m <- keep(ev[[1]]$markets, ~ str_detect(.x$question %||% "", "Democratic Party"))
+  if (!length(m)) return(NA_real_)
+  as.numeric(fromJSON(m[[1]]$outcomePrices)[1])
+}
+benchmark_polymarket <- tibble(chamber = c("House", "Senate"),
+                               p_dem = c(pm_price(file.path(RAW, "polymarket_house.json")), pm_price(file.path(RAW, "polymarket_senate.json"))),
+                               fetched = STAMP, source = "gamma-api.polymarket.com (which-party-will-win-the-house/senate-in-2026)")
+print(benchmark_polymarket)
+
+# ============================================================================
 # 8. Guardar
 # ============================================================================
+write_csv(ratings_house,      file.path(DIR_FROZEN, "ratings_house.csv"))
+write_csv(ratings_house_long, file.path(DIR_FROZEN, "ratings_house_long.csv"))
+write_csv(ratings_senate,     file.path(DIR_FROZEN, "ratings_senate.csv"))
+write_csv(pollster_quality,   file.path(DIR_FROZEN, "pollster_quality.csv"))
+write_csv(benchmark_polymarket, file.path(DIR_FROZEN, "benchmark_polymarket.csv"))
 write_csv(districts %>% select(-wiki_candidates), file.path(DIR_FROZEN, "districts.csv"))
 write_csv(senate_races %>% left_join(senate_cands_pw, by = "state") %>% select(-wiki_candidates),
           file.path(DIR_FROZEN, "senate_races.csv"))

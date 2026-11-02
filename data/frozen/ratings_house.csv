@@ -1,0 +1,433 @@
+district,rating_margin,n_raters,rating_consensus,rating_latest,raters
+AK-AL,-6.333333333333333,6,Lean R,2026-10-27,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AL-01,-18,6,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AL-02,-5.083333333333333,6,Lean R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AL-03,-18,6,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AL-04,-18,6,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AL-05,-18,6,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AL-06,-18,6,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AL-07,18,6,Safe D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AR-01,-18,6,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AR-02,-9,6,Likely R,2026-10-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AR-03,-18,6,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AR-04,-18,6,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AZ-01,5.916666666666667,6,Lean D,2026-10-27,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AZ-02,-5.5,6,Lean R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AZ-03,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+AZ-04,18,6,Safe D,2026-09-10,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AZ-05,-14.333333333333334,6,Solid R,2026-10-24,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AZ-06,6.583333333333333,6,Likely D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AZ-07,18,6,Safe D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AZ-08,-13.5,6,Likely R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+AZ-09,-18,6,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+CA-01,18,5,Safe D,2026-07-14,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-02,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-03,18,5,Safe D,2026-07-14,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-04,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-05,-16.2,5,Safe R,2026-09-08,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-06,14.4,5,Likely D,2026-10-29,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-07,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-08,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-09,18,5,Safe D,2026-07-14,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-10,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-13,7.7,5,Likely D,2026-10-23,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-15,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-16,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-17,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-18,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-19,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-20,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-21,16.2,5,Safe D,2026-10-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-22,3.8,5,Lean D,2026-10-01,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-23,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-24,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-25,18,5,Safe D,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-26,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-27,18,5,Safe D,2026-07-14,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-28,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-29,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-30,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-31,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-32,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-33,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-34,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-35,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-36,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-37,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-38,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-39,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-40,-18,5,Safe R,2026-07-14,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-41,18,5,Safe D,2026-07-14,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-42,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-43,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-44,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-45,10.8,5,Likely D,2026-10-29,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-46,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-47,18,5,Safe D,2026-07-14,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-48,6.9,5,Likely D,2026-10-20,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-49,18,5,Safe D,2026-09-08,Decision Desk HQ; Inside Elections; The Cook Political Report; Sabato's Crystal Ball; The Economist
+CA-50,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-51,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CA-52,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CO-01,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CO-02,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CO-03,-6.4,5,Likely R,2026-10-27,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CO-04,-7.4,5,Likely R,2026-10-29,The Cook Political Report; Decision Desk HQ; The Economist; Inside Elections; Sabato's Crystal Ball
+CO-05,-3.6,5,Tossup,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CO-06,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CO-07,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CO-08,4.3,5,Lean D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CT-01,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CT-02,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CT-03,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CT-04,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+CT-05,18,5,Safe D,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+DE-AL,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-01,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-02,-14.4,5,Likely R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-03,-16.2,5,Safe R,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-04,-13.6,5,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-05,-15.75,4,Solid R,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+FL-06,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-07,-5.6,5,Lean R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-08,-14.4,5,Likely R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-09,-4.6,5,Likely R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-10,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-11,-13.6,5,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-12,-12.6,5,Likely R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-13,-5,5,Lean R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-14,2.5,5,Lean D,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-15,-16.2,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-16,-8.2,5,Likely R,2026-10-16,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-17,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-18,-14.4,5,Likely R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-19,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-20,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-21,-14.4,5,Likely R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-22,0,5,Tossup,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-23,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-24,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-25,4.5,5,Lean D,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-26,-14.4,5,Likely R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-27,-8.4,5,Lean R,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+FL-28,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+GA-01,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-02,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-03,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-04,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-05,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-06,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-07,-15.75,4,Solid R,2026-10-04,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-08,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-09,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-10,-15.75,4,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-11,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-12,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-13,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+GA-14,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+HI-01,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+HI-02,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IA-01,5.3,5,Lean D,2026-10-09,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IA-02,1,5,Tossup,2026-10-20,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IA-03,5.3,5,Lean D,2026-10-20,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IA-04,-18,5,Solid R,2026-08-20,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+ID-01,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+ID-02,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-01,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-02,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-03,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-04,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-05,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-06,18,4,Safe D,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-07,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-08,18,4,Safe D,2026-09-08,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-09,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-10,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-11,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-12,-18,4,Safe R,2026-10-10,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-13,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-14,18,4,Safe D,2026-10-01,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-15,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-16,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IL-17,18,4,Safe D,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+IN-01,12.6,5,Likely D,2026-09-08,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IN-02,-18,5,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IN-03,-18,5,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IN-04,-18,5,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IN-05,-8.2,5,Likely R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IN-06,-18,5,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IN-07,18,5,Safe D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IN-08,-18,5,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+IN-09,-18,5,Safe R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+KS-01,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+KS-02,-9,4,Likely R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+KS-03,15.75,4,Solid D,2026-07-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+KS-04,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+KY-01,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+KY-02,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+KY-03,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+KY-04,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+KY-05,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+KY-06,-1.25,4,Tossup,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+LA-01,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+LA-02,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+LA-03,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+LA-04,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+LA-05,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+LA-06,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MA-01,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MA-02,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MA-03,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MA-04,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MA-05,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MA-06,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MA-07,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MA-08,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MA-09,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MD-01,-13.5,4,Likely R,2026-10-27,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MD-02,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MD-03,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MD-04,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MD-05,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MD-06,18,4,Safe D,2026-09-24,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MD-07,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MD-08,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+ME-01,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+ME-02,-3,5,Lean R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+MI-01,-14.4,5,Likely R,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MI-02,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MI-03,16.5,6,Safe D,2026-08-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+MI-04,-0.8333333333333334,6,Tossup,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+MI-05,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MI-06,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MI-07,2.8,5,Tossup,2026-10-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MI-08,14.4,5,Likely D,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MI-09,-18,5,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MI-10,2.75,6,Lean D,2026-10-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist; Silver Bulletin
+MI-11,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MI-12,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MI-13,18,5,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+MN-01,-5,4,Lean R,2026-10-29,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball
+MN-02,11.25,4,Likely D,2026-10-01,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MN-03,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MN-04,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MN-05,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MN-06,-18,4,Safe R,2026-09-08,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MN-07,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MN-08,-15.75,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MO-01,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MO-02,-8,4,Lean R,2026-10-27,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MO-03,-18,4,Safe R,2026-10-01,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MO-04,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MO-05,18,4,Safe D,2026-10-01,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MO-06,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MO-07,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MO-08,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MS-01,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MS-02,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MS-03,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MS-04,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MT-01,0,4,Tossup,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+MT-02,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-01,3.125,4,Lean D,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-02,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-03,-8,4,Likely R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-04,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-05,-13.5,4,Likely R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-06,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-07,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-08,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-09,-11.25,4,Likely R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-10,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-11,3.125,4,Lean D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-12,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-13,-11.25,4,Likely R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NC-14,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+ND-AL,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NE-01,-9,4,Likely R,2026-10-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NE-02,8,4,Likely D,2026-10-15,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NE-03,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NH-01,8,4,Likely D,2026-10-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NH-02,13.5,4,Likely D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NJ-01,18,5,Solid D,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-02,-8.2,5,Likely R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-03,18,5,Solid D,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-04,-18,5,Solid R,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-05,18,5,Solid D,2026-09-08,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-06,18,5,Solid D,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-07,6.1,5,Lean D,2026-09-25,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-08,18,5,Solid D,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-09,14.4,5,Likely D,2026-10-15,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-10,18,5,Solid D,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-11,18,5,Solid D,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NJ-12,18,5,Solid D,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NM-01,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NM-02,5.375,4,Lean D,2026-08-12,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NM-03,18,4,Safe D,2026-10-01,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NV-01,8.2,5,Likely D,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NV-02,-5.3,5,Lean R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NV-03,10,5,Likely D,2026-10-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NV-04,10.8,5,Likely D,2026-08-23,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+NY-01,-12.5,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-02,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-03,7,4,Lean D,2026-10-09,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-04,7.375,4,Likely D,2026-10-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-05,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-06,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-07,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-08,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-09,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-10,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-11,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-12,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-13,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-14,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-15,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-16,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-17,1.25,4,Tossup,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-18,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-19,11.25,4,Likely D,2026-10-15,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-20,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-21,-6,4,Lean R,2026-10-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-22,18,4,Safe D,2026-10-08,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-23,-15.75,4,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-24,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-25,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+NY-26,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-01,8,4,Likely D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-02,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-03,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-04,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-05,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-06,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-07,0.625,4,Tossup,2026-10-29,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball
+OH-08,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-09,3.125,4,Lean D,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-10,-6,4,Lean R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-11,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-12,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-13,11.25,4,Likely D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-14,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OH-15,-5.8,5,Lean R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; The Economist
+OK-01,-15.75,4,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OK-02,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OK-03,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OK-04,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OK-05,-13.5,4,Likely R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OR-01,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OR-02,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OR-03,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OR-04,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OR-05,18,4,Safe D,2026-10-27,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+OR-06,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+PA-01,0,5,Tossup,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-02,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-03,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-04,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-05,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-06,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-07,5.3,5,Lean D,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-08,3.5,5,Lean D,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-09,-18,5,Solid R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-10,5.3,5,Lean D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-11,-16.2,5,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-12,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-13,-18,5,Solid R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-14,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+PA-15,-18,5,Solid R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-16,-18,5,Solid R,2026-09-08,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+PA-17,18,5,Solid D,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+RI-01,18,5,Solid D,2026-08-23,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+RI-02,18,5,Solid D,2026-09-08,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+SC-01,-3.125,4,Lean R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+SC-02,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+SC-03,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+SC-04,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+SC-05,-15.75,4,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+SC-06,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+SC-07,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+SD-AL,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TN-01,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TN-02,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TN-03,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TN-04,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TN-05,-18,4,Safe R,2026-09-08,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TN-06,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TN-07,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TN-08,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TN-09,-13.5,4,Likely R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+TX-01,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-02,-16.2,5,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-03,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-04,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-05,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-06,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-07,18,5,Solid D,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-08,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-09,-8.2,5,Likely R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-10,-16.2,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-11,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-12,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-13,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-14,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-15,2.5,5,Lean D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-16,18,5,Solid D,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-17,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-18,18,5,Solid D,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-19,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-20,18,5,Solid D,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-21,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-22,-16.2,5,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-23,-4.8,5,Lean R,2026-10-26,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-24,-14.4,5,Likely R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-25,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-26,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-27,-16.2,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-28,7.4,5,Likely D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-29,18,5,Solid D,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-30,18,5,Solid D,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-31,-16.2,5,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-32,-14.4,5,Likely R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-33,18,5,Solid D,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-34,5.6,5,Lean D,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-35,0,5,Tossup,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-36,-18,5,Solid R,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-37,18,5,Solid D,2026-10-22,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+TX-38,-16.2,5,Solid R,2026-10-27,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+UT-01,18,5,Solid D,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+UT-02,-18,5,Solid R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+UT-03,-18,5,Solid R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+UT-04,-18,5,Solid R,2026-08-20,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin
+VA-01,-1.875,4,Tossup,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-02,5.375,4,Lean D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-03,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-04,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-05,-4.75,4,Lean R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-06,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-07,13.5,4,Likely D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-08,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-09,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-10,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VA-11,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+VT-AL,18,4,Safe D,2026-07-14,The Cook Political Report; Decision Desk HQ; Inside Elections; Sabato's Crystal Ball
+WA-01,18,5,Safe D,2026-07-28,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Split Ticket
+WA-02,18,5,Safe D,2026-07-28,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Split Ticket
+WA-03,5.6,5,Lean D,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Split Ticket
+WA-04,-16.2,5,Safe R,2026-09-08,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Split Ticket
+WA-05,-12.375,8,Likely R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; RealClearPolitics; The Economist; Split Ticket; Fox News
+WA-06,18,5,Safe D,2026-07-28,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Split Ticket
+WA-07,18,5,Safe D,2026-07-28,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Split Ticket
+WA-08,18,5,Safe D,2026-09-25,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Split Ticket
+WA-09,18,5,Safe D,2026-07-28,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Split Ticket
+WA-10,18,5,Safe D,2026-07-28,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Split Ticket
+WI-01,-5,4,Lean R,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WI-02,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WI-03,5.375,4,Lean D,2026-10-29,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WI-04,18,4,Safe D,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WI-05,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WI-06,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WI-07,-15.75,4,Solid R,2026-10-30,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WI-08,-15.75,4,Solid R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WV-01,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WV-02,-18,4,Safe R,2026-07-14,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball
+WY-AL,-16.2,5,Solid R,2026-10-15,Decision Desk HQ; The Cook Political Report; Inside Elections; Sabato's Crystal Ball; Silver Bulletin

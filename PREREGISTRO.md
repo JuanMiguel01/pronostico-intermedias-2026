@@ -33,11 +33,14 @@ La **versión principal** es la que incluye δ ("con_delta"). Se publica tambié
 | RV → LV | −1 punto hacia R |
 | Encuestas partidistas | −2 puntos contra el patrocinador y peso 0.5 |
 | Adultos (A) | excluidas |
-| Efectos de casa | desviación del encuestador respecto al promedio, encogida n/(n+3) |
+| Efectos de casa | desviación del encuestador respecto al promedio local (±7 días) de los demás, ventana de 90 días, encogida n/(n+3) |
+| Calidad del encuestador | peso 0.6–1.0 según la nota numérica de FiveThirtyEight (2024); desconocidos 0.8 |
 | Incertidumbre de μ_G | bootstrap en dos etapas (encuestadores → encuestas), 2000 réplicas |
-| Fundamentales Cámara | μ_G + 2·PVI₂₀₂₆ + 2.5·incumbencia; σ = 6.5 (+1.5 en estados rediseñados) |
+| Fundamentales Cámara | μ_G + 2·PVI₂₀₂₆ + 2.5·incumbencia (×0.5 en mapas nuevos); σ = 6.5 (+1.5 en estados rediseñados) |
 | Fundamentales Senado | μ_G + 2·PVI_estado + 4·incumbencia; σ = 9 |
-| Combinación encuesta/fundamentales | precisión inversa; var. encuesta = s_sys² + s_within²/n_eff |
+| Calificaciones de expertos | promedio de Cook, Sabato, Inside Elections, DDHQ (y otros) vía Wikipedia, convertido a margen: Toss‑up 0, Tilt ±2.5, Lean ±5, Likely ±9, Solid/Safe ±18; σ = 6 (10 si Solid/Safe) |
+| Combinación | precisión inversa de fundamentales, encuestas y calificación; var. encuesta = s_sys² + s_within²/n_eff |
+| Correlación Cámara–Senado | comparten ε_nac, ε_región y la mitad de ε_estado |
 | Componentes de error | σ_nac, σ_región, σ_estado, σ_distrito calibrados con 538 1998–2022 (`data/frozen/calibration.csv`) |
 | Réplicas | 20 000, semilla 20261103 |
 | Sin competencia | el único partido mayor gana con P = 1 |
@@ -51,7 +54,8 @@ La **versión principal** es la que incluye δ ("con_delta"). Se publica tambié
 - MAE y sesgo del margen por distrito/estado; cobertura real de los IC 80 % (¿caen Q1–Q3 dentro?).
 - Q5: δ observado = voto popular real − μ_G; se compara con la distribución preregistrada.
 - Post‑mortem multietápico: ANOVA anidada (`nlme::lme`) de los residuos de margen región/estado; si la mayor parte del error es nacional, el problema fue sesgo sistemático; si es distrital, información local.
-- Líneas base: (a) swing uniforme sin δ, (b) solo fundamentales, (c) Poliwave, PollCheck y Silver Bulletin (`output/lineas_base.csv`), (d) mercados de predicción (anotar la noche del 3 de noviembre).
+- Líneas base: (a) swing uniforme sin δ, (b) solo fundamentales, (c) Poliwave, PollCheck y Silver Bulletin, (d) Polymarket (precio del contrato "Democratic Party controls" al momento de la descarga) — todas en `output/lineas_base.csv`.
+- Sensibilidad: `output/resumen.md` incluye la tabla de P(D Cámara) y P(D Senado) para medias de δ de 0, −1, −2, −2.7 y −4, para que el lector vea cuánto depende el pronóstico de la hipótesis Q5.
 - Fechas: evaluación provisional con llamadas de AP el 10 de noviembre; definitiva con certificados.
 
 ## 5. Anclaje externo del hash

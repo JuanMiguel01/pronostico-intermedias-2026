@@ -23,6 +23,34 @@ wiki_parse_html("2026_United_States_Senate_elections", file.path(RAW, "wiki_sena
 http_get("https://raw.githubusercontent.com/fivethirtyeight/data/master/pollster-ratings/raw_polls.csv",
          file.path(RAW, "fte_raw_polls.csv"))
 
+# ---- 3b. Calificaciones de expertos, calidad de encuestadores, mercados --------
+# Cook: calificaciones de los 435 distritos (si el sitio no responde al script, se usan las de Wikipedia)
+http_get("https://www.cookpolitical.com/ratings/house-race-ratings", file.path(RAW, "cook_house_ratings.html"), retries = 2)
+
+# Wikipedia por estado: cada distrito tiene una tabla "Source | Ranking | As of" con DDHQ, Cook, Inside Elections, Sabato...
+dir.create(file.path(RAW, "wiki_states"), showWarnings = FALSE)
+for (st in names(STATE_NAME)) {
+  dest <- file.path(RAW, "wiki_states", paste0(st, ".json"))
+  if (file.exists(dest) && file.size(dest) > 1000) next
+  nm <- str_replace_all(STATE_NAME[[st]], " ", "_")
+  if (st == "CA") {
+    # California esta dividida en dos paginas
+    wiki_parse_html(sprintf("2026_United_States_House_of_Representatives_elections_in_California_(districts_1%s26)", "–"),
+                    file.path(RAW, "wiki_states", "CA_1.json"))
+    wiki_parse_html(sprintf("2026_United_States_House_of_Representatives_elections_in_California_(districts_27%s52)", "–"),
+                    file.path(RAW, "wiki_states", "CA_2.json"))
+    next
+  }
+  ok <- wiki_parse_html(sprintf("2026_United_States_House_of_Representatives_elections_in_%s", nm), dest)
+  if (is.null(ok))   # estados con un solo distrito usan "election" en singular
+    wiki_parse_html(sprintf("2026_United_States_House_of_Representatives_election_in_%s", nm), dest)
+}
+msg("Paginas estatales de Wikipedia: %d", length(list.files(file.path(RAW, "wiki_states"))))
+http_get("https://raw.githubusercontent.com/fivethirtyeight/data/master/pollster-ratings/pollster-ratings-combined.csv",
+         file.path(RAW, "fte_pollster_ratings.csv"))
+http_get("https://gamma-api.polymarket.com/events?slug=which-party-will-win-the-house-in-2026",  file.path(RAW, "polymarket_house.json"))
+http_get("https://gamma-api.polymarket.com/events?slug=which-party-will-win-the-senate-in-2026", file.path(RAW, "polymarket_senate.json"))
+
 # ---- 4. Poliwave -----------------------------------------------------------
 PW <- "https://www.poliwave.com"
 dir.create(file.path(RAW, "poliwave"), showWarnings = FALSE)

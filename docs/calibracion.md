@@ -1,6 +1,6 @@
 # Calibracion historica (archivo FiveThirtyEight 1998-2022)
 
-Generado: 2026-11-02 13:36. Encuestas de los ultimos 21 dias antes de cada eleccion.
+Generado: 2026-11-02 13:57. Encuestas de los ultimos 21 dias antes de cada eleccion.
 
 ## Error del promedio final del generic ballot por ciclo (poll - resultado; >0 exagera a D)
 

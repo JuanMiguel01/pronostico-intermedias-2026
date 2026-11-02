@@ -61,11 +61,15 @@ fund <- race_table(sims[["solo_fundamentales"]]) %>% select(race_id, p_dem_solo_
 
 info <- bind_rows(
   D %>% transmute(race_id = district, pvi = round(pvi_2026, 2), incumbent, inc_party = inc_party_model, open_seat, uncontested,
-                  cand_D, cand_R, polled, n_polls, poll_margin = round(poll_margin, 2), fund_margin = round(fund_margin, 2),
-                  w_poll = round(w_poll, 3), m_hat = round(m_hat, 2), redistricted),
+                  cand_D, cand_R, polled, n_polls, poll_margin = round(poll_margin, 2),
+                  rating_consensus, rating_margin = round(rating_margin, 2), n_raters,
+                  fund_margin = round(fund_margin, 2), w_poll = round(w_poll, 3), w_rating = round(w_rating, 3),
+                  m_hat = round(m_hat, 2), redistricted),
   S %>% transmute(race_id, pvi, incumbent = senator, inc_party, open_seat, uncontested = !has_D & !polled,
                   cand_D = if_else(challenger_is_ind, cand_I, cand_D), cand_R, polled, n_polls, poll_margin = round(poll_margin, 2),
-                  fund_margin = round(fund_margin, 2), w_poll = round(w_poll, 3), m_hat = round(m_hat, 2), redistricted = FALSE)
+                  rating_consensus, rating_margin = round(rating_margin, 2), n_raters,
+                  fund_margin = round(fund_margin, 2), w_poll = round(w_poll, 3), w_rating = round(w_rating, 3),
+                  m_hat = round(m_hat, 2), redistricted = FALSE)
 )
 predicciones <- main %>% left_join(alt, by = "race_id") %>% left_join(fund, by = "race_id") %>% left_join(info, by = "race_id") %>%
   mutate(across(c(p_dem, p_ind, p_rep, p_dem_sin_delta, p_dem_solo_fund), ~ round(.x, 4)),
@@ -103,6 +107,12 @@ lineas_base <- bind_rows(
   tibble(linea_base = "(c) Silver Bulletin (FLIPR)", camara_D = 213 + 25, P_D_camara = 0.95, senado_D = NA, P_D_senado = NA,
          fuente = "Silver Bulletin: ~95% Camara, +25 escanos netos sobre 213 actuales, citado en el plan", fecha = "2026-11-01")
 )
+pm <- read_csv(file.path(DIR_FROZEN, "benchmark_polymarket.csv"))
+if (nrow(pm) && any(!is.na(pm$p_dem))) {
+  lineas_base <- bind_rows(lineas_base,
+    tibble(linea_base = "(d) Polymarket (mercado de prediccion)", camara_D = NA, P_D_camara = pm$p_dem[pm$chamber == "House"],
+           senado_D = NA, P_D_senado = pm$p_dem[pm$chamber == "Senate"], fuente = pm$source[1], fecha = as.character(pm$fetched[1])))
+}
 write_csv(lineas_base, file.path(DIR_OUT, "lineas_base.csv"))
 write_csv(bench_gen %>% mutate(nota = "promedios generic ballot de otros agregadores (Wikipedia, 1 nov 2026)"),
           file.path(DIR_OUT, "lineas_base_generic_ballot.csv"))
@@ -148,9 +158,9 @@ md <- c(
   sprintf("Promedio generic ballot (dos partidos, LV, efectos de casa): **D%+.1f** (sd bootstrap en dos etapas %.2f).", ms$mu_G, ms$sigma_mu), "",
   "| Cantidad | con delta (principal) | sin delta |", "|---|---|---|",
   sprintf("| Q1 margen voto popular Camara (2 partidos) | %s [IC80 %s, %s] | %s [%s, %s] |", fmt(r$Q1_voto_nacional_margen), fmt(r$Q1_lo80), fmt(r$Q1_hi80), fmt(r2$Q1_voto_nacional_margen), fmt(r2$Q1_lo80), fmt(r2$Q1_hi80)),
-  sprintf("| Q2 escanos D Camara | %d [IC80 %d, %d] | %d [%d, %d] |", r$Q2_camara_D_mediana, r$Q2_lo80, r$Q2_hi80, r2$Q2_camara_D_mediana, r2$Q2_lo80, r2$Q2_hi80),
+  sprintf("| Q2 escanos D Camara | %s [IC80 %s, %s] | %s [%s, %s] |", fmt(r$Q2_camara_D_mediana, 0), fmt(r$Q2_lo80, 0), fmt(r$Q2_hi80, 0), fmt(r2$Q2_camara_D_mediana, 0), fmt(r2$Q2_lo80, 0), fmt(r2$Q2_hi80, 0)),
   sprintf("| Q2 P(D >= 218) | %s | %s |", fmt(r$Q2_P_D_mayoria, 3), fmt(r2$Q2_P_D_mayoria, 3)),
-  sprintf("| Q3 escanos D Senado (con King y Sanders) | %d [IC80 %d, %d] | %d [%d, %d] |", r$Q3_senado_D_mediana, r$Q3_lo80, r$Q3_hi80, r2$Q3_senado_D_mediana, r2$Q3_lo80, r2$Q3_hi80),
+  sprintf("| Q3 escanos D Senado (con King y Sanders) | %s [IC80 %s, %s] | %s [%s, %s] |", fmt(r$Q3_senado_D_mediana, 0), fmt(r$Q3_lo80, 0), fmt(r$Q3_hi80, 0), fmt(r2$Q3_senado_D_mediana, 0), fmt(r2$Q3_lo80, 0), fmt(r2$Q3_hi80, 0)),
   sprintf("| Q3 P(D >= 51) | %s | %s |", fmt(r$Q3_P_D_51, 3), fmt(r2$Q3_P_D_51, 3)),
   sprintf("| Q3 P(D + independientes nuevos >= 51) | %s | %s |", fmt(r$Q3_P_D_51_con_independientes, 3), fmt(r2$Q3_P_D_51_con_independientes, 3)),
   sprintf("| Q5 delta (sesgo de encuestas, negativo = exageran a D) | %s [IC80 %s, %s] | 0 (fijo) |", fmt(r$Q5_delta_media), fmt(r$Q5_delta_lo80), fmt(r$Q5_delta_hi80)),
@@ -162,12 +172,15 @@ md <- c(
   sprintf("| %s | %s | %s | %s | %s | %s |", lineas_base$linea_base, coalesce(as.character(lineas_base$camara_D), "-"),
           coalesce(fmt(lineas_base$P_D_camara, 2), "-"), coalesce(as.character(lineas_base$senado_D), "-"),
           coalesce(fmt(lineas_base$P_D_senado, 2), "-"), lineas_base$fuente), "",
-  "## Carreras senatoriales (version principal)", "", "| carrera | P(no R) | lado no R | margen mediana | IC80 | encuestas |", "|---|---|---|---|---|---|",
+  "## Sensibilidad a la hipotesis de sesgo (media de delta; 5 000 replicas cada una)", "",
+  "| media de delta | Camara D mediana | P(D Camara) | Senado D mediana | P(D Senado) | P(D Camara y R Senado) |", "|---|---|---|---|---|---|",
+  with(ms$sensibilidad, sprintf("| %s | %s | %s | %s | %s | %s |", fmt(delta_mean), fmt(camara_D_mediana, 0), fmt(P_D_camara, 3), fmt(senado_D_mediana, 0), fmt(P_D_senado, 3), fmt(P_D_camara_R_senado, 3))), "",
+  "## Carreras senatoriales (version principal)", "", "| carrera | P(no R) | lado no R | margen mediana | IC80 | encuestas | calificacion |", "|---|---|---|---|---|---|---|",
   with(predicciones %>% filter(chamber == "Senate") %>% arrange(desc(p_dem + p_ind)),
-       sprintf("| %s | %s | %s | %s | [%s, %s] | %s |", race_id, fmt(p_dem + p_ind, 3), coalesce(cand_D, "-"), fmt(margin_median), fmt(margin_lo80), fmt(margin_hi80), coalesce(as.character(n_polls), "0"))), "",
-  "## Distritos mas competitivos (P(D) entre 0.2 y 0.8, version principal)", "", "| distrito | P(D) | PVI | incumbente | margen mediana | encuestas |", "|---|---|---|---|---|---|",
+       sprintf("| %s | %s | %s | %s | [%s, %s] | %s | %s |", race_id, fmt(p_dem + p_ind, 3), coalesce(cand_D, "-"), fmt(margin_median), fmt(margin_lo80), fmt(margin_hi80), coalesce(as.character(n_polls), "0"), coalesce(rating_consensus, "-"))), "",
+  "## Distritos mas competitivos (P(D) entre 0.2 y 0.8, version principal)", "", "| distrito | P(D) | PVI | incumbente | margen mediana | encuestas | calificacion |", "|---|---|---|---|---|---|---|",
   with(predicciones %>% filter(chamber == "House", p_dem >= .2, p_dem <= .8) %>% arrange(p_dem),
-       sprintf("| %s | %s | %s | %s (%s) | %s | %s |", race_id, fmt(p_dem, 3), fmt(pvi), coalesce(incumbent, "abierto"), inc_party, fmt(margin_median), coalesce(as.character(n_polls), "0")))
+       sprintf("| %s | %s | %s | %s (%s) | %s | %s | %s |", race_id, fmt(p_dem, 3), fmt(pvi), coalesce(incumbent, "abierto"), inc_party, fmt(margin_median), coalesce(as.character(n_polls), "0"), coalesce(rating_consensus, "-")))
 )
 writeLines(md, file.path(DIR_OUT, "resumen.md"))
 

@@ -26,11 +26,11 @@ SEED <- 20261103L
 # ---- utilidades ------------------------------------------------------------
 msg <- function(...) cat(format(Sys.time(), "%H:%M:%S"), "|", sprintf(...), "\n")
 
-http_get <- function(url, dest, sleep = 0.6, retries = 4, skip_existing = TRUE) {
+http_get <- function(url, dest, sleep = 0.6, retries = 4, skip_existing = TRUE, ua = UA) {
   if (skip_existing && file.exists(dest) && file.size(dest) > 1000) return(TRUE)
   # Descarga con reintentos; devuelve TRUE si se escribio el archivo.
   for (i in seq_len(retries)) {
-    r <- tryCatch(GET(url, user_agent(UA), timeout(90)), error = function(e) NULL)
+    r <- tryCatch(GET(url, user_agent(ua), timeout(90)), error = function(e) NULL)
     if (!is.null(r) && status_code(r) == 200) {
       writeBin(content(r, "raw"), dest)
       Sys.sleep(sleep)
@@ -46,10 +46,12 @@ wiki_parse_html <- function(page, dest) {
   # Devuelve el HTML renderizado por la API action=parse (tablas limpias)
   url <- paste0("https://en.wikipedia.org/w/api.php?action=parse&page=",
                 URLencode(page, reserved = TRUE),
-                "&prop=text&format=json&formatversion=2")
+                "&prop=text&format=json&formatversion=2&redirects=1")
   ok <- http_get(url, dest)
   if (!ok) return(NULL)
-  fromJSON(dest)$parse$text
+  j <- fromJSON(dest)
+  if (is.null(j$parse)) { unlink(dest); return(NULL) }   # pagina inexistente: no dejar un archivo de error
+  j$parse$text
 }
 
 pvi_to_num <- function(x) {
