@@ -72,5 +72,5 @@ Versión sin δ: P(D Cámara) 0.872, P(D Senado) 0.688.
 2. OSF: hecho el 2 de noviembre de 2026 a las 15:15 Caracas, plantilla "OSF Preregistration", proyecto asociado https://osf.io/35xdw.
 3. OpenTimestamps: opentimestamps.org → arrastrar `predicciones.csv` → guardar el `.ots` en `output/` y hacer commit.
 4. Publicar el post con el hash y los enlaces.
-5. Metaculus/Manifold con las probabilidades.
+5. Metaculus: hecho el 2 de noviembre de 2026 (pregunta 34484: Dem/Dem 59, Rep/Dem 22, Rep/Rep 18, Dem/Rep 1).
 6. No volver a correr `run_all.R` hasta después de la elección.
