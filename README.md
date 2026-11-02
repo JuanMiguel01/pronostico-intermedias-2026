@@ -2,6 +2,8 @@
 
 *Forecast of the 2026 U.S. midterm elections (House and Senate). English summary at the end.*
 
+Versión congelada el 2 de noviembre de 2026 (etiqueta `congelado-2026-11-02`); página del pronóstico: https://claude.ai/artifact/VukesKW717AewmHnrQUf4P
+
 Pronóstico **preregistrado** de las elecciones del 3 de noviembre de 2026, construido a partir de encuestas públicas y fundamentales, con una simulación jerárquica (multietápica: nación → región → estado → distrito) y una hipótesis explícita sobre el sesgo de las encuestas. Las cantidades preregistradas, las decisiones metodológicas y el plan de evaluación están en [PREREGISTRO.md](PREREGISTRO.md). Los resultados numéricos están en [output/resumen.md](output/resumen.md) y, carrera por carrera, en [output/predicciones.csv](output/predicciones.csv).
 
 ## Estructura

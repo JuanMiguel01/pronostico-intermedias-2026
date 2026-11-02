@@ -50,7 +50,7 @@ Versión sin δ: P(D Cámara) 0.872, P(D Senado) 0.688.
 > Cámara: 81 % demócrata, 231 escaños [212–254]. Senado: 60 % demócrata, 51 escaños [48–55]. Congreso dividido (Cámara D, Senado R): 22 %.
 > Hipótesis explícita: las encuestas exageran a los demócratas ~1 punto.
 > SHA-256 de predicciones.csv: a33f9c72b2f77723053940c3d039c5fac369c6e6197817859a5dd40e26b84333
-> Código, datos y 470 probabilidades por carrera: [enlace al repositorio] · Página: [enlace a la página]
+> Código, datos y 470 probabilidades por carrera: https://github.com/JuanMiguel01/pronostico-intermedias-2026 · Página: https://claude.ai/artifact/VukesKW717AewmHnrQUf4P
 
 **English**
 
@@ -58,7 +58,7 @@ Versión sin δ: P(D Cámara) 0.872, P(D Senado) 0.688.
 > House: 81% Democratic, 231 seats [212–254]. Senate: 60% Democratic, 51 seats [48–55]. Split Congress (D House, R Senate): 22%.
 > Explicit hypothesis: polls overstate Democrats by ~1 point.
 > SHA-256 of predicciones.csv: a33f9c72b2f77723053940c3d039c5fac369c6e6197817859a5dd40e26b84333
-> Code, data and all 470 race probabilities: [repo link] · Page: [page link]
+> Code, data and all 470 race probabilities: https://github.com/JuanMiguel01/pronostico-intermedias-2026 · Page: https://claude.ai/artifact/VukesKW717AewmHnrQUf4P
 
 ## Metaculus / Manifold
 
@@ -68,7 +68,7 @@ Versión sin δ: P(D Cámara) 0.872, P(D Senado) 0.688.
 
 ## Pasos de hoy
 
-1. `git push` del repositorio (público) con la etiqueta: `git push -u origin master --tags`.
+1. `git push` del repositorio (público) con la etiqueta: `git push origin congelado-2026-11-02` (hecho).
 2. OSF: proyecto nuevo → subir los tres archivos → Registrations → "Preregistration" → pegar el texto de arriba → registrar (sin embargo).
 3. OpenTimestamps: opentimestamps.org → arrastrar `predicciones.csv` → guardar el `.ots` en `output/` y hacer commit.
 4. Publicar el post con el hash y los enlaces.
