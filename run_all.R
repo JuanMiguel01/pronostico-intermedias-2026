@@ -6,7 +6,8 @@
 #   05 entregables -> output/predicciones.csv, resumen.md, SHA256SUMS.txt
 args <- commandArgs(trailingOnly = TRUE)
 t0 <- Sys.time()
-steps <- c(if (!"--sin-descarga" %in% args) "R/01_download.R", "R/02_clean.R", "R/03_calibrate.R", "R/04_model.R", "R/05_outputs.R")
+steps <- c(if (!"--sin-descarga" %in% args) "R/01_download.R", "R/02_clean.R", "R/03_calibrate.R", "R/04_model.R",
+           "R/05_outputs.R", "R/08_pagina.R")
 for (s in steps) {
   cat("\n==================== ", s, " ====================\n")
   source(s, echo = FALSE)

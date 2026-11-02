@@ -15,6 +15,7 @@ R/04_model.R        promedio generic ballot (efectos de casa + bootstrap en dos 
 R/05_outputs.R      predicciones.csv, resumen.md/json, distribución de escaños, líneas base, figuras, SHA256SUMS
 R/06_evaluate.R     evaluación preregistrada (Brier, log score, calibración, cobertura IC80, ANOVA anidada de residuos)
 R/07_resultados.R   carga los resultados desde Wikipedia (llamadas de AP) -> output/resultados.csv; probado con las páginas de 2024
+R/08_pagina.R       página HTML del pronóstico (output/pronostico.html) a partir de docs/plantilla_pagina.html y los entregables
 R/utils.R           funciones puras compartidas; pruebas en tests/test_utils.R (Rscript tests/test_utils.R)
 run_all.R           corre toda la cadena:  Rscript run_all.R   (o  --sin-descarga)
 ```

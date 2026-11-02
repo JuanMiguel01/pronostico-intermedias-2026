@@ -1,0 +1,268 @@
+<title>Pronóstico Intermedias 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una columna editorial de 72ch con figuras a ancho completo; datos en Plex Mono, titulares en Fraunces */
+:root {
+  --bg: #fcfcfb; --surface: #f3f3ef; --fg: #1d2129; --fg-2: #4b5260; --fg-3: #7b8290; --line: #dcdcd5;
+  --accent: #0f6e6a; --dem: #2b63c7; --rep: #c8373f; --dem-soft: #dfe8fa; --rep-soft: #f8e1e2; --ind: #7b5fb3;
+  --warn: #9a6400;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1a1a19; --surface: #232322; --fg: #ecebe6; --fg-2: #b9b8b1; --fg-3: #8a8982; --line: #3a3a37;
+  --accent: #5fc3bd; --dem: #5b8fe8; --rep: #e5636a; --dem-soft: #22314d; --rep-soft: #4a2628; --ind: #a98ad9; --warn: #e0b24a;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #1a1a19; --surface: #232322; --fg: #ecebe6; --fg-2: #b9b8b1; --fg-3: #8a8982; --line: #3a3a37;
+  --accent: #5fc3bd; --dem: #5b8fe8; --rep: #e5636a; --dem-soft: #22314d; --rep-soft: #4a2628; --ind: #a98ad9; --warn: #e0b24a;
+  color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 4rem }
+main { max-width: 72ch; margin: 0 auto }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.12; text-wrap: balance; margin: 0 }
+h1 { font-size: clamp(2.1rem, 1.3rem + 3vw, 3.4rem); letter-spacing: -0.01em }
+h2 { font-size: 1.65rem; margin-top: 3.2rem; padding-top: 1.2rem; border-top: 1px solid var(--line) }
+h3 { font-size: 1.15rem; margin-top: 1.8rem; font-family: var(--body); font-weight: 600 }
+p { margin: 0.8rem 0; max-width: 68ch }
+.eyebrow { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 2.6rem 0 0.8rem }
+.dateline { color: var(--fg-2); font-size: 0.92rem; margin-top: 0.9rem }
+.lede { font-size: 1.15rem; color: var(--fg); max-width: 62ch }
+.hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 1.8rem 0 0 }
+.tile { background: var(--surface); padding: 14px 16px; border-left: 3px solid var(--line); min-width: 0 }
+.tile.dem { border-left-color: var(--dem) } .tile.rep { border-left-color: var(--rep) } .tile.acc { border-left-color: var(--accent) }
+.tile .k { font-size: 0.78rem; color: var(--fg-2); letter-spacing: 0.02em }
+.tile .v { font-family: var(--mono); font-size: 1.75rem; font-weight: 500; line-height: 1.1; margin-top: 4px; font-variant-numeric: tabular-nums }
+.tile .s { font-family: var(--mono); font-size: 0.78rem; color: var(--fg-3); margin-top: 4px }
+figure { margin: 1.4rem 0 0 }
+figcaption { font-size: 0.85rem; color: var(--fg-2); margin-top: 6px }
+svg text { font-family: var(--mono); font-size: 11px; fill: var(--fg-2) }
+svg .grid { stroke: var(--line); stroke-width: 1 }
+svg .axis { stroke: var(--fg-3); stroke-width: 1 }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.82rem; color: var(--fg-2); margin: 8px 0 0 }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; background: var(--sw) }
+.tooltip { position: fixed; pointer-events: none; background: var(--fg); color: var(--bg); font-family: var(--mono); font-size: 12px;
+  padding: 6px 8px; border-radius: 3px; opacity: 0; transition: opacity .12s; z-index: 20; max-width: 260px; white-space: pre-line }
+.strip { display: flex; height: 26px; gap: 2px; margin-top: 10px; border-radius: 3px; overflow: hidden }
+.strip div { min-width: 0; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; color: #fff }
+.strip-labels { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--fg-2); margin-top: 4px; font-family: var(--mono) }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; font-variant-numeric: tabular-nums }
+.tablewrap { overflow-x: auto; margin-top: 1rem }
+th { text-align: left; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-2); border-bottom: 1px solid var(--fg-3); padding: 6px 8px; white-space: nowrap }
+td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top }
+td.n, th.n { text-align: right; font-family: var(--mono) }
+.pill { display: inline-block; font-family: var(--mono); font-size: 0.74rem; padding: 1px 7px; border-radius: 10px; background: var(--surface); color: var(--fg-2); white-space: nowrap }
+.pill.d { background: var(--dem-soft); color: var(--dem) } .pill.r { background: var(--rep-soft); color: var(--rep) }
+.pbar { display: inline-block; width: 70px; height: 8px; background: var(--rep-soft); border-radius: 2px; vertical-align: middle; margin-right: 8px; position: relative; overflow: hidden }
+.pbar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--dem); border-radius: 2px }
+.pbar.ind i { background: var(--ind) }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1rem }
+.controls button { font: 500 0.82rem var(--body); padding: 6px 12px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 3px; cursor: pointer }
+.controls button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent) }
+.controls button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.note { font-size: 0.9rem; color: var(--fg-2); border-left: 3px solid var(--warn); padding: 6px 12px; background: var(--surface); margin: 1rem 0 }
+code, .hash { font-family: var(--mono); font-size: 0.82rem; word-break: break-all }
+.hashes { background: var(--surface); padding: 10px 14px; font-size: 0.78rem; line-height: 1.6; overflow-x: auto }
+ul { padding-left: 1.2rem } li { margin: 0.3rem 0 }
+a { color: var(--accent) }
+@media (prefers-reduced-motion: reduce) { .tooltip { transition: none } }
+</style>
+
+<main>
+  <p class="eyebrow">Elecciones intermedias de Estados Unidos · 3 de noviembre de 2026</p>
+  <h1>Pronóstico preregistrado de la Cámara y el Senado</h1>
+  <p class="dateline" id="dateline"></p>
+  <p class="lede" id="lede"></p>
+  <div class="hero" id="hero"></div>
+
+  <h2>Cámara de Representantes</h2>
+  <p id="house-text"></p>
+  <figure>
+    <svg id="house-hist" viewBox="0 0 720 300" width="100%" role="img" aria-label="Distribución simulada de escaños demócratas en la Cámara"></svg>
+    <div class="legend"><span style="--sw: var(--accent)">con δ (versión principal)</span><span style="--sw: var(--fg-3)">sin δ</span></div>
+    <figcaption id="house-cap"></figcaption>
+  </figure>
+  <h3>Los 435 distritos según la probabilidad demócrata</h3>
+  <div class="strip" id="strip"></div>
+  <div class="strip-labels" id="strip-labels"></div>
+  <h3 id="comp-title">Distritos competitivos</h3>
+  <p>Probabilidad de que gane el lado demócrata entre 10 % y 90 %, ordenados del más republicano al más demócrata. El margen es la mediana simulada (D − R) con su intervalo del 80 %.</p>
+  <div class="tablewrap"><table id="house-table"></table></div>
+
+  <h2>Senado</h2>
+  <p id="senate-text"></p>
+  <div class="controls" role="group" aria-label="Filtro de carreras">
+    <button type="button" id="btn-comp" aria-pressed="true">Solo competitivas</button>
+    <button type="button" id="btn-all" aria-pressed="false">Las 35 carreras</button>
+  </div>
+  <div class="tablewrap"><table id="senate-table"></table></div>
+  <figure>
+    <svg id="senate-hist" viewBox="0 0 720 220" width="100%" role="img" aria-label="Distribución simulada de escaños demócratas en el Senado"></svg>
+    <div class="legend"><span style="--sw: var(--accent)">con δ (versión principal)</span><span style="--sw: var(--fg-3)">sin δ</span></div>
+    <figcaption id="senate-cap"></figcaption>
+  </figure>
+
+  <h2>La apuesta: δ, el sesgo de las encuestas</h2>
+  <p id="delta-text"></p>
+  <div class="tablewrap"><table id="sens-table"></table></div>
+
+  <h2>Frente a otros pronósticos</h2>
+  <p>Las líneas base preregistradas: dos versiones ingenuas del propio modelo, tres agregadores y el mercado de predicción. Se evalúan todas con el mismo Brier score después de la elección.</p>
+  <div class="tablewrap"><table id="base-table"></table></div>
+
+  <h2>Cómo está hecho</h2>
+  <p id="method-1"></p>
+  <ul>
+    <li><strong>Entorno nacional.</strong> Promedio del generic ballot de los últimos 21 días, solo votantes probables y registrados (estos corridos un punto hacia R), indecisos repartidos en proporción, encuestas partidistas penalizadas dos puntos y a mitad de peso, efecto de casa por encuestador estimado en 90 días y peso por calidad del encuestador. La incertidumbre sale de un bootstrap en dos etapas: primero encuestadores, luego encuestas dentro de cada uno.</li>
+    <li><strong>Cada carrera.</strong> Tres fuentes combinadas por precisión inversa: fundamentales (entorno + 2·PVI + incumbencia), promedio de encuestas de la carrera con un piso de error sistemático, y la calificación de los expertos (Cook, Sabato, Inside Elections, DDHQ).</li>
+    <li><strong>Error por conglomerados.</strong> El error se simula en cuatro etapas anidadas, nación → región → estado → distrito, con desviaciones calibradas en 18 250 encuestas de 1998 a 2022 con resultado real. Por eso la probabilidad de mayoría no es 99 %: los errores de 435 distritos no son independientes.</li>
+    <li><strong>Lo que no modela.</strong> Segunda vuelta de Georgia, voto por orden de preferencia en Alaska y Maine, encuestas publicadas después del 1 de noviembre.</li>
+  </ul>
+
+  <h2>Preregistro y verificación</h2>
+  <p id="prereg-text"></p>
+  <div class="hashes" id="hashes"></div>
+  <p class="note">Después de la congelación no se modifica ningún número. La evaluación (Brier, log score, calibración por deciles, cobertura de los intervalos del 80 % y descomposición del error por nivel) está preescrita en el repositorio y se corre con los resultados certificados.</p>
+</main>
+<div class="tooltip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+/*__DATA__*/
+</script>
+<script>
+(function () {
+  const D = window.DATA; if (!D) return;
+  const f1 = x => (x == null ? "–" : Number(x).toFixed(1));
+  const f0 = x => (x == null ? "–" : Math.round(Number(x)).toString());
+  const pct = x => (x == null ? "–" : Math.round(Number(x) * 100) + " %");
+  const sgn = x => (x == null ? "–" : (x > 0 ? "D+" : x < 0 ? "R+" : "±") + Math.abs(Number(x)).toFixed(1));
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const R = D.resumen.con_delta, R0 = D.resumen.sin_delta;
+  const fecha = new Date(D.generado);
+  const fmtFecha = d => d.toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+
+  document.getElementById("dateline").textContent =
+    `Generado el ${fmtFecha(fecha)} (UTC) con encuestas cuyo trabajo de campo terminó hasta el ${fmtFecha(new Date(D.ultima_encuesta + "T12:00:00"))}. ` +
+    `${D.n_sim.toLocaleString("es-ES")} simulaciones. Versión principal: con δ.`;
+  document.getElementById("lede").textContent =
+    `Los demócratas tienen ${pct(R.Q2_P_D_mayoria)} de probabilidad de ganar la Cámara y ${pct(R.Q3_P_D_51)} de llegar a 51 escaños en el Senado. ` +
+    `El escenario de Congreso dividido (Cámara demócrata, Senado republicano) tiene ${pct(R.Q6_P_D_camara_y_R_senado)}.`;
+
+  const hero = [
+    ["dem", "P(mayoría D en la Cámara)", pct(R.Q2_P_D_mayoria), `sin δ: ${pct(R0.Q2_P_D_mayoria)}`],
+    ["dem", "Escaños D en la Cámara", f0(R.Q2_camara_D_mediana), `IC 80 %: ${f0(R.Q2_lo80)}–${f0(R.Q2_hi80)} · mayoría 218`],
+    ["dem", "P(D ≥ 51 en el Senado)", pct(R.Q3_P_D_51), `sin δ: ${pct(R0.Q3_P_D_51)}`],
+    ["dem", "Escaños D en el Senado", f0(R.Q3_senado_D_mediana), `IC 80 %: ${f0(R.Q3_lo80)}–${f0(R.Q3_hi80)} · incluye King y Sanders`],
+    ["acc", "Voto popular Cámara (2 partidos)", sgn(R.Q1_voto_nacional_margen), `IC 80 %: ${sgn(R.Q1_lo80)} a ${sgn(R.Q1_hi80)}`],
+    ["acc", "P(Cámara D y Senado R)", pct(R.Q6_P_D_camara_y_R_senado), `Cámara D y Senado D: ${pct(R.P_D_camara_y_D_senado)}`]
+  ];
+  document.getElementById("hero").innerHTML = hero.map(([c, k, v, s]) =>
+    `<div class="tile ${c}"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join("");
+
+  // ---- tooltip ----
+  const tip = document.getElementById("tip");
+  function bindTips(svg) {
+    svg.querySelectorAll("[data-tip]").forEach(el => {
+      el.addEventListener("mousemove", e => { tip.textContent = el.dataset.tip; tip.style.opacity = 1;
+        tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 270) + "px"; tip.style.top = (e.clientY + 14) + "px"; });
+      el.addEventListener("mouseleave", () => { tip.style.opacity = 0; });
+    });
+  }
+
+  // ---- histograma de escaños ----
+  function histogram(svgId, series, opts) {
+    const svg = document.getElementById(svgId);
+    const W = 720, H = +svg.getAttribute("viewBox").split(" ")[3], m = { l: 44, r: 12, t: 16, b: 34 };
+    const all = series.flatMap(s => s.rows);
+    let lo = Math.min(...all.map(r => r.seats_D)), hi = Math.max(...all.map(r => r.seats_D));
+    lo = Math.min(lo, opts.majority - 10); hi = Math.max(hi, opts.majority + 10);
+    const pmax = Math.max(...all.map(r => r.prob));
+    const x = s => m.l + (s - lo) / (hi - lo + 1) * (W - m.l - m.r);
+    const bw = (W - m.l - m.r) / (hi - lo + 1);
+    const y = p => H - m.b - p / pmax * (H - m.t - m.b);
+    let out = "";
+    const ticksY = [0, 0.25, 0.5, 0.75, 1].map(t => t * pmax);
+    ticksY.forEach(t => { out += `<line class="grid" x1="${m.l}" x2="${W - m.r}" y1="${y(t)}" y2="${y(t)}"/><text x="${m.l - 6}" y="${y(t) + 4}" text-anchor="end">${(t * 100).toFixed(1)} %</text>`; });
+    series.forEach(s => {
+      s.rows.forEach(r => {
+        out += `<rect x="${x(r.seats_D) + 0.5}" y="${y(r.prob)}" width="${Math.max(bw - 1, 1)}" height="${H - m.b - y(r.prob)}" fill="${s.color}" fill-opacity="${s.opacity}" data-tip="${s.name}: ${r.seats_D} escaños D\n${(r.prob * 100).toFixed(2)} % de las simulaciones"/>`;
+      });
+    });
+    out += `<line class="axis" x1="${m.l}" x2="${W - m.r}" y1="${H - m.b}" y2="${H - m.b}"/>`;
+    const step = opts.step;
+    for (let s = Math.ceil(lo / step) * step; s <= hi; s += step) out += `<text x="${x(s) + bw / 2}" y="${H - m.b + 16}" text-anchor="middle">${s}</text>`;
+    const xm = x(opts.majority) ;
+    out += `<line x1="${xm}" x2="${xm}" y1="${m.t}" y2="${H - m.b}" stroke="var(--fg)" stroke-dasharray="4 3"/><text x="${xm + 5}" y="${m.t + 10}" fill="var(--fg)">mayoría: ${opts.majority}</text>`;
+    out += `<text x="${W - m.r}" y="${H - 4}" text-anchor="end">escaños demócratas</text>`;
+    svg.innerHTML = out; bindTips(svg);
+  }
+  histogram("house-hist", [
+    { name: "con δ", rows: D.dist_house.con_delta, color: "var(--accent)", opacity: 0.8 },
+    { name: "sin δ", rows: D.dist_house.sin_delta, color: "var(--fg-3)", opacity: 0.45 }
+  ], { majority: 218, step: 10 });
+  histogram("senate-hist", [
+    { name: "con δ", rows: D.dist_senate.con_delta, color: "var(--accent)", opacity: 0.8 },
+    { name: "sin δ", rows: D.dist_senate.sin_delta, color: "var(--fg-3)", opacity: 0.45 }
+  ], { majority: 51, step: 1 });
+  document.getElementById("house-cap").textContent = `Mediana ${f0(R.Q2_camara_D_mediana)} escaños con δ (${f0(R0.Q2_camara_D_mediana)} sin δ). La cola izquierda, por debajo de 218, suma ${pct(1 - R.Q2_P_D_mayoria)}.`;
+  document.getElementById("senate-cap").textContent = `Mediana ${f0(R.Q3_senado_D_mediana)} escaños; ${D.D_not_up} no se renuevan. P(≥ 51) = ${pct(R.Q3_P_D_51)}; contando también a un independiente nuevo, ${pct(R.Q3_P_D_51_con_independientes)}.`;
+  document.getElementById("house-text").textContent =
+    `Con un generic ballot de ${sgn(D.mu_G)} a dos partidos (${D.n_polls_generic} encuestas; error bootstrap ±${f1(D.sigma_mu)}), el modelo da ${f0(R.Q2_camara_D_mediana)} escaños demócratas en la mediana, ` +
+    `frente a los 213 actuales. ${D.n_polled_house} distritos tienen encuestas; el resto se apoya en PVI, incumbencia y calificaciones de expertos. ${D.n_uncontested} escaños no tienen rival de los dos partidos grandes.`;
+
+  // ---- franja de categorías ----
+  const hc = D.house_counts, cats = [["safe_D", "D ≥ 90 %", "var(--dem)"], ["lean_D", "D 60–90 %", "var(--dem)", 0.55], ["tossup", "40–60 %", "var(--fg-3)"], ["lean_R", "R 60–90 %", "var(--rep)", 0.55], ["safe_R", "R ≥ 90 %", "var(--rep)"]];
+  document.getElementById("strip").innerHTML = cats.map(([k, lab, col, op]) => `<div style="flex:${hc[k]};background:${col};opacity:${op || 1}" title="${lab}: ${hc[k]}">${hc[k]}</div>`).join("");
+  document.getElementById("strip-labels").innerHTML = cats.map(([k, lab]) => `<span>${lab}</span>`).join("");
+
+  // ---- tabla de distritos ----
+  const pillP = p => `<span class="pill ${p === "D" ? "d" : p === "R" ? "r" : ""}">${p || "–"}</span>`;
+  const bar = (p, ind) => `<span class="pbar${ind ? " ind" : ""}"><i style="width:${(p * 100).toFixed(0)}%"></i></span>`;
+  document.getElementById("comp-title").textContent = `${D.house_comp.length} distritos competitivos`;
+  document.getElementById("house-table").innerHTML =
+    `<thead><tr><th>Distrito</th><th>P(D)</th><th class="n">PVI</th><th>Incumbente</th><th class="n">Margen (IC 80 %)</th><th class="n">Enc.</th><th>Calificación</th></tr></thead><tbody>` +
+    D.house_comp.map(r => `<tr><td><strong>${r.district}</strong></td><td>${bar(r.p_dem)}<span class="hash">${pct(r.p_dem)}</span></td><td class="n">${sgn(r.pvi)}</td>` +
+      `<td>${esc(r.incumbent)} ${pillP(r.inc_party)}</td><td class="n">${sgn(r.margin)} <span style="color:var(--fg-3)">[${f1(r.lo)}, ${f1(r.hi)}]</span></td><td class="n">${r.n_polls}</td><td>${esc(r.rating || "–")}</td></tr>`).join("") + "</tbody>";
+
+  // ---- Senado ----
+  document.getElementById("senate-text").textContent =
+    `Hay 35 escaños en juego: 22 republicanos y 13 demócratas. Para la mayoría los demócratas necesitan 17 victorias. ` +
+    `En Nebraska, Montana y Dakota del Sur el rival principal del republicano es un independiente; sus victorias se cuentan aparte.`;
+  function senateTable(onlyComp) {
+    const rows = D.senate.filter(r => !onlyComp || (r.p_nonR > 0.05 && r.p_nonR < 0.95));
+    document.getElementById("senate-table").innerHTML =
+      `<thead><tr><th>Estado</th><th>P(no R)</th><th>Candidatos</th><th class="n">Margen (IC 80 %)</th><th class="n">Enc.</th><th>Calificación</th></tr></thead><tbody>` +
+      rows.map(r => `<tr><td><strong>${esc(r.state_name)}</strong>${r.race_id.endsWith("-S") ? " <span class=\"pill\">especial</span>" : ""}</td>` +
+        `<td>${bar(r.p_nonR, r.ind)}<span class="hash">${pct(r.p_nonR)}</span></td>` +
+        `<td>${esc(r.cand || "–")} ${r.ind ? '<span class="pill">I</span>' : pillP("D")} vs ${esc(r.cand_R || "–")} ${pillP("R")}</td>` +
+        `<td class="n">${sgn(r.margin)} <span style="color:var(--fg-3)">[${f1(r.lo)}, ${f1(r.hi)}]</span></td><td class="n">${r.n_polls}</td><td>${esc(r.rating || "–")}</td></tr>`).join("") + "</tbody>";
+  }
+  senateTable(true);
+  const bC = document.getElementById("btn-comp"), bA = document.getElementById("btn-all");
+  bC.onclick = () => { senateTable(true); bC.setAttribute("aria-pressed", "true"); bA.setAttribute("aria-pressed", "false"); };
+  bA.onclick = () => { senateTable(false); bA.setAttribute("aria-pressed", "true"); bC.setAttribute("aria-pressed", "false"); };
+
+  // ---- delta ----
+  document.getElementById("delta-text").textContent =
+    `δ es el error que se espera de las encuestas: resultado menos promedio final. La hipótesis preregistrada es δ ~ N(${D.delta.mean}, ${D.delta.sd}²): ` +
+    `las encuestas exageran a los demócratas en un punto en promedio, porque la no-respuesta de los votantes de Trump persiste aunque la ponderación por voto recordado la corrige en parte. ` +
+    `En las intermedias de 1998 a 2022 el error medio fue de 2,7 puntos en esa misma dirección. La tabla muestra cuánto cambia el pronóstico según la media de δ que se elija.`;
+  document.getElementById("sens-table").innerHTML =
+    `<thead><tr><th class="n">Media de δ</th><th class="n">Escaños D Cámara</th><th class="n">P(D Cámara)</th><th class="n">Escaños D Senado</th><th class="n">P(D Senado)</th><th class="n">P(Cámara D, Senado R)</th></tr></thead><tbody>` +
+    D.sensibilidad.map(s => `<tr${s.delta_mean === D.delta.mean ? ' style="font-weight:600"' : ""}><td class="n">${s.delta_mean > 0 ? "+" : ""}${f1(s.delta_mean)}${s.delta_mean === D.delta.mean ? " ◂" : ""}</td><td class="n">${f0(s.camara_D_mediana)}</td><td class="n">${pct(s.P_D_camara)}</td><td class="n">${f0(s.senado_D_mediana)}</td><td class="n">${pct(s.P_D_senado)}</td><td class="n">${pct(s.P_D_camara_R_senado)}</td></tr>`).join("") + "</tbody>";
+
+  // ---- lineas base ----
+  document.getElementById("base-table").innerHTML =
+    `<thead><tr><th>Pronóstico</th><th class="n">Escaños D Cámara</th><th class="n">P(D Cámara)</th><th class="n">Escaños D Senado</th><th class="n">P(D Senado)</th><th>Fuente</th></tr></thead><tbody>` +
+    D.lineas_base.map(b => `<tr><td>${esc(b.linea_base)}</td><td class="n">${b.camara_D == null ? "–" : f0(b.camara_D)}</td><td class="n">${b.P_D_camara == null ? "–" : pct(b.P_D_camara)}</td><td class="n">${b.senado_D == null ? "–" : f0(b.senado_D)}</td><td class="n">${b.P_D_senado == null ? "–" : pct(b.P_D_senado)}</td><td style="font-size:0.8rem;color:var(--fg-2)">${esc(b.fuente)}</td></tr>`).join("") + "</tbody>";
+
+  document.getElementById("method-1").textContent =
+    `Todo el código, los datos congelados y las 470 probabilidades por carrera están en el repositorio. Fuentes: Wikipedia (encuestas nacionales y candidatos), Poliwave (encuestas por carrera), Cook Political Report (PVI 2026) y el archivo histórico de FiveThirtyEight para calibrar.`;
+  document.getElementById("prereg-text").textContent =
+    `Las cantidades preregistradas son seis: el margen del voto popular (Q1), los escaños y la probabilidad de mayoría en cada cámara (Q2, Q3), las 470 probabilidades por carrera (Q4), la hipótesis δ (Q5) y la probabilidad conjunta de Congreso dividido (Q6). Los archivos congelados tienen estos SHA-256, anclados externamente antes del cierre de urnas:`;
+  document.getElementById("hashes").innerHTML = D.hashes.map(h => `<div>${esc(h)}</div>`).join("");
+})();
+</script>
